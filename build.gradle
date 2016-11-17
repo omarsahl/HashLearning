@@ -1,0 +1,20 @@
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.hashlearning.gui.screens.LoginScreen'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'com.jfoenix:jfoenix:1.0.0'
+}

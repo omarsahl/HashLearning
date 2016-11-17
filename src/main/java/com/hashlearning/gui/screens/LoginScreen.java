@@ -20,7 +20,7 @@ public class LoginScreen extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/landing_page.fxml"));
         Scene scene = new Scene(root);
         StageInitializer.initialize(primaryStage);
         primaryStage.setScene(scene);

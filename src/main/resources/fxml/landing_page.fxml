@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="887.0" style="-fx-background-color: #243342;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="60.0" fitWidth="72.0" layoutX="46.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../landing_page_hash_logo-01.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="signOutBtn" buttonType="RAISED" layoutX="717.0" layoutY="44.0" prefHeight="33.0" prefWidth="120.0" ripplerFill="WHITE" style="-fx-background-color: #e91e63; -fx-background-radius: 5PT;" text="SIGN OUT" textFill="WHITE">
+         <font>
+            <Font name="Roboto Black" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="assignmentsBtn" layoutX="585.0" layoutY="46.0" prefHeight="25.0" prefWidth="113.0" ripplerFill="WHITE" text="ASSIGNMENTS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="coursesBtn" layoutX="492.0" layoutY="46.0" prefHeight="25.0" prefWidth="78.0" ripplerFill="WHITE" text="COURSES" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="myProfileBtn" layoutX="386.0" layoutY="46.0" prefHeight="25.0" prefWidth="94.0" ripplerFill="WHITE" text="MY PROFILE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="contLearninBtn" layoutX="46.0" layoutY="255.0" prefHeight="41.0" prefWidth="171.0" ripplerFill="WHITE" style="-fx-background-color: #e91e63; -fx-background-radius: 6pt;" text="CONTINUE LEARNING" textFill="WHITE">
+         <font>
+            <Font name="Roboto Black" size="14.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="470.0" fitWidth="639.0" layoutX="245.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../laptop_pic1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rocket" fitHeight="313.0" fitWidth="426.0" layoutX="290.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../rocket_pic.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="95.0" fitWidth="447.0" layoutX="43.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../slogan.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="browseCoursesBtn" layoutX="241.0" layoutY="255.0" prefHeight="41.0" prefWidth="171.0" ripplerFill="WHITE" style="-fx-background-color: #17222d; -fx-background-radius: 6pt; -fx-border-width: 1PT; -fx-border-color: #FFFFFF; -fx-border-radius: 6PT;" text="BROWSE COURSES" textFill="WHITE">
+         <font>
+            <Font name="Roboto Black" size="14.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="271.0" fitWidth="390.0" layoutX="-115.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../gamepad_pic.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

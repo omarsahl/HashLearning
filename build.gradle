@@ -13,9 +13,17 @@ jar {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile 'com.jfoenix:jfoenix:1.0.0'
+    compile 'de.jensd:fontawesomefx-commons:8.13'
+    compile 'de.jensd:fontawesomefx-fontawesome:4.7.0'
+    compile 'de.jensd:fontawesomefx-icons525:3.0.0'
+    compile 'de.jensd:fontawesomefx-materialdesignfont:1.7.22'
+    compile 'de.jensd:fontawesomefx-materialicons:2.2.0-1'
+    compile 'de.jensd:fontawesomefx-octicons:4.3.0-1'
+    compile 'de.jensd:fontawesomefx-weathericons:2.0.10-1'
 }

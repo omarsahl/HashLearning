@@ -11,6 +11,13 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="HashLearning_main" />
     <orderEntry type="library" name="Gradle: com.jfoenix:jfoenix:1.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-commons:8.13" level="project" />
+    <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-fontawesome:4.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-icons525:3.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-materialdesignfont:1.7.22" level="project" />
+    <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-materialicons:2.2.0-1" level="project" />
+    <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-octicons:4.3.0-1" level="project" />
+    <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-weathericons:2.0.10-1" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.11" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
   </component>

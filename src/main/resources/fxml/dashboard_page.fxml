@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="660.0" prefWidth="980.0" style="-fx-background-color: #ebeff2;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.DashboardController">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="NEVER" />
+        <RowConstraints maxHeight="2000.0" minHeight="200.0" valignment="BOTTOM" vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <GridPane prefHeight="449.0" prefWidth="816.0" style="-fx-background-color: #ebeff2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="258.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="563.0" minWidth="10.0" prefWidth="558.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="300.0" minHeight="100.0" prefHeight="115.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="501.0" minHeight="10.0" prefHeight="496.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+
+                <JFXListView fx:id="list_view" cellVerticalMargin="0.0" fixedCellSize="70.0" layoutX="300" layoutY="50" prefHeight="439.0" prefWidth="258.0" styleClass="custom-jfx-list-view1" GridPane.rowIndex="1">
+                    <Label textFill="#ffffff">
+                        DASHBOARD
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <FontAwesomeIconView glyphName="LAPTOP" size="2.5em" styleClass="custom-jfx-list-view-icon">
+                                    <StackPane.margin>
+                                        <Insets right="10.0" />
+                                    </StackPane.margin>
+                                </FontAwesomeIconView>
+                            </StackPane>
+                        </graphic>
+                        <font>
+                            <Font name="Roboto Light" size="18.0" />
+                        </font>
+                        <padding>
+                            <Insets left="27.0" />
+                        </padding>
+                    </Label>
+                    <Label textFill="#ffffff">
+                        COURSES
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <FontAwesomeIconView glyphName="GRADUATION_CAP" size="2.25em" styleClass="custom-jfx-list-view-icon">
+                                    <StackPane.margin>
+                                        <Insets right="8.0" />
+                                    </StackPane.margin>
+                                </FontAwesomeIconView>
+                            </StackPane>
+                        </graphic>
+                        <font>
+                            <Font name="Roboto Light" size="18.0" />
+                        </font>
+                        <padding>
+                            <Insets left="25.0" />
+                        </padding>
+                    </Label>
+                    <Label textFill="#ffffff">
+                        ASSIGNMENTS
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <FontAwesomeIconView glyphName="CALENDAR_CHECK_ALT" size="2.3em" styleClass="custom-jfx-list-view-icon">
+                                    <StackPane.margin>
+                                        <Insets right="10.0" />
+                                    </StackPane.margin>
+                                </FontAwesomeIconView>
+                            </StackPane>
+                        </graphic>
+                        <font>
+                            <Font name="Roboto Light" size="18.0" />
+                        </font>
+                        <padding>
+                            <Insets left="30.0" />
+                        </padding>
+                    </Label>
+                    <Label textFill="#ffffff">
+                        LOGOUT
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                <FontAwesomeIconView glyphName="SIGN_OUT" size="2.5em" styleClass="custom-jfx-list-view-icon">
+                                    <StackPane.margin>
+                                        <Insets right="10.0" />
+                                    </StackPane.margin>
+                                </FontAwesomeIconView>
+                            </StackPane>
+                        </graphic>
+                        <font>
+                            <Font name="Roboto Light" size="18.0" />
+                        </font>
+                        <padding>
+                            <Insets left="30.0" />
+                        </padding>
+                    </Label>
+
+                </JFXListView>
+                <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #383e49;">
+                    <padding>
+                        <Insets left="8.0" />
+                    </padding>
+               <children>
+                  <ImageView fitHeight="63.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../landing_page_hash_logo-01.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT" prefHeight="89.0" prefWidth="201.0">
+                     <children>
+                        <Label prefHeight="12.0" prefWidth="148.0" text="Omar Sahl" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Light" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="169.0" text="omar753sahl@gmail.com" textFill="#e61e63">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+                </FlowPane>
+            </GridPane>
+
+        </GridPane>
+        <JFXToolbar prefHeight="70.0" prefWidth="816.0" style="-fx-background-color: #ffffff;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+            <center>
+                <ImageView fitHeight="66.0" fitWidth="138.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../HashLearning_logo.png" />
+                    </image>
+                </ImageView>
+            </center>
+        </JFXToolbar>
+    </children>
+</GridPane>

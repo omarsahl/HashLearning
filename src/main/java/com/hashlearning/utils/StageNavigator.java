@@ -18,11 +18,11 @@ public class StageNavigator {
      * @return new stage.
      * @throws IOException
      */
-    public static Stage switchStage(Stage currentWindow, String fxml) throws IOException {
+    public static Stage switchStage(Stage currentWindow, String fxml, boolean resizable) throws IOException {
         Parent root = FXMLLoader.load(StageNavigator.class.getResource(fxml));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
-        StageInitializer.initialize(stage);
+        StageInitializer.initializeStage(stage, resizable);
         stage.setScene(scene);
         currentWindow.close();
         return stage;

@@ -52,7 +52,7 @@ public class SignUpScreenController implements Initializable {
     }
 
     private void openLoginScreen(Stage window) throws IOException {
-        Stage logInStage = StageNavigator.switchStage(window, "/fxml/login_screen.fxml");
+        Stage logInStage = StageNavigator.switchStage(window, "/fxml/login_screen.fxml", false);
         logInStage.show();
     }
 }

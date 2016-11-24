@@ -21,8 +21,8 @@ public class LoginScreen extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/dashboard_page.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/css/main_stylesheet.css").toExternalForm());
-        StageInitializer.initialize(primaryStage);
+        scene.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
+        StageInitializer.initializeStage(primaryStage, false);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -38,6 +38,12 @@ public class LoginScreenController implements Initializable {
         System.out.println("email: " + email + ", password: " + password);
     }
 
+
+    private void openSignUpScreen(Stage window) throws IOException {
+        Stage signUpStage = StageNavigator.switchStage(window, "/fxml/signup_screen.fxml", true);
+        signUpStage.show();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         signUpLabel.setOnMouseClicked(event -> {
@@ -48,10 +54,4 @@ public class LoginScreenController implements Initializable {
             }
         });
     }
-
-    private void openSignUpScreen(Stage window) throws IOException {
-        Stage signUpStage = StageNavigator.switchStage(window, "/fxml/signup_screen.fxml");
-        signUpStage.show();
-    }
-
 }

@@ -1,10 +1,14 @@
 package com.hashlearning.gui.controllers;
 
+import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -29,13 +33,36 @@ public class LandingPageController implements Initializable{
     private JFXButton contLearninBtn;
 
     @FXML
-    private ImageView rocket;
+    private JFXButton browseCoursesBtn;
 
     @FXML
-    private JFXButton browseCoursesBtn;
+    void openAssignmentsPage(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openCoursesPage(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openMyProfilePage(ActionEvent event) {
+
+    }
+
+    @FXML
+    void signOut(ActionEvent event) {
+        try {
+            SessionManager.signOut((Stage) signOutBtn.getScene().getWindow());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
+
 }

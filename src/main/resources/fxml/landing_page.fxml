@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="956.0" style="-fx-background-color: #243342;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="956.0" style="-fx-background-color: #243342;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.LandingPageController">
    <children>
       <ImageView fitHeight="514.0" fitWidth="698.0" layoutX="250.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,27 +18,27 @@
             <Image url="@../landing_page_hash_logo-01.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="signOutBtn" buttonType="RAISED" layoutX="778.0" layoutY="44.0" prefHeight="33.0" prefWidth="120.0" ripplerFill="WHITE" style="-fx-background-color: #e91e63; -fx-background-radius: 5PT;" text="SIGN OUT" textFill="WHITE">
+      <JFXButton fx:id="signOutBtn" buttonType="RAISED" layoutX="778.0" layoutY="44.0" onAction="#signOut" prefHeight="33.0" prefWidth="120.0" ripplerFill="WHITE" style="-fx-background-color: #e91e63; -fx-background-radius: 5PT;" text="SIGN OUT" textFill="WHITE">
          <font>
             <Font name="Roboto Black" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="assignmentsBtn" layoutX="646.0" layoutY="46.0" prefHeight="25.0" prefWidth="113.0" ripplerFill="WHITE" text="ASSIGNMENTS" textFill="WHITE">
+      <JFXButton fx:id="assignmentsBtn" layoutX="646.0" layoutY="46.0" onAction="#openAssignmentsPage" prefHeight="25.0" prefWidth="113.0" ripplerFill="WHITE" text="ASSIGNMENTS" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="coursesBtn" layoutX="553.0" layoutY="46.0" prefHeight="25.0" prefWidth="78.0" ripplerFill="WHITE" text="COURSES" textFill="WHITE">
+      <JFXButton fx:id="coursesBtn" layoutX="553.0" layoutY="46.0" onAction="#openCoursesPage" prefHeight="25.0" prefWidth="78.0" ripplerFill="WHITE" text="COURSES" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="myProfileBtn" layoutX="447.0" layoutY="46.0" prefHeight="25.0" prefWidth="94.0" ripplerFill="WHITE" text="MY PROFILE" textFill="WHITE">
+      <JFXButton fx:id="myProfileBtn" layoutX="447.0" layoutY="46.0" onAction="#openMyProfilePage" prefHeight="25.0" prefWidth="94.0" ripplerFill="WHITE" text="MY PROFILE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="contLearninBtn" layoutX="51.0" layoutY="257.0" prefHeight="41.0" prefWidth="171.0" ripplerFill="WHITE" style="-fx-background-color: #e91e63; -fx-background-radius: 6pt;" text="CONTINUE LEARNING" textFill="WHITE">
+      <JFXButton fx:id="contLearninBtn" layoutX="51.0" layoutY="257.0" onAction="#openMyProfilePage" prefHeight="41.0" prefWidth="171.0" ripplerFill="WHITE" style="-fx-background-color: #e91e63; -fx-background-radius: 6pt;" text="CONTINUE LEARNING" textFill="WHITE">
          <font>
             <Font name="Roboto Black" size="14.0" />
          </font>
@@ -59,7 +58,7 @@
             <Image url="@../slogan.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="browseCoursesBtn" layoutX="246.0" layoutY="257.0" prefHeight="41.0" prefWidth="171.0" ripplerFill="WHITE" style="-fx-background-color: #17222d; -fx-background-radius: 6pt; -fx-border-width: 1PT; -fx-border-color: #FFFFFF; -fx-border-radius: 6PT;" text="BROWSE COURSES" textFill="WHITE">
+      <JFXButton fx:id="browseCoursesBtn" layoutX="246.0" layoutY="257.0" onAction="#openCoursesPage" prefHeight="41.0" prefWidth="171.0" ripplerFill="WHITE" style="-fx-background-color: #17222d; -fx-background-radius: 6pt; -fx-border-width: 1PT; -fx-border-color: #FFFFFF; -fx-border-radius: 6PT;" text="BROWSE COURSES" textFill="WHITE">
          <font>
             <Font name="Roboto Black" size="14.0" />
          </font>

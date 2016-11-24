@@ -3,52 +3,100 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="340.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.LoginScreenController">
+
+<GridPane alignment="CENTER" prefHeight="375.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.LoginScreenController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="192.0" minHeight="83.0" prefHeight="90.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="315.0" minHeight="109.0" prefHeight="156.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="315.0" minHeight="40.0" prefHeight="44.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="315.0" minHeight="25.0" prefHeight="33.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="315.0" minHeight="40.0" prefHeight="45.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <JFXTextField fx:id="emailTextField" focusColor="#e91e63" labelFloat="true" layoutX="53.0" layoutY="133.0" maxWidth="234.0" minWidth="234.0" prefHeight="31.0" prefWidth="234.0" promptText="Email" unFocusColor="#e91e63">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </JFXTextField>
-      <JFXPasswordField fx:id="passwordTextField" focusColor="#e91e63" labelFloat="true" layoutX="53.0" layoutY="188.0" maxWidth="234.0" minWidth="234.0" prefHeight="31.0" prefWidth="234.0" promptText="Password" unFocusColor="#e91e63">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </JFXPasswordField>
-      <JFXButton fx:id="logInBtn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="62.0" layoutY="260.0" onAction="#logIn" prefHeight="36.0" prefWidth="216.0" style="-fx-background-color: #e91e63;" text="Log In" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Roboto Black" size="17.0" />
-         </font>
-      </JFXButton>
-      <ImageView fitHeight="84.0" fitWidth="200.0" layoutX="64.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../HashLearning_logo.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="forgotPasswordLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="317.0" prefHeight="20.0" prefWidth="132.0" text="Forgot Password?" textFill="#e91e63">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="73.0" layoutY="349.0" prefHeight="17.0" prefWidth="132.0" text="Don't have an account?" textFill="#263238">
-         <font>
-            <Font name="Roboto Regular" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="signUpLabel" contentDisplay="CENTER" layoutX="206.0" layoutY="348.0" prefHeight="17.0" prefWidth="99.0" text="Sign Up" textAlignment="CENTER" textFill="#e91e63">
-         <font>
-            <Font name="AvenirNextLTPro-Regular" size="14.0" />
-         </font>
-      </Label>
+      <HBox alignment="CENTER" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="76.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../HashLearning_logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="10.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets right="3.0" top="20.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" style="-fx-background-color: #ffffff;" GridPane.rowIndex="1">
+         <children>
+            <JFXTextField fx:id="emailTextField" focusColor="#e91e63" labelFloat="true" maxWidth="234.0" minWidth="234.0" prefHeight="31.0" prefWidth="234.0" promptText="Email" unFocusColor="#e91e63">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="passwordTextField" focusColor="#e91e63" labelFloat="true" maxWidth="234.0" minWidth="234.0" prefHeight="31.0" prefWidth="234.0" promptText="Password" unFocusColor="#e91e63">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </JFXPasswordField>
+         </children>
+      </VBox>
+      <StackPane GridPane.rowIndex="2">
+         <children>
+            <JFXButton fx:id="logInBtn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#logIn" prefHeight="36.0" prefWidth="216.0" style="-fx-background-color: #e91e63;" text="Log In" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Black" size="17.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </StackPane>
+      <StackPane GridPane.rowIndex="3">
+         <children>
+            <Label fx:id="forgotPasswordLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="115.0" text="Forgot Password?" textFill="#e91e63">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" prefHeight="71.0" prefWidth="273.0" spacing="2.0" GridPane.rowIndex="4">
+         <padding>
+            <Insets bottom="15.0" left="40.0" />
+         </padding>
+         <children>
+            <Label prefHeight="17.0" prefWidth="132.0" text="Don't have an account?" textFill="#263238">
+               <font>
+                  <Font name="Roboto Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="signUpLabel" contentDisplay="CENTER" prefHeight="18.0" prefWidth="102.0" text="Sign Up" textAlignment="CENTER" textFill="#e91e63">
+               <font>
+                  <Font name="AvenirNextLTPro-Regular" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
-   <effect>
-      <DropShadow />
-   </effect>
-</Pane>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" />
+   </padding>
+</GridPane>

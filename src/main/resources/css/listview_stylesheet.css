@@ -19,7 +19,7 @@
 
 .jfx-list-cell .jfx-rippler {
     /*this one*/
-    -fx-rippler-fill: #ff0154;
+    -fx-rippler-fill: #bd0035;
 }
 
 .jfx-list-cell:odd:selected > .jfx-rippler > StackPane,

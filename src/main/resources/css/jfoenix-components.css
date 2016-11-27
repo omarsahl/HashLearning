@@ -405,6 +405,8 @@
 }
 
 
+/* my tab pane custom styles */
+
 .jfx-tab-pane .tab-header-area .jfx-rippler {
     -fx-rippler-fill: #ffffff;
 }
@@ -413,9 +415,16 @@
     -fx-stroke: #e71e63;
 }
 
+
 .tab-header-background{
     -fx-background-color: #414550;
 }
 .jfx-tab-pane{
     -fx-background-color: #ffffff;
+}
+
+.tab .tab-label {
+    -fx-font-size: 18px; /* all the same except this newly added one */
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: 100;
 }

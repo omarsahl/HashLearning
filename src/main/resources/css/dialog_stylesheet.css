@@ -1,0 +1,45 @@
+/*******************************************************************************
+ *                                                                             *
+ * JFX Dialog Layout                                                           *
+ *                                                                             *
+ ******************************************************************************/
+
+.jfx-dialog-overlay-pane {
+    -fx-background-color: rgba(0.0,0.0,0.0,0.1);
+}
+
+.dialog-trigger{
+    -fx-background-color: WHITE;
+    -fx-button-type:RAISED;
+    -fx-font-size: 14.0px;
+}
+
+.jfx-dialog-layout {
+    -fx-padding: 24.0px 24.0px 16.0px 24.0px;
+    -fx-text-fill: rgba(0.0, 0.0, 0.0, 0.87);
+}
+.jfx-layout-heading {
+    -fx-font-size: 18.0px;
+    -fx-text-fill: #292e39;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+    -fx-padding: 0.0 0.0 10.0 0.0;
+}
+
+.jfx-layout-body {
+    -fx-font-size: 15.0px;
+    -fx-text-fill: #383e49;
+    -fx-alignment: center-left;
+    -fx-wrap-text: true;
+}
+
+.jfx-layout-actions {
+    -fx-padding: 10.0px 0.0 0.0 0.0 ;
+    -fx-alignment: center-right ;
+}
+.dialog-accept{
+    -fx-font-family: sans-serif;
+    -fx-text-fill: #e61e63;
+    -fx-font-weight: normal;
+    -fx-padding: 0.7em 0.8em;
+}

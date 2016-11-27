@@ -43,7 +43,7 @@
                 </rowConstraints>
 
                 <JFXListView fx:id="list_view" cellVerticalMargin="0.0" fixedCellSize="70.0" layoutX="300" layoutY="50" prefHeight="439.0" prefWidth="258.0" styleClass="custom-jfx-list-view1" GridPane.rowIndex="1">
-                    <Label fx:id="dashboardBtn" textFill="#ffffff">
+                    <Label textFill="#ffffff">
                         DASHBOARD
                         <graphic>
                             <StackPane styleClass="custom-jfx-list-view-icon-container">
@@ -61,7 +61,7 @@
                             <Insets left="27.0" />
                         </padding>
                     </Label>
-                    <Label fx:id="coursesBtn" textFill="#ffffff">
+                    <Label textFill="#ffffff">
                         COURSES
                         <graphic>
                             <StackPane styleClass="custom-jfx-list-view-icon-container">

@@ -27,13 +27,13 @@
     <children>
         <GridPane prefHeight="449.0" prefWidth="816.0" style="-fx-background-color: #ebeff2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="379.0" minWidth="260.0" prefWidth="260.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="980.0" minWidth="10.0" prefWidth="695.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="260.0" prefWidth="260.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
-            <GridPane prefHeight="590.0" prefWidth="225.0">
+            <GridPane prefHeight="590.0">
                 <columnConstraints>
                     <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="285.0" />
                 </columnConstraints>
@@ -150,12 +150,12 @@
                </children>
                 </FlowPane>
             </GridPane>
-         <GridPane fx:id="dashboardPageContainer" GridPane.columnIndex="1">
+         <GridPane fx:id="dashboardPageContainer" alignment="CENTER" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
            <columnConstraints>
-             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+             <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
            </columnConstraints>
            <rowConstraints>
-             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
            </rowConstraints>
             <padding>
                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

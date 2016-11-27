@@ -12,14 +12,10 @@ import java.io.IOException;
 
 public class DashboardManager {
 
-    public static final int DASHBOARD = 0;
-    public static final int COURSES = 1;
-    public static final int ASSIGNMENTS = 2;
-    public static final int LOGOUT = 3;
-
     private GridPane container;
 
-    public void open(int index) {
+    public void open(int index, GridPane container) {
+        this.container = container;
         switch (index) {
             case 0:
                 openDashboard();
@@ -36,12 +32,14 @@ public class DashboardManager {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                break;
+
         }
     }
 
 
     private void openDashboard() {
-        System.out.println("Dashboard opened!");
+        System.out.println("Dashboard selected!");
 
         JFXTabPane tabPane = new JFXTabPane();
         tabPane.getStylesheets().add(getClass().getResource("/css/jfoenix-components.css").toExternalForm());
@@ -50,15 +48,20 @@ public class DashboardManager {
 
         Tab tab1 = new Tab();
         tab1.setText("COURSES");
-        tab1.setContent(new Label("Courses!"));
+        Label coursesLabel = new Label("Courses Page!");
+        coursesLabel.setStyle("-fx-font-size: 50px");
+        tab1.setContent(coursesLabel);
         tabPane.getTabs().add(tab1);
 
         Tab tab2 = new Tab();
         tab2.setText("ASSIGNMENTS");
-        tab2.setContent(new Label("Assignments!"));
+        Label assignmentsLabel = new Label("Assignments Page!");
+        tab2.setContent(assignmentsLabel);
+        assignmentsLabel.setStyle("-fx-font-size: 50px");
         tabPane.getTabs().add(tab2);
-        SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
-        selectionModel.select(0);
+        tabPane.getSelectionModel().select(0);
+
+        container.getChildren().add(tabPane);
     }
 
     private void openCoursesPage() {

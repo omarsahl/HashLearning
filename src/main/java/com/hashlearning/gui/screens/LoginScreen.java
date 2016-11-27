@@ -22,7 +22,7 @@ public class LoginScreen extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/dashboard_page.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
-        StageInitializer.initializeStage(primaryStage, false);
+        StageInitializer.initializeStage(primaryStage, true);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

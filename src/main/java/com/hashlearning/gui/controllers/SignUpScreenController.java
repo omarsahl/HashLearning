@@ -1,6 +1,7 @@
 package com.hashlearning.gui.controllers;
 
 
+import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.StageNavigator;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -47,6 +48,7 @@ public class SignUpScreenController implements Initializable {
                 openLoginScreen((Stage) goToLoginScreenLabel.getScene().getWindow());
             } catch (IOException e) {
                 e.printStackTrace();
+                ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
             }
         });
     }

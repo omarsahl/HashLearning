@@ -1,5 +1,6 @@
 package com.hashlearning.gui.controllers;
 
+import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -56,6 +57,7 @@ public class LandingPageController implements Initializable{
             SessionManager.signOut((Stage) signOutBtn.getScene().getWindow());
         } catch (IOException e) {
             e.printStackTrace();
+            ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
         }
     }
 

@@ -38,7 +38,7 @@ public class DashboardController implements Initializable {
             }
         });
 
-        // call DashboardManager.open(DashboardManager.DASHBOARD) to open Dashboard after initialization so that the user doesn't have to look at some empty boring page.
+        // call DashboardManager.open(0) to open Dashboard after initialization so that the user doesn't have to look at some empty boring page.
         list_view.getSelectionModel().select(0 ); // 0 is Dashboard
 
     }

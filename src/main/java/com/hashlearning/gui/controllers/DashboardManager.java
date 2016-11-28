@@ -27,6 +27,8 @@ public class DashboardManager {
                 openAssignmentsPage();
                 break;
             case 3:
+                openEditor();
+            case 4:
                 try {
                     SessionManager.signOut((Stage) container.getScene().getWindow());
                 } catch (IOException e) {
@@ -36,6 +38,10 @@ public class DashboardManager {
                 break;
 
         }
+    }
+
+    private void openEditor() {
+    clearContainer();
     }
 
     private void clearContainer() {

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
@@ -15,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane minHeight="580.0" minWidth="800.0" prefHeight="660.0" prefWidth="980.0" style="-fx-background-color: #ebeff2;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.DashboardController">
+<GridPane  minHeight="580.0" minWidth="800.0" prefHeight="660.0" prefWidth="980.0" style="-fx-background-color: #ebeff2;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.DashboardController">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="800.0" />
@@ -97,6 +96,25 @@
                             <Insets left="30.0" />
                         </padding>
                     </Label>
+                    <Label textFill="#ffffff">
+                        TOOLS
+                        <graphic>
+                            <StackPane styleClass="custom-jfx-list-view-icon-continer">
+                                <FontAwesomeIconView glyphName="GEAR" size="2.5em" styleClass="custom-jfx-list-view-icon">
+                                    <StackPane.margin>
+                                        <Insets right="10.0" />
+                                    </StackPane.margin>
+                                </FontAwesomeIconView>
+                            </StackPane>
+                        </graphic>
+                        <font>
+                            <Font name="Roboto Light" size="18.0" />
+                        </font>
+                        <padding>
+                            <Insets left="27.0" />
+                        </padding>
+                    </Label>
+
                     <Label textFill="#ffffff">
                         LOGOUT
                         <graphic>

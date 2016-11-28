@@ -23,7 +23,7 @@ public class LoginScreen extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/landing_page.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/dashboard_page.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
         StageInitializer.initializeStage(primaryStage, true);

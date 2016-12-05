@@ -40,8 +40,10 @@ public class DashboardManager {
         }
     }
 
-    private void openEditor() {
-    clearContainer();
+    private void openEditor()
+    {
+
+         System.out.println("EDITOR");
     }
 
     private void clearContainer() {
@@ -55,20 +57,22 @@ public class DashboardManager {
         tabPane.getStylesheets().add(getClass().getResource("/css/jfoenix-components.css").toExternalForm());
         tabPane.setTabMinHeight(60);
         tabPane.setTabMinWidth(200);
+        //MY COURSES TAB
 
         Tab tab1 = new Tab();
         tab1.setText("MY COURSES");
         Label coursesLabel = new Label("Courses Page!");
         coursesLabel.setStyle("-fx-font-size: 50px");
         tab1.setContent(coursesLabel);
-        tabPane.getTabs().add(tab1);
 
+        // tabPane.getTabs().add(tab1);
         Tab tab2 = new Tab();
         tab2.setText("MY ASSIGNMENTS");
         Label assignmentsLabel = new Label("Assignments Page!");
         tab2.setContent(assignmentsLabel);
         assignmentsLabel.setStyle("-fx-font-size: 50px");
-        tabPane.getTabs().add(tab2);
+        //tabPane.getTabs().add(tab2);
+        tabPane.getTabs().addAll(tab1,tab2);
         tabPane.getSelectionModel().select(0);
 
         container.getChildren().add(tabPane);

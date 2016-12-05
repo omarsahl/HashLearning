@@ -2,11 +2,11 @@ package com.hashlearning.gui.controllers;
 
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
+import com.hashlearning.utils.StageNavigator;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -48,7 +48,13 @@ public class LandingPageController implements Initializable{
 
     @FXML
     void openMyProfilePage(ActionEvent event) {
-
+        try {
+            Stage stage = StageNavigator.switchStage((Stage) contLearninBtn.getScene().getWindow(),"/fxml/dashboard_page.fxml",false);
+        stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE,e.toString());
+        }
     }
 
     @FXML
@@ -63,6 +69,7 @@ public class LandingPageController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
 
     }
 

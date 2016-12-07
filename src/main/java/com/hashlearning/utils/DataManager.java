@@ -53,8 +53,6 @@ public class DataManager {
     }
 
     public static boolean validate(String username, String password) {
-        if (students.get(username) != null && students.get(username).getPassword().equals(password))
-            return true;
-        return false;
+        return students.get(username) != null && students.get(username).getPassword().equals(password);
     }
 }

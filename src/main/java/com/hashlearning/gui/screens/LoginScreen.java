@@ -7,30 +7,33 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginScreen extends Application {
 
 
+    public static void main(String[] args) throws MalformedURLException, FileNotFoundException {
+        launch(args);
 
-    public static void main(String[] args) {
-       launch(args);
-        HashMap<Integer,String> students = new HashMap<>();
-        BufferedReader bf = new BufferedReader(new InputStreamReader(LoginScreen.class.getResourceAsStream("students")));
+        HashMap<Integer, String> students = new HashMap<>();
+
+        FileInputStream file = new FileInputStream(LoginScreen.class.getResource("/files/students.txt").getFile());
+
+        BufferedReader bf = new BufferedReader(new InputStreamReader(file));
         bf
                 .lines().map(line -> line.split("[|]"))
-                .skip(1).skip(2)
+                .skip(1)
                 .forEach(x -> {
-                    students.put(Integer.parseInt(x[0].trim()),x[1]);
+                    students.put(Integer.parseInt(x[0].trim()), x[1]);
                 });
-        for(Map.Entry <Integer,String> s :students.entrySet()){
-            System.out.println(s.getKey()+" ----> "+s.getValue());
+        for (Map.Entry<Integer, String> s : students.entrySet()) {
+            System.out.println(s.getKey() + " ----> " + s.getValue());
         }
     }
+
     // test pull request
     @Override
     public void start(Stage primaryStage) throws IOException {

@@ -1,16 +1,23 @@
 package com.hashlearning.models;
 
 
-import java.util.HashMap;
-
 public class User {
     //TODO: implement user class
 
     private  String name;
     private String mail ;
-    private int id ;
+    private String id ;
     private String password;
-    public static HashMap<String,Course> enrolledCourses;
+    private String [] enrolledCourses;
+
+
+    public String[] getEnrolledCourses() {
+        return enrolledCourses;
+    }
+
+    public void setEnrolledCourses(String[] enrolledCourses) {
+        this.enrolledCourses = enrolledCourses;
+    }
 
     public String getPassword() {
         return password;
@@ -35,11 +42,11 @@ public class User {
         this.mail = mail;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

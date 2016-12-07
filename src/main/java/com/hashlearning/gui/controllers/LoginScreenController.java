@@ -1,6 +1,6 @@
 package com.hashlearning.gui.controllers;
 
-import com.hashlearning.utils.Encrypt;
+import com.hashlearning.utils.DataManager;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.StageNavigator;
 import com.jfoenix.controls.JFXButton;
@@ -36,17 +36,20 @@ public class LoginScreenController implements Initializable {
     @FXML
     private void logIn(ActionEvent event) {
 
-        String email = emailTextField.getText();
+        String userName = emailTextField.getText();
         //printing the Encrypted.
-        String password = Encrypt.encrypt( passwordTextField.getText());
-        System.out.println("email: " + email + ", password: " + password);
-        //TODO validating the login operation.
-        try {
+        String password = ( passwordTextField.getText());//Encrypt.encrypt
+        if(DataManager.validate(userName,password))
+        { try {
             Stage landingStage = StageNavigator.switchStage((Stage) logInBtn.getScene().getWindow(),"/fxml/landing_page.fxml",false);
             landingStage.show();
         } catch (IOException e) {
             e.printStackTrace();
             ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
+        }
+        }
+        else {
+            ErrorHandler.showErrorDialog("Check your Password or Your Username","");
         }
 
     }

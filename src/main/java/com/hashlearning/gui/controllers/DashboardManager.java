@@ -1,14 +1,18 @@
 package com.hashlearning.gui.controllers;
 
+import com.hashlearning.utils.DataManager;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXTabPane;
+import javafx.collections.FXCollections;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class DashboardManager {
 
@@ -61,9 +65,11 @@ public class DashboardManager {
 
         Tab tab1 = new Tab();
         tab1.setText("MY COURSES");
-        Label coursesLabel = new Label("Courses Page!");
-        coursesLabel.setStyle("-fx-font-size: 50px");
-        tab1.setContent(coursesLabel);
+            ListView courses = new ListView();
+            courses.setItems(FXCollections.observableArrayList(Arrays.asList(DataManager.students.get(SessionManager.getCurrentStudent()).getEnrolledCourses())));
+   //     Label coursesLabel = new Label("Courses Page!");
+  //      coursesLabel.setStyle("-fx-font-size: 50px");
+        tab1.setContent(courses);
 
         // tabPane.getTabs().add(tab1);
         Tab tab2 = new Tab();

@@ -2,6 +2,7 @@ package com.hashlearning.gui.controllers;
 
 import com.hashlearning.utils.DataManager;
 import com.hashlearning.utils.ErrorHandler;
+import com.hashlearning.utils.SessionManager;
 import com.hashlearning.utils.StageNavigator;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -40,7 +41,9 @@ public class LoginScreenController implements Initializable {
         //printing the Encrypted.
         String password = ( passwordTextField.getText());//Encrypt.encrypt
         if(DataManager.validate(userName,password))
-        { try {
+        {
+            SessionManager.setCurrentStudent(userName); // save the name of the student to use it later.
+            try {
             Stage landingStage = StageNavigator.switchStage((Stage) logInBtn.getScene().getWindow(),"/fxml/landing_page.fxml",false);
             landingStage.show();
         } catch (IOException e) {
@@ -49,7 +52,7 @@ public class LoginScreenController implements Initializable {
         }
         }
         else {
-            ErrorHandler.showErrorDialog("Check your Password or Your Username","");
+            ErrorHandler.showErrorDialog("Kindly check your Username or Password","");
         }
 
     }

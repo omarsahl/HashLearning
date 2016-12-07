@@ -1,9 +1,7 @@
 package com.hashlearning.models;
 
-/**
- * Created by ahmed-ayman on 12/5/16.
- */
-public class Toutrial {
+
+public class Tutorial {
 
     private String name ;
     private double time ; //the estimated time of the Course

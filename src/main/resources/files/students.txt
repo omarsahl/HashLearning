@@ -7,5 +7,3 @@ id  name        courses        mail              passwords
 6 |Sahl	        |Ruby          |sahl@gmail.com      |123456789
 7 |Nabil        |Java          |nabil@gmail.com     |12345678910
 8 |Zareef       |Java	     |zalaion@gmail.com   |1234567891011
-
-//courses

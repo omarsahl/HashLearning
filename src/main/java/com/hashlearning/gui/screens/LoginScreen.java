@@ -7,9 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,10 +15,12 @@ public class LoginScreen extends Application {
 
 
 
-    public static void main(String[] args) {
-       launch(args);
+    public static void main(String[] args) throws IOException {
+     //  launch(args);
         HashMap<Integer,String> students = new HashMap<>();
-        BufferedReader bf = new BufferedReader(new InputStreamReader(LoginScreen.class.getResourceAsStream("students")));
+        ClassLoader loader = LoginScreen.class.getClassLoader();
+        FileInputStream fis = new FileInputStream(loader.getResource("files/students").getFile());
+        BufferedReader bf = new BufferedReader(new InputStreamReader(fis));
         bf
                 .lines().map(line -> line.split("[|]"))
                 .skip(1).skip(2)

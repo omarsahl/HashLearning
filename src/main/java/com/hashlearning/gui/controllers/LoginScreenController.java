@@ -35,6 +35,12 @@ public class LoginScreenController implements Initializable {
 
     @FXML
     private void logIn(ActionEvent event) {
+
+        String email = emailTextField.getText();
+        //printing the Encrypted.
+        String password = Encrypt.encrypt( passwordTextField.getText());
+        System.out.println("email: " + email + ", password: " + password);
+        //TODO validating the login operation.
         try {
             Stage landingStage = StageNavigator.switchStage((Stage) logInBtn.getScene().getWindow(),"/fxml/landing_page.fxml",false);
             landingStage.show();
@@ -43,10 +49,6 @@ public class LoginScreenController implements Initializable {
             ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
         }
 
-        String email = emailTextField.getText();
-        //printing the Encrypted.
-        String password = Encrypt.encrypt( passwordTextField.getText());
-        System.out.println("email: " + email + ", password: " + password);
     }
 
 

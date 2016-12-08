@@ -1,6 +1,5 @@
 package com.hashlearning.gui.screens;
 
-import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.utils.DataManager;
 import com.hashlearning.utils.StageInitializer;
 import javafx.application.Application;
@@ -23,7 +22,7 @@ public class LoginScreen extends Application {
     // test pull request
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/dashboard_page.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
         StageInitializer.initializeStage(primaryStage, true);

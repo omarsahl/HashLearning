@@ -48,9 +48,10 @@ public class LandingPageController implements Initializable{
 
     @FXML
     void openMyProfilePage(ActionEvent event) {
+        Stage stage = null;
         try {
-            Stage stage = StageNavigator.switchStage((Stage) contLearninBtn.getScene().getWindow(),"/fxml/dashboard_page.fxml",false);
-        stage.show();
+         stage = StageNavigator.switchStage((Stage) contLearninBtn.getScene().getWindow(),"/fxml/dashboard_page.fxml",false);
+                  stage.show();
         } catch (IOException e) {
             e.printStackTrace();
             ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE,e.toString());
@@ -69,7 +70,6 @@ public class LandingPageController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
     }
 

@@ -1,9 +1,6 @@
 package com.hashlearning.gui.controllers;
 
-import com.hashlearning.utils.DataManager;
-import com.hashlearning.utils.ErrorHandler;
-import com.hashlearning.utils.SessionManager;
-import com.hashlearning.utils.StageNavigator;
+import com.hashlearning.utils.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -13,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -52,8 +50,9 @@ public class LoginScreenController implements Initializable {
         }
         }
         else {
-            ErrorHandler.showErrorDialog("Kindly check your Username or Password","");
+            JOptionPane.showMessageDialog( null, "There is a problem with your Password or the Username");
         }
+
 
     }
 

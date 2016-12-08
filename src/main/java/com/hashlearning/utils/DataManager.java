@@ -4,13 +4,8 @@ import com.hashlearning.gui.screens.LoginScreen;
 import com.hashlearning.models.Course;
 import com.hashlearning.models.User;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
 
 /**
  * Created by ahmed-ayman on 12/8/16.
@@ -25,11 +20,14 @@ public class DataManager {
     public static void loadData() throws FileNotFoundException {
         students = new HashMap<>();
         students = loadStudents();
-        for (Map.Entry<String, User> s : students.entrySet()) {
-            System.out.println(s.getKey() + " ----> " + s.getValue().getPassword());
-        }
-    }
 
+        for (Map.Entry<String,User>s :students.entrySet()){
+            System.out.print(s.getKey());
+      }
+  }
+    public static void refresh() throws FileNotFoundException {
+        students=loadStudents();
+    }
     private static HashMap<String, User> loadStudents() throws FileNotFoundException {
         HashMap<String, User> listOfStudents = new HashMap<>();
         ClassLoader loader = LoginScreen.class.getClassLoader();
@@ -41,28 +39,44 @@ public class DataManager {
                 .forEach(line -> {
                     //new student
                     User student = new User();
-                    student.setId(line[0]);  //ID
+                    student.setId(line[0]);  // No need for the ID
                     student.setName(line[1]); // Name
-
-                    ArrayList<Course> courses = new ArrayList<Course>();
-                    String[] coursesNames = line[2].split("-");
-                    for (String courseName : coursesNames) {
-                        courses.add(new Course(courseName));
-                    }
-                    student.setEnrolledCourses(courses); //add the courses
+                  //  System.out.printf(line[1]+" ");
                     student.setMail(line[3]);  // MAIL
                     student.setPassword(line[4]); //Password
+                //    System.out.printf(line[4]+"\n");
+                    ArrayList<Course> courses = new ArrayList<Course>();
+                    String[] coursesNames = line[2].split("-");
+                    for (String courseName : coursesNames)
+                        courses.add(new Course(courseName));
+                    student.setEnrolledCourses(courses); //add the courses
                     listOfStudents.put(student.getName(), student);           //put the Object to a Hash of students !
 
-
                 });
-
         return listOfStudents;
     }
-
     public static boolean validate(String username, String password) {
-        if (students.get(username) != null && students.get(username).getPassword().equals(password))
-            return true;
-        return false;
+        return (students.get(username) != null && students.get(username).getPassword().equals(password));
+    }
+    public static void addStudent(String userName , String password, String mail) throws IOException {
+        String line ="1|"+userName+"|"+password+"|"+mail;
+
+        ClassLoader loader = LoginScreen.class.getClassLoader();
+        File file=new File(loader.getResource("files/students").getFile());
+        PrintWriter out =null;
+        try{
+        out     = new PrintWriter(new FileWriter(file,true));
+            out.println(line);
+
+            System.out.println(file.getPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+finally {
+            out.close();
+        }
+   for(Map.Entry<String,User>s :students.entrySet()){
+            System.out.println(s.getKey());
+        }
     }
 }

@@ -4,13 +4,11 @@ package com.hashlearning.models;
 import java.util.ArrayList;
 
 public class User {
-    //TODO: implement user class
 
     private  String name;
     private String mail ;
     private String id ;
     private String password;
-
     public ArrayList<Course> getEnrolledCourses() {
         return enrolledCourses;
     }

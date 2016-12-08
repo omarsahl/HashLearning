@@ -99,5 +99,6 @@ public class DashboardManager {
         courses.setItems(courseObservableList);
         courses.setCellFactory(courseListView -> new CourseListItem());
         return courses;
+
     }
 }

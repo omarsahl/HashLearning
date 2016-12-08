@@ -31,6 +31,8 @@ public class DashboardController implements Initializable {
         mail.setText(DataManager.students.get(SessionManager.getCurrentStudent()).getMail());
         DashboardManager dashboardManager = new DashboardManager();
 
+        list_view.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
+
         list_view.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {

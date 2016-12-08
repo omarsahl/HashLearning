@@ -21,8 +21,9 @@ public class DataManager {
         students = new HashMap<>();
         students = loadStudents();
 
+        System.out.println("Users       Passwords");
         for (Map.Entry<String,User>s :students.entrySet()){
-            System.out.print(s.getKey());
+            System.out.println(s.getKey() +"  "+s.getValue().getPassword());
       }
   }
     public static void refresh() throws FileNotFoundException {

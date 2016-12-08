@@ -65,11 +65,9 @@ public class DashboardManager {
 
         Tab tab1 = new Tab();
         tab1.setText("MY COURSES");
-            ListView courses = new ListView();
-            courses.setItems(FXCollections.observableArrayList(Arrays.asList(DataManager.students.get(SessionManager.getCurrentStudent()).getEnrolledCourses())));
-   //     Label coursesLabel = new Label("Courses Page!");
+      //     Label coursesLabel = new Label("Courses Page!");
   //      coursesLabel.setStyle("-fx-font-size: 50px");
-        tab1.setContent(courses);
+        tab1.setContent(coursesListView());
 
         // tabPane.getTabs().add(tab1);
         Tab tab2 = new Tab();
@@ -86,11 +84,17 @@ public class DashboardManager {
 
     private void openCoursesPage() {
         clearContainer();
+
+        container.getChildren().add(coursesListView());
     }
 
     private void openAssignmentsPage() {
         clearContainer();
     }
 
-
+    private ListView coursesListView(){
+        ListView courses = new ListView();
+        courses.setItems(FXCollections.observableArrayList(Arrays.asList(DataManager.students.get(SessionManager.getCurrentStudent()).getEnrolledCourses())));
+return courses;
+    }
 }

@@ -18,7 +18,12 @@
     <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-octicons:4.3.0-1" level="project" />
     <orderEntry type="library" name="Gradle: de.jensd:fontawesomefx-weathericons:2.0.10-1" level="project" />
     <orderEntry type="library" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: edu.vt.middleware:vt-password:3.1.2" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.10" level="project" />
+    <orderEntry type="library" name="Gradle: edu.vt.middleware:vt-dictionary:3.0" level="project" />
+    <orderEntry type="library" name="Gradle: edu.vt.middleware:vt-crypt:2.1.4" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.bouncycastle:bcprov-jdk15:1.45" level="project" />
+    <orderEntry type="library" name="Gradle: commons-cli:commons-cli:1.2" level="project" />
   </component>
 </module>

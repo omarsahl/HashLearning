@@ -19,12 +19,11 @@ public class LoginScreen extends Application {
         launch(args);
 
     }
-    // test pull request
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
+        scene.getStylesheets().add("/css/textfield_stylesheet.css");
         StageInitializer.initializeStage(primaryStage, true);
         primaryStage.setScene(scene);
         primaryStage.show();

@@ -27,4 +27,7 @@ dependencies {
     compile 'de.jensd:fontawesomefx-octicons:4.3.0-1'
     compile 'de.jensd:fontawesomefx-weathericons:2.0.10-1'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    compile('edu.vt.middleware:vt-password:3.1.2') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
 }

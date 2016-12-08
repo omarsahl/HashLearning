@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.scene.control.FocusModel;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
@@ -33,11 +34,9 @@ public class DashboardManager {
                 openCoursesPage();
                 break;
             case 2:
-                openAssignmentsPage();
+                openEditor();
                 break;
             case 3:
-                openEditor();
-            case 4:
                 try {
                     SessionManager.signOut((Stage) container.getScene().getWindow());
                 } catch (IOException e) {
@@ -49,10 +48,6 @@ public class DashboardManager {
         }
     }
 
-    private void openEditor() {
-
-        System.out.println("EDITOR");
-    }
 
     private void clearContainer() {
         container.getChildren().clear();
@@ -86,15 +81,20 @@ public class DashboardManager {
 
     private void openCoursesPage() {
         clearContainer();
-        container.getChildren().add(createCoursesListView());
     }
 
     private void openAssignmentsPage() {
         clearContainer();
     }
 
-    private ListView createCoursesListView() {
+    private void openEditor() {
+        System.out.println("EDITOR");
+        clearContainer();
+    }
+
+    private JFXListView<Course> createCoursesListView() {
         JFXListView<Course> courses = new JFXListView<Course>();
+        courses.getStylesheets().add(getClass().getResource("/css/courses_list_stylesheet.css").toExternalForm());
         ObservableList<Course> courseObservableList = FXCollections.observableArrayList(DataManager.students.get(SessionManager.getCurrentStudent()).getEnrolledCourses());
         courses.setItems(courseObservableList);
         courses.setCellFactory(courseListView -> new CourseListItem());

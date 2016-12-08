@@ -89,27 +89,9 @@
                         </padding>
                     </Label>
                     <Label textFill="#ffffff">
-                        ASSIGNMENTS
-                        <graphic>
-                            <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                <FontAwesomeIconView glyphName="CALENDAR_CHECK_ALT" size="2.3em" styleClass="custom-jfx-list-view-icon">
-                                    <StackPane.margin>
-                                        <Insets right="10.0" />
-                                    </StackPane.margin>
-                                </FontAwesomeIconView>
-                            </StackPane>
-                        </graphic>
-                        <font>
-                            <Font name="Roboto Light" size="18.0" />
-                        </font>
-                        <padding>
-                            <Insets left="30.0" />
-                        </padding>
-                    </Label>
-                    <Label textFill="#ffffff">
                         TOOLS
                         <graphic>
-                            <StackPane styleClass="custom-jfx-list-view-icon-continer">
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
                                 <FontAwesomeIconView glyphName="GEAR" size="2.5em" styleClass="custom-jfx-list-view-icon">
                                     <StackPane.margin>
                                         <Insets right="10.0" />

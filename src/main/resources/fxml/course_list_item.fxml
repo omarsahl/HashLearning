@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="listItemParent" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="111.0" prefWidth="686.0" spacing="20.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="courseIcon" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../courses_icons/java.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="courseName" text="Java Basics" textFill="#e91e63">
+         <font>
+            <Font name="Bariol-Bold" size="25.0" />
+         </font>
+      </Label>
+      <JFXProgressBar fx:id="progressBar" progress="0.34">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </JFXProgressBar>
+      <JFXButton fx:id="continueBtn" maxHeight="20.0" minWidth="100.0" prefHeight="20.0" prefWidth="100.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2; -fx-background-color: #ffffff; -fx-border-color: #e91e63;" text="CONTINUE" textFill="#e91e63">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="15.0" right="15.0" />
+         </HBox.margin>
+      </JFXButton>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="35.0" right="30.0" top="10.0" />
+   </padding>
+</HBox>

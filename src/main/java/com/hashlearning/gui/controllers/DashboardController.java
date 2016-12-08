@@ -17,8 +17,8 @@ public class DashboardController implements Initializable {
 
     @FXML
     private Label username;
-@FXML
-private Label mail;
+    @FXML
+    private Label mail;
     @FXML
     private JFXListView<?> list_view;
     @FXML
@@ -27,8 +27,8 @@ private Label mail;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    username.setText(DataManager.students.get(SessionManager.getCurrentStudent()).getName());
-    mail.setText(DataManager.students.get(SessionManager.getCurrentStudent()).getMail());
+        username.setText(DataManager.students.get(SessionManager.getCurrentStudent()).getName());
+        mail.setText(DataManager.students.get(SessionManager.getCurrentStudent()).getMail());
         DashboardManager dashboardManager = new DashboardManager();
 
         list_view.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
@@ -41,10 +41,8 @@ private Label mail;
         });
 
         // call DashboardManager.open(0) to open Dashboard after initialization so that the user doesn't have to look at some empty boring page.
-        list_view.getSelectionModel().select(0 ); // 0 is Dashboard
+        list_view.getSelectionModel().select(0); // 0 is Dashboard
     }
-
-
 
 
 }

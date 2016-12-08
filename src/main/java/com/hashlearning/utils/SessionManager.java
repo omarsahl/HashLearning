@@ -6,6 +6,7 @@ import java.io.IOException;
 
 
 public class SessionManager {
+
     public static String getCurrentStudent() {
         return CurrentStudent;
     }
@@ -14,7 +15,7 @@ public class SessionManager {
         CurrentStudent = currentStudent;
     }
 
-    private static String CurrentStudent ;
+    private static String CurrentStudent = "Sahl" ;
 
     public static void signOut(Stage currentStage) throws IOException {
         StageNavigator.switchStage(currentStage, "/fxml/login_screen.fxml", false).show();

@@ -1,6 +1,8 @@
 package com.hashlearning.models;
 
 
+import java.util.ArrayList;
+
 public class User {
     //TODO: implement user class
 
@@ -8,16 +10,16 @@ public class User {
     private String mail ;
     private String id ;
     private String password;
-    private String [] enrolledCourses;
 
-
-    public String[] getEnrolledCourses() {
+    public ArrayList<Course> getEnrolledCourses() {
         return enrolledCourses;
     }
 
-    public void setEnrolledCourses(String[] enrolledCourses) {
+    public void setEnrolledCourses(ArrayList<Course> enrolledCourses) {
         this.enrolledCourses = enrolledCourses;
     }
+
+    private ArrayList<Course> enrolledCourses;
 
     public String getPassword() {
         return password;

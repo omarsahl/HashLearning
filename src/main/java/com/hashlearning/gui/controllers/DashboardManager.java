@@ -1,18 +1,23 @@
 package com.hashlearning.gui.controllers;
 
+import com.hashlearning.gui.custom_views.CourseListItem;
+import com.hashlearning.models.Course;
 import com.hashlearning.utils.DataManager;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class DashboardManager {
 
@@ -44,10 +49,9 @@ public class DashboardManager {
         }
     }
 
-    private void openEditor()
-    {
+    private void openEditor() {
 
-         System.out.println("EDITOR");
+        System.out.println("EDITOR");
     }
 
     private void clearContainer() {
@@ -65,9 +69,7 @@ public class DashboardManager {
 
         Tab tab1 = new Tab();
         tab1.setText("MY COURSES");
-      //     Label coursesLabel = new Label("Courses Page!");
-  //      coursesLabel.setStyle("-fx-font-size: 50px");
-        tab1.setContent(coursesListView());
+        tab1.setContent(createCoursesListView());
 
         // tabPane.getTabs().add(tab1);
         Tab tab2 = new Tab();
@@ -76,7 +78,7 @@ public class DashboardManager {
         tab2.setContent(assignmentsLabel);
         assignmentsLabel.setStyle("-fx-font-size: 50px");
         //tabPane.getTabs().add(tab2);
-        tabPane.getTabs().addAll(tab1,tab2);
+        tabPane.getTabs().addAll(tab1, tab2);
         tabPane.getSelectionModel().select(0);
 
         container.getChildren().add(tabPane);
@@ -84,17 +86,18 @@ public class DashboardManager {
 
     private void openCoursesPage() {
         clearContainer();
-
-        container.getChildren().add(coursesListView());
+        container.getChildren().add(createCoursesListView());
     }
 
     private void openAssignmentsPage() {
         clearContainer();
     }
 
-    private ListView coursesListView(){
-        ListView courses = new ListView();
-        courses.setItems(FXCollections.observableArrayList(Arrays.asList(DataManager.students.get(SessionManager.getCurrentStudent()).getEnrolledCourses())));
-return courses;
+    private ListView createCoursesListView() {
+        JFXListView<Course> courses = new JFXListView<Course>();
+        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(DataManager.students.get(SessionManager.getCurrentStudent()).getEnrolledCourses());
+        courses.setItems(courseObservableList);
+        courses.setCellFactory(courseListView -> new CourseListItem());
+        return courses;
     }
 }

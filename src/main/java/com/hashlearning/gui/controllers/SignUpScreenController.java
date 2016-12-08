@@ -40,7 +40,9 @@ public class SignUpScreenController implements Initializable {
     void signUp(ActionEvent event) {
 
     }
-//TODO add the student to the File
+
+    //TODO add the student to the File
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         goToLoginScreenLabel.setOnMouseClicked(event -> {

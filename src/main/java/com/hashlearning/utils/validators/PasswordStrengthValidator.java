@@ -17,7 +17,8 @@ public class PasswordStrengthValidator extends ValidatorBase {
 
     private void evalTextInputField() {
         TextInputControl textField = (TextInputControl) srcControl.get();
-        if (textField.getText() == null || textField.getText().equals("")) hasErrors.set(true);
+        if (textField.getText() == null || textField.getText().equals("") ||
+                !PasswordChecker.checkPassword(textField.getText()).isValid()) hasErrors.set(true);
         else hasErrors.set(false);
     }
 

@@ -25,19 +25,19 @@ public class PasswordChecker {
 
         LengthRule lengthRule = new LengthRule(8, 20);
 
-        CharacterCharacteristicsRule charRule = new CharacterCharacteristicsRule();
+//        CharacterCharacteristicsRule charRule = new CharacterCharacteristicsRule();
 
-        // require at least 1 digit in passwords
-        charRule.getRules().add(new DigitCharacterRule(1));
-        // require at least 1 uppercase character in passwords
-        charRule.getRules().add(new UppercaseCharacterRule(1));
-        // require at least 1 lowercase character in passwords
-        charRule.getRules().add(new LowercaseCharacterRule(1));
-        charRule.setNumberOfCharacteristics(3);
+//        // require at least 1 digit in passwords
+//        charRule.getRules().add(new DigitCharacterRule(1));
+//        // require at least 1 uppercase character in passwords
+//        charRule.getRules().add(new UppercaseCharacterRule(1));
+//        // require at least 1 lowercase character in passwords
+//        charRule.getRules().add(new LowercaseCharacterRule(1));
+//        charRule.setNumberOfCharacteristics(3);
 
         List<Rule> ruleList = new ArrayList<Rule>();
         ruleList.add(lengthRule);
-        ruleList.add(charRule);
+//        ruleList.add(charRule);
 
         PasswordValidator validator = new PasswordValidator(ruleList);
         PasswordData passwordData = new PasswordData(new Password(pass));

@@ -69,7 +69,7 @@ public class LoginScreenController implements Initializable {
     }
 
     private void openSignUpScreen(Stage window) throws IOException {
-        Stage signUpStage = StageNavigator.switchStage(window, "/fxml/signup_screen.fxml", true);
+        Stage signUpStage = StageNavigator.switchStage(window, "/fxml/signup_screen.fxml", false, "textfield_stylesheet.css");
         signUpStage.show();
     }
 

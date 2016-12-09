@@ -11,29 +11,30 @@ import java.util.*;
  * Created by Ahmed Ayman on 12/8/16
  */
 public class DataManager {
-    public static HashMap<String, User> students;
+
+    public static HashMap<String, User> users;
 
     /*
-    * this mesthod loads the data from the files and saves it into our data structures.
+    * this method loads the data from the files and saves it into our data structures.
     * */
 
     public static void loadData() throws FileNotFoundException {
-        students = new HashMap<>();
-        students = loadStudents();
+        users = new HashMap<>();
+        users = loadStudents();
 
         System.out.println("Users       Passwords");
-        for (Map.Entry<String, User> s : students.entrySet()) {
+        for (Map.Entry<String, User> s : users.entrySet()) {
             System.out.println(s.getKey() + "  " + s.getValue().getPassword());
         }
     }
 
     public static void refresh() throws FileNotFoundException {
-        students = loadStudents();
+        users = loadStudents();
     }
 
     private static HashMap<String, User> loadStudents() throws FileNotFoundException {
         HashMap<String, User> listOfStudents = new HashMap<>();
-        ClassLoader loader = LoginScreen.class.getClassLoader();
+        ClassLoader loader = DataManager.class.getClassLoader();
         FileInputStream fis = new FileInputStream(loader.getResource("files/students").getFile());
         BufferedReader bf = new BufferedReader(new InputStreamReader(fis));
         bf
@@ -43,7 +44,7 @@ public class DataManager {
                     //new student
                     User student = new User();
                     student.setId(line[0]);  // No need for the ID
-                    student.setName(line[1]); // Name
+                    student.setUsername(line[1]); // Name
                     //  System.out.printf(line[1]+" ");
                     student.setMail(line[3]);  // MAIL
                     student.setPassword(line[4]); //Password
@@ -53,14 +54,14 @@ public class DataManager {
                     for (String courseName : coursesNames)
                         courses.add(new Course(courseName));
                     student.setEnrolledCourses(courses); //add the courses
-                    listOfStudents.put(student.getName(), student);           //put the Object to a Hash of students !
+                    listOfStudents.put(student.getUsername(), student);           //put the Object to a Hash of users !
 
                 });
         return listOfStudents;
     }
 
-    public static boolean validate(String username, String password) {
-        return (students.get(username) != null && students.get(username).getPassword().equals(password));
+    public static boolean checkUser(String username, String password) {
+        return (users.get(username) != null && users.get(username).getPassword().equals(password));
     }
 
     public static void addStudent(String userName, String password, String mail) throws IOException {
@@ -79,7 +80,7 @@ public class DataManager {
         } finally {
             out.close();
         }
-        for (Map.Entry<String, User> s : students.entrySet()) {
+        for (Map.Entry<String, User> s : users.entrySet()) {
             System.out.println(s.getKey());
         }
     }

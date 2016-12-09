@@ -27,8 +27,8 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        username.setText(DataManager.students.get(SessionManager.getCurrentStudent()).getName());
-        mail.setText(DataManager.students.get(SessionManager.getCurrentStudent()).getMail());
+        username.setText(SessionManager.getCurrentUser().getUsername());
+        mail.setText(SessionManager.getCurrentUser().getMail());
         DashboardManager dashboardManager = new DashboardManager();
 
         list_view.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());

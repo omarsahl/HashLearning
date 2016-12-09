@@ -9,12 +9,8 @@ import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
-import javafx.scene.control.FocusModel;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -95,7 +91,7 @@ public class DashboardManager {
     private JFXListView<Course> createCoursesListView() {
         JFXListView<Course> courses = new JFXListView<Course>();
         courses.getStylesheets().add(getClass().getResource("/css/courses_list_stylesheet.css").toExternalForm());
-        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(DataManager.students.get(SessionManager.getCurrentStudent()).getEnrolledCourses());
+        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(SessionManager.getCurrentUser().getEnrolledCourses());
         courses.setItems(courseObservableList);
         courses.setCellFactory(courseListView -> new CourseListItem());
         return courses;

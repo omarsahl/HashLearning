@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class User {
 
-    private  String name;
+    private  String username;
     private String mail ;
     private String id ;
     private String password;
@@ -26,12 +26,12 @@ public class User {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getMail() {

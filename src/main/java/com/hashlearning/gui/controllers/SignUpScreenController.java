@@ -40,7 +40,7 @@ public class SignUpScreenController implements Initializable {
 
     @FXML
     void signUp(ActionEvent e) {
-        //TODO validate the password strength
+        //TODO checkUser the password strength
 
         if (notExisted(userNameTextField.getText())) {
             if (validatePassword(passwordTextField.getText(), retypePasswordTextField.getText())) {
@@ -78,7 +78,7 @@ public class SignUpScreenController implements Initializable {
     }
 
     private boolean notExisted(String userName) {
-        return DataManager.students.get(userName)==null;
+        return DataManager.users.get(userName)==null;
     }
 
     private void openLoginScreen(Stage window) throws IOException {

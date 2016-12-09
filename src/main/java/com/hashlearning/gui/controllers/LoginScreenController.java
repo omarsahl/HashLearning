@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.hashlearning.utils.DataManager.users;
+import static com.hashlearning.utils.DatabaseManager.users;
 
 public class LoginScreenController implements Initializable {
 
@@ -39,20 +39,15 @@ public class LoginScreenController implements Initializable {
     @FXML
     private void logIn(ActionEvent event) {
 
-        String userName = emailTextField.getText();
-
+        String username = emailTextField.getText();
         String password = passwordTextField.getText();
 
-        if (!passwordTextField.validate()){
+        if (!passwordTextField.validate() || !emailTextField.validate()) {
             return;
         }
 
-        if (!emailTextField.validate()){
-            return;
-        }
-
-        if (DataManager.checkUser(userName, password)) {
-            SessionManager.setCurrentUser(users.get(userName)); // save the name of the student to use it later.
+        if (DatabaseManager.checkUser(username, password)) {
+            SessionManager.setCurrentUser(users.get(username)); // save the user as the current user.
             try {
                 Stage landingStage = StageNavigator.switchStage((Stage) logInBtn.getScene().getWindow(), "/fxml/landing_page.fxml", false);
                 landingStage.show();

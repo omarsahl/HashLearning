@@ -2,7 +2,7 @@ package com.hashlearning.gui.controllers;
 
 
 import com.hashlearning.gui.custom_views.MaterialDialog;
-import com.hashlearning.utils.DataManager;
+import com.hashlearning.utils.DatabaseManager;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
 import com.hashlearning.utils.StageNavigator;
@@ -19,12 +19,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.hashlearning.utils.DataManager.users;
+import static com.hashlearning.utils.DatabaseManager.users;
 
 public class SignUpScreenController implements Initializable {
 
@@ -49,6 +48,7 @@ public class SignUpScreenController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         initializeSignUpInputUI();
 
         goToLoginScreenLabel.setOnMouseClicked(event -> {
@@ -69,9 +69,9 @@ public class SignUpScreenController implements Initializable {
             return;
         }
 
-        if (notExisted(userNameTextField.getText())) {
+        if (checkUserIfExists(userNameTextField.getText())) {
             try {
-                DataManager.addUser(userNameTextField.getText(), emailTextField.getText(), passwordTextField.getText());
+                DatabaseManager.addUserJson(userNameTextField.getText(), emailTextField.getText(), passwordTextField.getText());
                 SessionManager.setCurrentUser(users.get(userNameTextField.getText()));
                 Stage landingStage = StageNavigator.switchStage((Stage) signUpBtn.getScene().getWindow(), "/fxml/landing_page.fxml", false);
                 landingStage.show();
@@ -81,7 +81,7 @@ public class SignUpScreenController implements Initializable {
             }
 
         } else {
-            MaterialDialog.showDialog(Alert.AlertType.ERROR, "Error signing up","Error signing up!", "The username you entered is already taken, please try again with a different one.");
+            MaterialDialog.showDialog(Alert.AlertType.ERROR, "Error signing up", "Error signing up!", "The username you entered is already taken, please try again with a different one.");
         }
 
     }
@@ -128,8 +128,8 @@ public class SignUpScreenController implements Initializable {
 
     }
 
-    private boolean notExisted(String userName) {
-        return DataManager.users.get(userName) == null;
+    private boolean checkUserIfExists(String userName) {
+        return DatabaseManager.users.get(userName) == null;
     }
 
     private void openLoginScreen(Stage window) throws IOException {

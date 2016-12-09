@@ -5,10 +5,11 @@ import java.util.ArrayList;
 
 public class User {
 
-    private  String username;
-    private String mail ;
-    private String id ;
+    private String username;
+    private String email;
     private String password;
+    private ArrayList<Course> enrolledCourses;
+
     public ArrayList<Course> getEnrolledCourses() {
         return enrolledCourses;
     }
@@ -17,11 +18,10 @@ public class User {
         this.enrolledCourses = enrolledCourses;
     }
 
-    private ArrayList<Course> enrolledCourses;
-
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -34,19 +34,12 @@ public class User {
         this.username = username;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }

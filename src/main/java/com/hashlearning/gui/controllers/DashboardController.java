@@ -1,6 +1,5 @@
 package com.hashlearning.gui.controllers;
 
-import com.hashlearning.utils.DataManager;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXListView;
 import javafx.beans.value.ChangeListener;
@@ -28,7 +27,7 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         username.setText(SessionManager.getCurrentUser().getUsername());
-        mail.setText(SessionManager.getCurrentUser().getMail());
+        mail.setText(SessionManager.getCurrentUser().getEmail());
         DashboardManager dashboardManager = new DashboardManager();
 
         list_view.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());

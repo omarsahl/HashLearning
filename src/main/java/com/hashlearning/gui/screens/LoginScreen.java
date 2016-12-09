@@ -1,13 +1,11 @@
 package com.hashlearning.gui.screens;
 
-import com.hashlearning.gui.custom_views.MaterialDialog;
-import com.hashlearning.utils.DataManager;
+import com.hashlearning.utils.DatabaseManager;
 import com.hashlearning.utils.StageInitializer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,10 +15,11 @@ public class LoginScreen extends Application {
 
 
     public static void main(String[] args) throws IOException {
-        DataManager.loadData();
+        DatabaseManager.initJsonDatabase();
+        DatabaseManager.loadUsersFromJsonDatabase();
         launch(args);
-
     }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
@@ -29,5 +28,6 @@ public class LoginScreen extends Application {
         StageInitializer.initializeStage(primaryStage, false);
         primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 }

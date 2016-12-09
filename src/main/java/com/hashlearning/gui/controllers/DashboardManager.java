@@ -2,7 +2,6 @@ package com.hashlearning.gui.controllers;
 
 import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.models.Course;
-import com.hashlearning.utils.DataManager;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXListView;

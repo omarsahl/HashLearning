@@ -12,6 +12,8 @@ import java.util.*;
  */
 public class DataManager {
 
+    //TODO: rebuild the DataManager class using JSON as a noSql database.
+
     public static HashMap<String, User> users;
 
     /*

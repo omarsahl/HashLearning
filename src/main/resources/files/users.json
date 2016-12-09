@@ -1,0 +1,68 @@
+[
+  {
+    "username": "Omar Sahl",
+    "email": "omar753sahl@gmail.com",
+    "password": "12345678",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Ahmed Nabil",
+    "email": "ahmed_nabil@gmail.com",
+    "password": "123456",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Ahmed Ayman",
+    "email": "ahmed_ayman@gmail.com",
+    "password": "123456",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Abdelrahman Yousri",
+    "email": "yousri@gmail.com",
+    "password": "123456",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Hossam Doma",
+    "email": "hossam_doma@gmail.com",
+    "password": "123456",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Bassel Bakr",
+    "email": "bassel_bakr@gmail.com",
+    "password": "123456",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Abdelrahem Badran",
+    "email": "badran@gmail.com",
+    "password": "123456",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Mahmoud Zarif",
+    "email": "mahmoud_zarif@gmail.com",
+    "password": "123456",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Ziad Sahl",
+    "email": "ziad753sahl@gmail.com",
+    "password": "12345678",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Ahmed Sahl",
+    "email": "ahmed_sahl@gmail.com",
+    "password": "12345678",
+    "enrolledCourses": null
+  },
+  {
+    "username": "Jack Sparrow",
+    "email": "jack_sparrow@gmail.com",
+    "password": "jackyjacky",
+    "enrolledCourses": null
+  }
+]

@@ -20,7 +20,7 @@ public class SessionManager {
 
 
     public static void signOut(Stage currentStage) throws IOException {
-        StageNavigator.switchStage(currentStage, "/fxml/login_screen.fxml", false).show();
+        StageNavigator.switchStage(currentStage, "/fxml/login_screen.fxml", false, "textfield_stylesheet.css").show();
     }
 
 }

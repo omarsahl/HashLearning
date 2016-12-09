@@ -79,10 +79,6 @@ public class DashboardManager {
         clearContainer();
     }
 
-    private void openAssignmentsPage() {
-        clearContainer();
-    }
-
     private void openEditor() {
         System.out.println("EDITOR");
         clearContainer();

@@ -1,13 +1,10 @@
 package com.hashlearning.utils;
 
 import com.google.gson.*;
-import com.hashlearning.gui.screens.LoginScreen;
-import com.hashlearning.models.Course;
 import com.hashlearning.models.User;
 
 import javax.swing.filechooser.FileSystemView;
 import java.io.*;
-import java.nio.Buffer;
 import java.util.*;
 
 /**

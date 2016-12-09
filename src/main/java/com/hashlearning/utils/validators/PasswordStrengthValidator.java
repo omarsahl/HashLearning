@@ -1,6 +1,5 @@
 package com.hashlearning.utils.validators;
 
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.validation.base.ValidatorBase;
 import javafx.scene.control.TextInputControl;
 
@@ -8,7 +7,7 @@ import javafx.scene.control.TextInputControl;
  * Created by Omar Sahl on 09-Dec-16
  */
 
-public class PasswordValidator extends ValidatorBase {
+public class PasswordStrengthValidator extends ValidatorBase {
 
     @Override
     protected void eval() {

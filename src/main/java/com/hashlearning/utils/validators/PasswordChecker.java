@@ -29,7 +29,9 @@ public class PasswordChecker {
 
         // require at least 1 digit in passwords
         charRule.getRules().add(new DigitCharacterRule(1));
+        // require at least 1 uppercase character in passwords
         charRule.getRules().add(new UppercaseCharacterRule(1));
+        // require at least 1 lowercase character in passwords
         charRule.getRules().add(new LowercaseCharacterRule(1));
         charRule.setNumberOfCharacteristics(3);
 

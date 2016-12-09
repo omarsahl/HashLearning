@@ -45,7 +45,7 @@ public class SignUpScreenController implements Initializable {
         if (notExisted(userNameTextField.getText())) {
             if (validatePassword(passwordTextField.getText(), retypePasswordTextField.getText())) {
                 try {
-                    DataManager.addStudent(userNameTextField.getText(), emailTextField.getText(), passwordTextField.getText());
+                    DataManager.addUser(userNameTextField.getText(), emailTextField.getText(), passwordTextField.getText());
                     Stage landingStage = StageNavigator.switchStage((Stage) signUpBtn.getScene().getWindow(), "/fxml/landing_page.fxml", false);
                     landingStage.show();
                 } catch (IOException e1) {
@@ -60,6 +60,7 @@ public class SignUpScreenController implements Initializable {
             JOptionPane.showMessageDialog(null, "Username already taken ");
 
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -78,7 +79,7 @@ public class SignUpScreenController implements Initializable {
     }
 
     private boolean notExisted(String userName) {
-        return DataManager.users.get(userName)==null;
+        return DataManager.users.get(userName) == null;
     }
 
     private void openLoginScreen(Stage window) throws IOException {

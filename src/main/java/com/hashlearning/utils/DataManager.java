@@ -64,7 +64,7 @@ public class DataManager {
         return (users.get(username) != null && users.get(username).getPassword().equals(password));
     }
 
-    public static void addStudent(String userName, String password, String mail) throws IOException {
+    public static void addUser(String userName, String password, String mail) throws IOException {
         String line = "1|" + userName + "|" + password + "|" + mail;
 
         ClassLoader loader = LoginScreen.class.getClassLoader();

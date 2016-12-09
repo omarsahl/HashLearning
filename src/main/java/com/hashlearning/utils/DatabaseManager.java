@@ -45,6 +45,7 @@ public class DatabaseManager {
             } catch (IOException e) {
                 e.printStackTrace();
                 ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
+
             }
         } else {
             MaterialDialog.showDialog(Alert.AlertType.ERROR, "Couldn't find \"users.json\"", "Couldn't find \"users.json\"", "You forgot to copy \"users.json\" file to your Desktop!");

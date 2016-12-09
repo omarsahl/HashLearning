@@ -15,13 +15,13 @@ public class LoginScreen extends Application {
 
 
     public static void main(String[] args) throws IOException {
-        DatabaseManager.initJsonDatabase();
-        DatabaseManager.loadUsersFromJsonDatabase();
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        DatabaseManager.initJsonDatabase();
+        DatabaseManager.loadUsersFromJsonDatabase();
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/css/textfield_stylesheet.css");

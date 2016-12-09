@@ -1,10 +1,14 @@
 package com.hashlearning.utils;
 
 import com.google.gson.*;
+import com.hashlearning.gui.custom_views.MaterialDialog;
 import com.hashlearning.models.User;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 import javax.swing.filechooser.FileSystemView;
 import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
 
 /**
@@ -27,17 +31,24 @@ public class DatabaseManager {
     }
 
     public static void initJsonDatabase() {
-        jsonFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "users.json");
-        try {
-            fis = new FileInputStream(jsonFile);
-            byte[] data = new byte[(int) jsonFile.length()];
-            fis.read(data);
-            fis.close();
-            String jsonString = new String(data, "UTF-8");
-            usersJson = parser.parse(jsonString).getAsJsonArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-            ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
+
+        File testFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "users.json");
+        if (testFile.exists()) {
+            jsonFile = testFile;
+            try {
+                fis = new FileInputStream(jsonFile);
+                byte[] data = new byte[(int) jsonFile.length()];
+                fis.read(data);
+                fis.close();
+                String jsonString = new String(data, "UTF-8");
+                usersJson = parser.parse(jsonString).getAsJsonArray();
+            } catch (IOException e) {
+                e.printStackTrace();
+                ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
+            }
+        } else {
+            MaterialDialog.showDialog(Alert.AlertType.ERROR, "Couldn't find \"users.json\"", "Couldn't find \"users.json\"", "You forgot to copy \"users.json\" file to your Desktop!");
+            Platform.exit();
         }
     }
 

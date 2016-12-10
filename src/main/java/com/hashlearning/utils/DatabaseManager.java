@@ -1,12 +1,15 @@
 package com.hashlearning.utils;
 
 import com.google.gson.*;
+import com.hashlearning.gui.controllers.DashboardManager;
 import com.hashlearning.gui.custom_views.MaterialDialog;
+import com.hashlearning.models.Course;
 import com.hashlearning.models.User;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
 import javax.swing.filechooser.FileSystemView;
+import javax.xml.crypto.Data;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
@@ -15,6 +18,11 @@ import java.util.*;
  * Created by Ahmed Ayman on 12/8/16
  */
 public class DatabaseManager {
+
+    private static final String USERNAME_KEY = "username";
+    private static final String EMAIL_KEY = "email";
+    private static final String PASSWORD_KEY = "password";
+    private static final String ENROLLED_COURSES_KEY = "enrolledCourses";
 
     public static HashMap<String, User> users;
     public static JsonArray usersJson;
@@ -67,7 +75,10 @@ public class DatabaseManager {
             System.out.println("Username: " + s.getValue().getUsername());
             System.out.println("Email: " + s.getValue().getEmail());
             System.out.println("Password: " + s.getValue().getPassword());
-            System.out.println("Enrolled courses: " + s.getValue().getEnrolledCourses());
+            System.out.println("Enrolled courses: ");
+            for (Course course : s.getValue().getEnrolledCourses()) {
+                System.out.println(course.getName());
+            }
             System.out.println("----------------------------------------------------");
         }
     }
@@ -83,6 +94,23 @@ public class DatabaseManager {
         updateJsonFile();
         initJsonDatabase();
         loadUsersFromJsonDatabase();
+    }
+
+    public static void enrollInCourse(Course course, User user){
+
+        for (JsonElement jsonElement : usersJson) {
+            JsonObject userToEdit = jsonElement.getAsJsonObject();
+            String username = userToEdit.getAsJsonPrimitive(USERNAME_KEY).getAsString();
+            if (username.equals(user.getUsername())) {
+                System.out.println("Got this username: " + username);
+                JsonArray enrolledCoursesJson = userToEdit.getAsJsonArray(ENROLLED_COURSES_KEY);
+                enrolledCoursesJson.add(parser.parse(gson.toJson(course)));
+            }
+        }
+        updateJsonFile();
+        initJsonDatabase();
+        loadUsersFromJsonDatabase();
+        SessionManager.setCurrentUser(users.get(user.getUsername()));
     }
 
     public static boolean checkUser(String username, String password) {

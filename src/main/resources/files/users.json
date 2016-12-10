@@ -3,66 +3,129 @@
     "username": "Omar Sahl",
     "email": "omar753sahl@gmail.com",
     "password": "12345678",
-    "enrolledCourses": null
+    "enrolledCourses": [
+      {
+        "name": "Java",
+        "toutrials": null
+      },
+      {
+        "name": "C++",
+        "toutrials": null
+      },
+      {
+        "name": "Java",
+        "toutrials": null
+      },
+      {
+        "name": "C++",
+        "toutrials": null
+      },
+      {
+        "name": "C++",
+        "toutrials": null
+      },
+      {
+        "name": "Java",
+        "toutrials": null
+      }
+    ]
   },
   {
     "username": "Ahmed Nabil",
     "email": "ahmed_nabil@gmail.com",
     "password": "123456",
-    "enrolledCourses": null
+    "enrolledCourses": [
+      {
+        "name": "C++",
+        "toutrials": null
+      }
+    ]
   },
   {
     "username": "Ahmed Ayman",
     "email": "ahmed_ayman@gmail.com",
     "password": "123456",
-    "enrolledCourses": null
+    "enrolledCourses": []
   },
   {
     "username": "Abdelrahman Yousri",
     "email": "yousri@gmail.com",
     "password": "123456",
-    "enrolledCourses": null
+    "enrolledCourses": []
   },
   {
     "username": "Hossam Doma",
     "email": "hossam_doma@gmail.com",
     "password": "123456",
-    "enrolledCourses": null
+    "enrolledCourses": []
   },
   {
     "username": "Bassel Bakr",
     "email": "bassel_bakr@gmail.com",
     "password": "123456",
-    "enrolledCourses": null
+    "enrolledCourses": []
   },
   {
     "username": "Abdelrahem Badran",
     "email": "badran@gmail.com",
     "password": "123456",
-    "enrolledCourses": null
+    "enrolledCourses": []
   },
   {
     "username": "Mahmoud Zarif",
     "email": "mahmoud_zarif@gmail.com",
     "password": "123456",
-    "enrolledCourses": null
+    "enrolledCourses": []
   },
   {
     "username": "Ziad Sahl",
     "email": "ziad753sahl@gmail.com",
     "password": "12345678",
-    "enrolledCourses": null
+    "enrolledCourses": []
   },
   {
     "username": "Ahmed Sahl",
     "email": "ahmed_sahl@gmail.com",
     "password": "12345678",
-    "enrolledCourses": null
+    "enrolledCourses": [
+      {
+        "name": "Java",
+        "toutrials": null
+      },
+      {
+        "name": "C++",
+        "toutrials": null
+      },
+      {
+        "name": "Java",
+        "toutrials": null
+      },
+      {
+        "name": "C++",
+        "toutrials": null
+      },
+      {
+        "name": "C++",
+        "toutrials": null
+      },
+      {
+        "name": "C++",
+        "toutrials": null
+      },
+      {
+        "name": "C++",
+        "toutrials": null
+      },
+      {
+        "name": "Java",
+        "toutrials": null
+      }
+    ]
   },
   {
     "username": "Jack Sparrow",
     "email": "jack_sparrow@gmail.com",
     "password": "jackyjacky",
-    "enrolledCourses": null
+    "enrolledCourses": []
   }
 ]

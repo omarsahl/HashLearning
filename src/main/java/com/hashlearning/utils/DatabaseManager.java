@@ -15,10 +15,11 @@ import java.nio.file.Files;
 import java.util.*;
 
 /**
- * Created by Ahmed Ayman on 12/8/16
+ * This class is responsible for creating users database and updating it when needed.
  */
 public class DatabaseManager {
 
+    // Some keys for Json parsing
     private static final String USERNAME_KEY = "username";
     private static final String EMAIL_KEY = "email";
     private static final String PASSWORD_KEY = "password";
@@ -38,6 +39,10 @@ public class DatabaseManager {
         gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
     }
 
+
+    /**
+     * Initializes the Json Database by getting the users.json file and parsing it and then filling the users json array.
+     */
     public static void initJsonDatabase() {
 
         File testFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "users.json");
@@ -61,6 +66,10 @@ public class DatabaseManager {
         }
     }
 
+
+    /**
+     * Loads the users in users json array to the users Hashmap.
+     */
     public static void loadUsersFromJsonDatabase() {
 
         users = new HashMap<String, User>();
@@ -83,6 +92,12 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Adds a new user to the database, then updates the json file and also the users hashmap.
+     * @param username new user's username.
+     * @param email new user's email.
+     * @param password new user's password
+     */
     public static void addUserJson(String username, String email, String password) {
         User newUser = new User();
         newUser.setUsername(username);
@@ -96,6 +111,12 @@ public class DatabaseManager {
         loadUsersFromJsonDatabase();
     }
 
+
+    /**
+     * Enrolls a user to a course, then updates the json file and the users hashmap.
+     * @param course the course which the user has to be enrolled in.
+     * @param user the user to be enrolled.
+     */
     public static void enrollInCourse(Course course, User user){
 
         for (JsonElement jsonElement : usersJson) {
@@ -113,10 +134,22 @@ public class DatabaseManager {
         SessionManager.setCurrentUser(users.get(user.getUsername()));
     }
 
+
+    /**
+     * Checks the database to see if the user is in the database and also check if the password passed to it
+     * matches the user's password.
+     * @param username the username to be used as the key to the hashmap.
+     * @param password the password to be checked against the user's  password which is stored in the database.
+     * @return
+     */
     public static boolean checkUser(String username, String password) {
         return (users.get(username) != null && users.get(username).getPassword().equals(password));
     }
 
+
+    /**
+     * Updates the json file by writing to it all the usersJson array in json format.
+     */
     private static void updateJsonFile() {
 
         try {

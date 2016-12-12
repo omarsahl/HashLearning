@@ -1,7 +1,6 @@
 package com.hashlearning.utils;
 
 import com.google.gson.*;
-import com.hashlearning.gui.controllers.DashboardManager;
 import com.hashlearning.gui.custom_views.MaterialDialog;
 import com.hashlearning.models.Course;
 import com.hashlearning.models.User;
@@ -9,10 +8,9 @@ import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
 import javax.swing.filechooser.FileSystemView;
-import javax.xml.crypto.Data;
 import java.io.*;
-import java.nio.file.Files;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class is responsible for creating users database and updating it when needed.

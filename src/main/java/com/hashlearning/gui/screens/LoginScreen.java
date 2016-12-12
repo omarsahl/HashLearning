@@ -1,9 +1,6 @@
 package com.hashlearning.gui.screens;
 
-import com.hashlearning.models.Course;
-import com.hashlearning.models.User;
 import com.hashlearning.utils.DatabaseManager;
-import com.hashlearning.utils.SessionManager;
 import com.hashlearning.utils.StageInitializer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

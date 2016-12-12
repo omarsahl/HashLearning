@@ -37,7 +37,8 @@ public class LoginScreenController implements Initializable {
     private Label signUpLabel;
 
     @FXML
-    private void logIn(ActionEvent event) {
+    private void logIn(ActionEvent event) throws IOException {
+        Audio.playOnClick(this);
 
         String username = emailTextField.getText();
         String password = passwordTextField.getText();

@@ -78,16 +78,6 @@ public class DatabaseManager {
             users.put(user.getUsername(), user);
         }
 
-        for (Map.Entry<String, User> s : users.entrySet()) {
-            System.out.println("Username: " + s.getValue().getUsername());
-            System.out.println("Email: " + s.getValue().getEmail());
-            System.out.println("Password: " + s.getValue().getPassword());
-            System.out.println("Enrolled courses: ");
-            for (Course course : s.getValue().getEnrolledCourses()) {
-                System.out.println(course.getName());
-            }
-            System.out.println("----------------------------------------------------");
-        }
     }
 
     /**
@@ -168,8 +158,16 @@ public class DatabaseManager {
     }
 
     public static void printUsers() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
-        System.out.println(gson.toJson(usersJson));
+        for (Map.Entry<String, User> s : users.entrySet()) {
+            System.out.println("Username: " + s.getValue().getUsername());
+            System.out.println("Email: " + s.getValue().getEmail());
+            System.out.println("Password: " + s.getValue().getPassword());
+            System.out.println("Enrolled courses: ");
+            for (Course course : s.getValue().getEnrolledCourses()) {
+                System.out.println(course.getName());
+            }
+            System.out.println("----------------------------------------------------");
+        }
     }
 
 }

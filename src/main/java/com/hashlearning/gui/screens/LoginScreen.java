@@ -21,6 +21,7 @@ public class LoginScreen extends Application {
     public void start(Stage primaryStage) throws IOException {
         DatabaseManager.initJsonDatabase();
         DatabaseManager.loadUsersFromJsonDatabase();
+        DatabaseManager.printUsers();
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
         Scene scene = new Scene(root);

@@ -1,7 +1,6 @@
 package com.hashlearning.gui.controllers;
 
-import com.hashlearning.models.Course;
-import com.hashlearning.utils.DatabaseManager;
+import com.hashlearning.utils.Audio;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXListView;
 import javafx.beans.value.ChangeListener;
@@ -11,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -38,7 +38,17 @@ public class DashboardController implements Initializable {
         list_view.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                dashboardManager.open(newValue.intValue(), dashboardPageContainer);
+                try {
+                    Audio.playOnClick(this);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    dashboardManager.open(newValue.intValue(), dashboardPageContainer);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 

@@ -2,20 +2,19 @@ package com.hashlearning.gui.controllers;
 
 import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.models.Course;
-import com.hashlearning.models.User;
 import com.hashlearning.utils.DatabaseManager;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -29,7 +28,7 @@ public class DashboardManager {
 
     private static JFXListView<Course> myCourses;
 
-    public void open(int index, GridPane container) {
+    public void open(int index, GridPane container) throws IOException {
         this.container = container;
         switch (index) {
             case 0:
@@ -73,7 +72,6 @@ public class DashboardManager {
         Tab tab1 = new Tab();
         tab1.setText("MY COURSES");
         tab1.setContent(myCourses);
-
         //MY ASSIGNMENTS TAB
         Tab tab2 = new Tab();
         tab2.setText("MY ASSIGNMENTS");
@@ -110,9 +108,10 @@ public class DashboardManager {
         container.getChildren().add(vBox);
     }
 
-    private void openEditor() {
-        System.out.println("EDITOR");
+    private void openEditor() throws IOException {
         clearContainer();
+        Parent editor = FXMLLoader.load(getClass().getResource("/fxml/editor.fxml"));
+        container.getChildren().add(editor);
     }
 
     private void initMyCoursesList() {

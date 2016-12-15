@@ -1,0 +1,36 @@
+/*******************************************************************************
+*                                                                              *
+* JFX Combo Box                                                                *
+*                                                                              *
+*******************************************************************************/
+
+.combo-box-popup .list-view .jfx-list-cell .label {
+    -fx-text-fill: BLACK ;
+}
+.combo-box-popup .list-view .jfx-list-cell .custom-jfx-list-view-icon {
+    -fx-text-fill: rgba(233, 30, 99, 0.91);
+    -fx-padding: 0.0 10.0 0.0 5.0  ;
+    -fx-cursor: hand;
+}
+
+.combo-box-popup .list-view .jfx-list-cell:odd:selected > .jfx-rippler > StackPane,
+.combo-box-popup .list-view .jfx-list-cell:even:selected > .jfx-rippler > StackPane {
+    -fx-background-color: rgba(233, 30, 99, 0.91);
+    -fx-text-fill: WHITE;
+}
+.combo-box-popup .list-view .jfx-list-cell {
+    -fx-background-insets: 0.0 ;
+    -fx-text-fill: BLACK;
+}
+.combo-box-popup .list-view .jfx-list-cell:odd,
+.combo-box-popup .list-view .jfx-list-cell:even{
+    -fx-background-color:  WHITE;
+}
+.combo-box-popup .list-view .jfx-list-cell:filled:hover{
+    -fx-text-fill: WHITE;
+    -fx-background-color: rgb(255, 131, 183);
+}
+
+.combo-box-popup .list-view .jfx-list-cell .jfx-rippler {
+    -fx-rippler-fill: rgb(255, 255, 255);
+}

@@ -1,5 +1,6 @@
 package com.hashlearning.gui.controllers;
 
+import com.Ostermiller.Syntax.ProgrammerEditorDemo;
 import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.models.Course;
 import com.hashlearning.utils.DatabaseManager;
@@ -9,6 +10,7 @@ import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -134,7 +136,6 @@ public class DashboardManager {
         clearContainer();
         Parent editor = FXMLLoader.load(getClass().getResource("/fxml/editor.fxml"));
         container.getChildren().add(editor);
-        ProgrammerEditorDemo frame = new ProgrammerEditorDemo();
 
     }
 

@@ -30,4 +30,5 @@ dependencies {
     compile('edu.vt.middleware:vt-password:3.1.2') {
         exclude group: 'commons-logging', module: 'commons-logging'
     }
+    compile 'net.sf.squirrel-sql.thirdparty-non-maven:ostermiller-syntax:1.1.1'
 }

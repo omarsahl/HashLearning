@@ -50,7 +50,7 @@ public class LandingPageController implements Initializable{
     void openMyProfilePage(ActionEvent event) {
         Stage stage = null;
         try {
-         stage = StageNavigator.switchStage((Stage) contLearninBtn.getScene().getWindow(),"/fxml/dashboard_page.fxml",false);
+         stage = StageNavigator.switchStage((Stage) contLearninBtn.getScene().getWindow(),"/fxml/dashboard_page.fxml",true);
                   stage.show();
         } catch (IOException e) {
             e.printStackTrace();

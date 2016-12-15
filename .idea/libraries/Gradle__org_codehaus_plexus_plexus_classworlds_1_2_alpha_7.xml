@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.codehaus.plexus:plexus-classworlds:1.2-alpha-7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-classworlds/1.2-alpha-7/ed03d1eeb9b2576747df0d2883d9006fa5e1febe/plexus-classworlds-1.2-alpha-7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-classworlds/1.2-alpha-7/c2dee636a88e14cf1ab295e0408893ecf82ff9c3/plexus-classworlds-1.2-alpha-7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

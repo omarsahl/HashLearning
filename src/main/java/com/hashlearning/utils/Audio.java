@@ -1,5 +1,7 @@
 package com.hashlearning.utils;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
 
@@ -12,9 +14,9 @@ import java.io.InputStream;
 public class Audio {
 
     public static void playOnClick(Object object) throws IOException {
-        ClassLoader CLDR = object.getClass().getClassLoader();
-        InputStream soundName = CLDR.getResourceAsStream("sounds/click.wav");
-        AudioStream audioStream = new AudioStream(soundName);
-        AudioPlayer.player.start(audioStream);
+
+        Media media = new Media(Audio.class.getResource("/sounds/click.mp3").toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
     }
 }

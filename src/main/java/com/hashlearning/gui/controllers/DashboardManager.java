@@ -1,6 +1,5 @@
 package com.hashlearning.gui.controllers;
 
-import com.hashlearning.gui.ProgrammerEditorDemo;
 import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.models.Course;
 import com.hashlearning.utils.DatabaseManager;

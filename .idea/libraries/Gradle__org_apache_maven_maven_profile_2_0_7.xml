@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.maven:maven-profile:2.0.7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-profile/2.0.7/e2482502436ada093bd041f119ca18bd1fbb1e3e/maven-profile-2.0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-profile/2.0.7/4ee68339dc96066c7e5b5a8fa2731e02e7f09055/maven-profile-2.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

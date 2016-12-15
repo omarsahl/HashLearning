@@ -17,7 +17,7 @@
  * See COPYING.TXT for details.
  */
  
-package com.hashlearning.gui;
+package com.hashlearning.gui.controllers;
 
 import com.Ostermiller.Syntax.HighlightedDocument;
 
@@ -38,6 +38,7 @@ public class ProgrammerEditorDemo extends JFrame {
 
 	/** The text pane displaying the document. */
 	private JTextPane textPane = new JTextPane(document);
+
 	
     /**
      * Create a new Demo

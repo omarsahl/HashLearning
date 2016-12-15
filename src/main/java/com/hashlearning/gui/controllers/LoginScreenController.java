@@ -93,7 +93,6 @@ public class LoginScreenController implements Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
         initializeInputUI();
-
         signUpLabel.setOnMouseClicked(event -> {
             try {
                 openSignUpScreen((Stage) signUpLabel.getScene().getWindow());

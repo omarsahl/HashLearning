@@ -33,6 +33,7 @@ import java.awt.event.WindowEvent;
  * that uses syntax highlighting.
  */
 public class ProgrammerEditorDemo extends JFrame {
+
     /** The document holding the text being edited. */
     private HighlightedDocument document = new HighlightedDocument();
 

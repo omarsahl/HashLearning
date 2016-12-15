@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -32,6 +33,10 @@
             </JFXButton>
          </children>
       </HBox>
-      <StackPane fx:id="editorContainer" prefHeight="299.0" prefWidth="440.0" GridPane.rowIndex="1" />
+      <ScrollPane GridPane.rowIndex="1">
+         <content>
+            <StackPane fx:id="editorContainer" prefHeight="800.0" prefWidth="800.0" />
+         </content>
+      </ScrollPane>
    </children>
 </GridPane>

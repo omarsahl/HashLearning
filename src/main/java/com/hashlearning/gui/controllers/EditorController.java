@@ -52,9 +52,10 @@ public class EditorController implements Initializable {
         initEditor();
         initLanguagesComboBox();
         SwingNode textPaneSwingNode = new SwingNode();
-        textPaneSwingNode.setContent(textPane);
+        createAndSetSwingContent(textPaneSwingNode);
         editorContainer.getChildren().add(textPaneSwingNode);
     }
+
 
     private void initEditor() {
         document = new HighlightedDocument();
@@ -94,6 +95,15 @@ public class EditorController implements Initializable {
             public void changed(ObservableValue<? extends Label> observable, Label oldValue, Label newValue) {
                 System.out.println("newValue: " + newValue.getText());
                 document.setHighlightStyle(languagesKeys.get(newValue.getText()));
+            }
+        });
+    }
+
+    private void createAndSetSwingContent(final SwingNode swingNode) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                swingNode.setContent(textPane);
             }
         });
     }

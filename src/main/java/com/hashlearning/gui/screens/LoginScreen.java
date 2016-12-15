@@ -29,6 +29,5 @@ public class LoginScreen extends Application {
         StageInitializer.initializeStage(primaryStage, false);
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
 }

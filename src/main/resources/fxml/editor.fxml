@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -11,13 +10,13 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.EditorController">
+<GridPane alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.EditorController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="344.0" minHeight="10.0" prefHeight="344.0" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+    <RowConstraints minHeight="10.0" prefHeight="543.0" vgrow="ALWAYS" />
   </rowConstraints>
    <children>
       <HBox alignment="CENTER" spacing="15.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
@@ -33,10 +32,6 @@
             </JFXButton>
          </children>
       </HBox>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-         <content>
-            <StackPane fx:id="editorContainer" prefHeight="299.0" prefWidth="440.0" />
-         </content>
-      </ScrollPane>
+      <StackPane fx:id="editorContainer" prefHeight="299.0" prefWidth="440.0" GridPane.rowIndex="1" />
    </children>
 </GridPane>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="syntax">
+    <CLASSES>
+      <root url="jar:///usr/java/jdk1.8.0_111/lib/syntax.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///usr/java/jdk1.8.0_111/lib/syntax.jar!/" />
+    </SOURCES>
+  </library>
+</component>

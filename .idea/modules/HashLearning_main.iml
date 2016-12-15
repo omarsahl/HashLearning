@@ -23,5 +23,6 @@
     <orderEntry type="library" name="Gradle: edu.vt.middleware:vt-crypt:2.1.4" level="project" />
     <orderEntry type="library" name="Gradle: org.bouncycastle:bcprov-jdk15:1.45" level="project" />
     <orderEntry type="library" name="Gradle: commons-cli:commons-cli:1.2" level="project" />
+    <orderEntry type="library" name="syntax" level="project" />
   </component>
 </module>

@@ -1,5 +1,6 @@
 package com.hashlearning.gui.controllers;
 
+import com.hashlearning.gui.ProgrammerEditorDemo;
 import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.models.Course;
 import com.hashlearning.utils.DatabaseManager;
@@ -108,11 +109,6 @@ public class DashboardManager {
         container.getChildren().add(vBox);
     }
 
-    private void openEditor() throws IOException {
-        clearContainer();
-        Parent editor = FXMLLoader.load(getClass().getResource("/fxml/editor.fxml"));
-        container.getChildren().add(editor);
-    }
 
     private void initMyCoursesList() {
         System.out.println("Initializing MyCoursesList...");
@@ -133,6 +129,14 @@ public class DashboardManager {
 
         myCourses.setItems(courseObservableList);
         myCourses.setCellFactory(courseListView -> new CourseListItem());
+    }
+
+    private void openEditor() throws IOException {
+        clearContainer();
+        Parent editor = FXMLLoader.load(getClass().getResource("/fxml/editor.fxml"));
+        container.getChildren().add(editor);
+        ProgrammerEditorDemo frame = new ProgrammerEditorDemo();
+
     }
 
 }

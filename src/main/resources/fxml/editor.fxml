@@ -1,61 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXToolbar?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.EditorController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="426.0" minHeight="10.0" prefHeight="355.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="426.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="426.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+    <RowConstraints />
   </rowConstraints>
    <children>
-      <JFXTextArea maxWidth="720.0" minWidth="654.0" prefHeight="252.0" prefWidth="720.0" GridPane.rowIndex="1" />
-      <JFXToolbar prefHeight="41.0" prefWidth="676.0">
-         <children>
-            <MenuBar prefHeight="22.0" prefWidth="265.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                        <MenuItem mnemonicParsing="false" text="Save " />
-                        <MenuItem mnemonicParsing="false" text="Save as" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-         </children>
-      </JFXToolbar>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="100.0" GridPane.rowIndex="2">
-         <children>
-            <JFXButton prefHeight="36.0" prefWidth="172.0" ripplerFill="#3c2929" style="-fx-background-color: #123123;" text="Compile " textFill="WHITE" />
-            <JFXButton buttonType="RAISED" prefHeight="36.0" prefWidth="172.0" style="-fx-background-color: #121131;" text="Run" textFill="WHITE" />
-            <JFXButton prefHeight="33.0" prefWidth="171.0" style="-fx-background-color: #86AB1B;" text="Compile and Run " textFill="WHITE" />
-         </children>
-      </HBox>
-      <Label fx:id="console" prefHeight="47.0" prefWidth="735.0" GridPane.rowIndex="3" />
+      <JFXButton fx:id="HowTo" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onMouseClicked="#HowToBtn" prefHeight="110.0" prefWidth="306.0" style="-fx-background-color: #86AB1B;" text="How To Compile and Run" textAlignment="CENTER" textFill="WHITE" />
    </children>
 </GridPane>

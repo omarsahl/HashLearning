@@ -1,17 +1,15 @@
 package com.hashlearning.models;
 
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 
     private String username;
     private String email;
     private String password;
-    private ArrayList<Course> enrolledCourses;
+    private List<Course> enrolledCourses;
 
     {
         enrolledCourses = new ArrayList<Course>();
@@ -27,7 +25,7 @@ public class User {
 
     }
 
-    public ArrayList<Course> getEnrolledCourses() {
+    public List<Course> getEnrolledCourses() {
         return enrolledCourses;
     }
 

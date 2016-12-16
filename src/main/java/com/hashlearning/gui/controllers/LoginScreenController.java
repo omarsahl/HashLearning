@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -101,5 +103,17 @@ public class LoginScreenController implements Initializable {
             }
         });
 
+    }
+
+    /**
+     * Login on hitting Enter key
+     *
+     * @param keyEvent
+     * @throws IOException
+     */
+    @FXML
+    public void onKeyPressed(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode() == KeyCode.ENTER)
+            logIn(new ActionEvent(logInBtn, logInBtn));
     }
 }

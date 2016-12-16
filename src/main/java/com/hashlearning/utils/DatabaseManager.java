@@ -44,6 +44,14 @@ public class DatabaseManager {
     public static void initJsonDatabase() {
 
         File testFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "users.json");
+
+        // if file doesn't exist create an empty one
+        if (!testFile.exists()) try {
+            createEmptyJson(testFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         if (testFile.exists()) {
             jsonFile = testFile;
             try {
@@ -62,6 +70,19 @@ public class DatabaseManager {
             MaterialDialog.showDialog(Alert.AlertType.ERROR, "Couldn't find \"users.json\"", "Couldn't find \"users.json\"", "You forgot to copy \"users.json\" file to your Desktop!");
             Platform.exit();
         }
+    }
+
+    /**
+     * @param file the file to be (re)created as empty Json file
+     * @throws IOException
+     */
+    private static void createEmptyJson(File file) throws IOException {
+        System.out.printf("Creating empty json file: %s\n", file.getName());
+        file.createNewFile();
+        FileOutputStream fos = new FileOutputStream(file);
+        fos.write("[]".getBytes());
+        fos.flush();
+        fos.close();
     }
 
 
@@ -106,6 +127,9 @@ public class DatabaseManager {
      * @param user the user to be enrolled.
      */
     public static void enrollInCourse(Course course, User user){
+        // check if user is already enrolled
+        if (user.getEnrolledCourses().contains(course))
+            return;
 
         for (JsonElement jsonElement : usersJson) {
             JsonObject userToEdit = jsonElement.getAsJsonObject();
@@ -122,6 +146,31 @@ public class DatabaseManager {
         SessionManager.setCurrentUser(users.get(user.getUsername()));
     }
 
+    /**
+     * Removes a course from user's list of courses then updates the json file and the users hashmap.
+     *
+     * @param course the course which the user removes.
+     * @param user   the user to remove the course for.
+     */
+    public static void dropCourse(Course course, User user) {
+        // check if user is not enrolled
+        if (!user.getEnrolledCourses().contains(course))
+            return;
+
+        for (JsonElement jsonElement : usersJson) {
+            JsonObject userToEdit = jsonElement.getAsJsonObject();
+            String username = userToEdit.getAsJsonPrimitive(USERNAME_KEY).getAsString();
+            if (username.equals(user.getUsername())) {
+                System.out.println("Got this username: " + username);
+                JsonArray enrolledCoursesJson = userToEdit.getAsJsonArray(ENROLLED_COURSES_KEY);
+                enrolledCoursesJson.remove(parser.parse(gson.toJson(course)));
+            }
+        }
+        updateJsonFile();
+        initJsonDatabase();
+        loadUsersFromJsonDatabase();
+        SessionManager.setCurrentUser(users.get(user.getUsername()));
+    }
 
     /**
      * Checks the database to see if the user is in the database and also check if the password passed to it
@@ -169,5 +218,4 @@ public class DatabaseManager {
             System.out.println("----------------------------------------------------");
         }
     }
-
 }

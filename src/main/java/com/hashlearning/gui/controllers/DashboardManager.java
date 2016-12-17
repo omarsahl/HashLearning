@@ -1,6 +1,5 @@
 package com.hashlearning.gui.controllers;
 
-import com.Ostermiller.Syntax.ProgrammerEditorDemo;
 import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.models.Course;
 import com.hashlearning.utils.DatabaseManager;
@@ -10,7 +9,6 @@ import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -126,8 +124,6 @@ public class DashboardManager {
         for (Course course : SessionManager.getCurrentUser().getEnrolledCourses()) {
             System.out.println(course.getName());
         }
-
-
         myCourses.setItems(courseObservableList);
         myCourses.setCellFactory(courseListView -> new CourseListItem());
     }

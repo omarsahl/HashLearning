@@ -22,8 +22,10 @@ public class LoginScreen extends Application {
         DatabaseManager.initJsonDatabase();
         DatabaseManager.loadUsersFromJsonDatabase();
         DatabaseManager.printUsers();
+        DatabaseManager.javaTutorialsFromJsonDatabase();
+        DatabaseManager.printToutrialsName();
 
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/css/textfield_stylesheet.css");
         StageInitializer.initializeStage(primaryStage, false);

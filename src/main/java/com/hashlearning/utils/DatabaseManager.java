@@ -3,6 +3,7 @@ package com.hashlearning.utils;
 import com.google.gson.*;
 import com.hashlearning.gui.custom_views.MaterialDialog;
 import com.hashlearning.models.Course;
+import com.hashlearning.models.Tutorial;
 import com.hashlearning.models.User;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
@@ -24,26 +25,36 @@ public class DatabaseManager {
     private static final String ENROLLED_COURSES_KEY = "enrolledCourses";
 
     public static HashMap<String, User> users;
+    public static HashMap<String,Tutorial> javaToutrials; //name = name of the toutrial.
     public static JsonArray usersJson;
-
+    public static JsonArray toutrialJson ;
     private static JsonParser parser;
+    private static JsonParser parser1;
+
     private static Gson gson;
+
+    private static Gson gson1;
     private static File jsonFile;
+    private static File jsonTutorialFile;
     private static BufferedWriter writer;
     private static FileInputStream fis;
 
     static {
         parser = new JsonParser();
-        gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
-    }
 
+        parser1 = new JsonParser();
+        gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+        gson1 = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+
+    }
 
     /**
      * Initializes the Json Database by getting the users.json file and parsing it and then filling the users json array.
      */
-    public static void initJsonDatabase() {
+    public static void initJsonDatabase()  {
 
         File testFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "users.json");
+        File toutrialFile = new File("/home/ahmed-ayman/Workspace/Java/HashLearning/src/main/resources/files/java.json");
         if (testFile.exists()) {
             jsonFile = testFile;
             try {
@@ -56,11 +67,41 @@ public class DatabaseManager {
             } catch (IOException e) {
                 e.printStackTrace();
                 ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
-
             }
+
         } else {
             MaterialDialog.showDialog(Alert.AlertType.ERROR, "Couldn't find \"users.json\"", "Couldn't find \"users.json\"", "You forgot to copy \"users.json\" file to your Desktop!");
             Platform.exit();
+        }
+        //Toutrial
+        if(toutrialFile.exists()){
+            jsonTutorialFile=toutrialFile;
+            try {
+                fis = new FileInputStream(jsonTutorialFile);
+                byte[] data = new byte[(int) jsonTutorialFile.length()];
+                fis.read(data);
+                String json = new String(data, "UTF-8");
+                toutrialJson = parser1.parse(json).getAsJsonArray();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+                ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
+            }
+            finally {
+                if(fis!=null){
+                    try {
+                        fis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+        }//if
+        else {
+            MaterialDialog.showDialog(Alert.AlertType.ERROR, "Couldn't find \"java.json\"", "Couldn't find \"java.json\"", "check this out!");
+            Platform.exit();
+
         }
     }
 
@@ -71,13 +112,24 @@ public class DatabaseManager {
     public static void loadUsersFromJsonDatabase() {
 
         users = new HashMap<String, User>();
-
         for (JsonElement jsonElement : usersJson) {
             JsonObject jsonObject = jsonElement.getAsJsonObject();
             User user = gson.fromJson(jsonObject, User.class);
             users.put(user.getUsername(), user);
         }
+    }
 
+    /**
+     * Loads the java tutorials in tutorial json array to the java Hashmap.
+     */
+    public static void javaTutorialsFromJsonDatabase() {
+
+        javaToutrials = new HashMap<String, Tutorial>();
+        for (JsonElement jsonElement : toutrialJson) {
+            JsonObject jsonObject = jsonElement.getAsJsonObject();
+            Tutorial tutorial = gson.fromJson(jsonObject, Tutorial.class);
+            javaToutrials.put(tutorial.getName(), tutorial); //adding the name and the toutrial object to the HashMap.
+        }
     }
 
     /**
@@ -167,6 +219,12 @@ public class DatabaseManager {
                 System.out.println(course.getName());
             }
             System.out.println("----------------------------------------------------");
+        }
+    }
+    public static void printToutrialsName(){
+        for(Map.Entry<String,Tutorial>s:javaToutrials.entrySet()){
+            System.out.println(s.getKey());
+            System.out.println(s.getValue().getName());
         }
     }
 

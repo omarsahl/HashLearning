@@ -54,7 +54,7 @@ public class DatabaseManager {
     public static void initJsonDatabase()  {
 
         File testFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "users.json");
-        File toutrialFile = new File("/home/ahmed-ayman/Workspace/Java/HashLearning/src/main/resources/files/java.json");
+        File toutrialFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(),"java.json");
         if (testFile.exists()) {
             jsonFile = testFile;
             try {

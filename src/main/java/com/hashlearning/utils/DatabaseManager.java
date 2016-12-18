@@ -30,9 +30,7 @@ public class DatabaseManager {
     public static JsonArray toutrialJson ;
     private static JsonParser parser;
     private static JsonParser parser1;
-
     private static Gson gson;
-
     private static Gson gson1;
     private static File jsonFile;
     private static File jsonTutorialFile;
@@ -158,6 +156,9 @@ public class DatabaseManager {
      * @param user the user to be enrolled.
      */
     public static void enrollInCourse(Course course, User user){
+
+        if(user.getEnrolledCourses().contains(course))
+            return;
 
         for (JsonElement jsonElement : usersJson) {
             JsonObject userToEdit = jsonElement.getAsJsonObject();

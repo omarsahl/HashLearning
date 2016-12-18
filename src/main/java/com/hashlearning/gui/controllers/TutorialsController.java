@@ -27,24 +27,26 @@ public class TutorialsController implements Initializable {
 
     @FXML
     private GridPane dashboardPageContainer;
-    private HashMap <String,Tutorial> tutorials ;
+    private HashMap<String, Tutorial> tutorials;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tutorials= DatabaseManager.javaToutrials;
-    Set<String> names = tutorials.keySet();
-   Object[] namesArray =  names.toArray();
+        Label label = new Label();
+        tutorials = DatabaseManager.javaToutrials;
+        list_view.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
+        Set<String> names = tutorials.keySet();
+        Object[] namesArray = names.toArray();
         System.out.println(tutorials.get("Over View").getContent());
-   ObservableList namesList = FXCollections.observableArrayList(Arrays.asList(namesArray));
+        ObservableList namesList = FXCollections.observableArrayList(Arrays.asList(namesArray));
         list_view.setItems(namesList);
-    list_view.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-        @Override
-        public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-            dashboardPageContainer.getChildren().clear();
-            Label label = new Label();
-            label.setText(tutorials.get(String.valueOf(namesArray[(int)newValue])).getContent());
+        list_view.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                dashboardPageContainer.getChildren().clear();
+                label.setText(tutorials.get(String.valueOf(namesArray[(int) newValue])).getContent());
 
-            dashboardPageContainer.getChildren().add(label);
-        }
-    });
+                dashboardPageContainer.getChildren().add(label);
+            }
+        });
     }
 }

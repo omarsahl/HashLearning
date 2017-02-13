@@ -1,5 +1,6 @@
 package com.hashlearning.utils;
 
+import com.hashlearning.models.Student;
 import com.hashlearning.models.User;
 import javafx.stage.Stage;
 
@@ -18,6 +19,9 @@ public class SessionManager {
         SessionManager.currentUser = currentUser;
     }
 
+    public static Student getCurrentStudent() {
+        return (Student) currentUser;
+    }
 
     public static void signOut(Stage currentStage) throws IOException {
         StageNavigator.switchStage(currentStage, "/fxml/login_screen.fxml", false, "textfield_stylesheet.css").show();

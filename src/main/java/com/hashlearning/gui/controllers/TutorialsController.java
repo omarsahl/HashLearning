@@ -14,7 +14,7 @@ import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -27,12 +27,12 @@ public class TutorialsController implements Initializable {
 
     @FXML
     private GridPane dashboardPageContainer;
-    private HashMap<String, Tutorial> tutorials;
+    private Map<String, Tutorial> tutorials;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Label label = new Label();
-        tutorials = DatabaseManager.javaToutrials;
+        tutorials = DatabaseManager.javaTutorials;
         list_view.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
         Set<String> names = tutorials.keySet();
         Object[] namesArray = names.toArray();

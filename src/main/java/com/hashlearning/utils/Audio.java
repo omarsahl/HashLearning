@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class Audio {
 
-    public static void playOnClick(Object object) throws IOException {
+    public static void playOnClick() throws IOException {
         Media media = new Media(Audio.class.getResource("/sounds/click.mp3").toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();

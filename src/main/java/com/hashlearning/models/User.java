@@ -1,32 +1,15 @@
 package com.hashlearning.models;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class User {
-
     private String username;
     private String email;
     private String password;
-    private List<Course> enrolledCourses;
-
-    {
-        enrolledCourses = new ArrayList<Course>();
-    }
 
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-    }
-
-    public User() {
-
-    }
-
-    public List<Course> getEnrolledCourses() {
-        return enrolledCourses;
     }
 
     public String getPassword() {

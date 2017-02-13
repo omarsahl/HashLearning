@@ -12,12 +12,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class ErrorHandler {
-
-    private static StackPane container;
-    private static Stage stage;
-
+public final class ErrorHandler {
     public static final String DEFAULT_MESSAGE = "Something went wrong...";
+    private static Stage stage;
+    private static StackPane container;
 
     public static void showErrorDialog(String message, String stackTraceString){
         container = new StackPane();

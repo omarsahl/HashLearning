@@ -1,5 +1,6 @@
 package com.hashlearning.gui.screens;
 
+import com.hashlearning.utils.DatabaseManager;
 import com.hashlearning.utils.StageInitializer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,17 +13,23 @@ import java.io.IOException;
 public class LoginScreen extends Application {
 
 
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/dashboard_page.fxml"));
+        DatabaseManager.initJsonDatabase();
+        DatabaseManager.loadUsersFromJsonDatabase();
+        DatabaseManager.printUsers();
+        DatabaseManager.javaTutorialsFromJsonDatabase();
+        DatabaseManager.printTutorialsName();
+
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
+
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
-        StageInitializer.initializeStage(primaryStage, true);
+        scene.getStylesheets().add("/css/textfield_stylesheet.css");
+        StageInitializer.initializeStage(primaryStage, false);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

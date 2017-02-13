@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.reactfx:reactfx:2.0-M4u1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.reactfx/reactfx/2.0-M4u1/c48f5055fc1295a90edbe753a8c9fc3869fd046f/reactfx-2.0-M4u1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.reactfx/reactfx/2.0-M4u1/ae4b9a8bbebf49ba183514600f56e77fc512af4a/reactfx-2.0-M4u1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

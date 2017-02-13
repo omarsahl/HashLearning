@@ -1,0 +1,18 @@
+.material-dialog{
+    -fx-background-color: #ffffff;
+}
+.material-dialog > *.button-bar > *.container{
+    -fx-background-color: #ffffff;
+}
+.material-dialog > *.label.content{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.material-dialog:header *.header-panel{
+    -fx-background-color: #ffffff;
+}
+.material-dialog:header *.header-panel *.label{
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-fill: #292929;
+}

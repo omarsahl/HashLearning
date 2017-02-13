@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="listItemParent" alignment="CENTER" prefHeight="110.0" prefWidth="519.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="133.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.0" minWidth="10.0" prefWidth="258.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="145.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <StackPane>
+         <children>
+            <HBox alignment="CENTER" spacing="20.0" StackPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="courseIcon" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../courses_icons/java.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" spacing="15.0" GridPane.columnIndex="1">
+         <children>
+            <VBox alignment="CENTER_LEFT" spacing="15.0">
+               <children>
+                  <Label fx:id="courseName" text="Java" textFill="#e91e63">
+                     <font>
+                        <Font name="Bariol-Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <JFXProgressBar fx:id="progressBar" progress="0.34" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <StackPane GridPane.columnIndex="2">
+         <children>
+            <JFXButton fx:id="continueBtn" maxHeight="20.0" prefHeight="20.0" prefWidth="110.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #e91e63;" text="CONTINUE" textFill="#e91e63" />
+         </children>
+      </StackPane>
+   </children>
+</GridPane>

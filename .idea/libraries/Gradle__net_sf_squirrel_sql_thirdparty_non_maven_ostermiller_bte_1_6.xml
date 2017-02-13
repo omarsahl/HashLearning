@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.sf.squirrel-sql.thirdparty-non-maven:ostermiller-bte:1.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.squirrel-sql.thirdparty-non-maven/ostermiller-bte/1.6/7b1cc31aa0a7feaa9ebdbd2d1b7ad02dcdf9180/ostermiller-bte-1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.squirrel-sql.thirdparty-non-maven/ostermiller-bte/1.6/6cb4521be3c6a2587a3b0759e4a54d1898858d/ostermiller-bte-1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

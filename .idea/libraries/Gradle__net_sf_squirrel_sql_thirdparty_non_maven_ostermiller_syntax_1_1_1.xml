@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.sf.squirrel-sql.thirdparty-non-maven:ostermiller-syntax:1.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.squirrel-sql.thirdparty-non-maven/ostermiller-syntax/1.1.1/3b17a8c62ec71d7bb0de0521a95bea81f6ab1570/ostermiller-syntax-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.squirrel-sql.thirdparty-non-maven/ostermiller-syntax/1.1.1/4ee14a9c6c98c7dd81e1d04bcade3ace50fd0002/ostermiller-syntax-1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

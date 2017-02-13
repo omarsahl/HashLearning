@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: edu.vt.middleware:vt-crypt:2.1.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.vt.middleware/vt-crypt/2.1.4/124a632cef1b3a853b78f3d85c233b49d56f14c/vt-crypt-2.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.vt.middleware/vt-crypt/2.1.4/ba3823cd6b7d420552636e2c6ea9a4165bc5d469/vt-crypt-2.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

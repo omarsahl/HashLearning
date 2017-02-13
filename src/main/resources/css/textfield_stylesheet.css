@@ -1,0 +1,25 @@
+/* Input Text Field */
+
+.jfx-text-field, .jfx-password-field{
+    -fx-background-color: WHITE;
+    -fx-prompt-text-fill: #e91e63;
+    -fx-alignment: top-left ;
+    -fx-focus-color: #e91e63;
+    -fx-unfocus-color: #e91e63;
+    -fx-text-fill: #1b1e28;
+}
+
+.jfx-text-field:error, .jfx-password-field:error, .jfx-text-area:error {
+    -fx-focus-color: #D34336;
+    -fx-unfocus-color: #D34336;
+}
+
+.jfx-text-field .errorLabel, .jfx-password-field .errorLabel, .jfx-text-area .errorLabel {
+    -fx-text-fill: #D34336;
+    -fx-font-size: 0.75em;
+}
+
+.jfx-text-field .errorIcon, .jfx-password-field .errorIcon, .jfx-text-area .errorIcon {
+    -fx-text-fill: #D34336;
+    -fx-font-size: 1em;
+}

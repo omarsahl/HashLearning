@@ -3,19 +3,15 @@
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
-<GridPane minHeight="580.0" minWidth="800.0" prefHeight="660.0" prefWidth="980.0" style="-fx-background-color: #ebeff2;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.DashboardController">
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" minHeight="580.0" minWidth="800.0" prefHeight="660.0" prefWidth="980.0"
+          style="-fx-background-color: #ebeff2;" xmlns="http://javafx.com/javafx/8.0.65"
+          fx:controller="com.hashlearning.gui.controllers.DashboardController">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="800.0" />
@@ -25,6 +21,15 @@
         <RowConstraints maxHeight="2000.0" minHeight="200.0" valignment="BOTTOM" vgrow="ALWAYS" />
     </rowConstraints>
     <children>
+        <JFXToolbar prefHeight="70.0" prefWidth="816.0" style="-fx-background-color: #ffffff;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+            <center>
+                <ImageView fitHeight="66.0" fitWidth="138.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../HashLearning_logo.png" />
+                    </image>
+                </ImageView>
+            </center>
+        </JFXToolbar>
         <GridPane prefHeight="449.0" prefWidth="816.0" style="-fx-background-color: #ebeff2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="260.0" prefWidth="260.0" />
@@ -80,10 +85,10 @@
                         </padding>
                     </Label>
                     <Label textFill="#ffffff">
-                        ASSIGNMENTS
+                        TOOLS
                         <graphic>
                             <StackPane styleClass="custom-jfx-list-view-icon-container">
-                                <FontAwesomeIconView glyphName="CALENDAR_CHECK_ALT" size="2.3em" styleClass="custom-jfx-list-view-icon">
+                                <FontAwesomeIconView glyphName="GEAR" size="2.5em" styleClass="custom-jfx-list-view-icon">
                                     <StackPane.margin>
                                         <Insets right="10.0" />
                                     </StackPane.margin>
@@ -94,9 +99,10 @@
                             <Font name="Roboto Light" size="18.0" />
                         </font>
                         <padding>
-                            <Insets left="30.0" />
+                            <Insets left="27.0" />
                         </padding>
                     </Label>
+
                     <Label textFill="#ffffff">
                         LOGOUT
                         <graphic>
@@ -129,16 +135,12 @@
                   </ImageView>
                   <VBox alignment="CENTER_LEFT" prefHeight="89.0" prefWidth="188.0">
                      <children>
-                        <Label prefHeight="12.0" prefWidth="148.0" text="Omar Sahl" textFill="WHITE">
+                        <Label id="name" fx:id="username" prefHeight="12.0" prefWidth="148.0" textFill="WHITE">
                            <font>
                               <Font name="Roboto Light" size="19.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="20.0" prefWidth="169.0" text="omar753sahl@gmail.com" textFill="#e61e63">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
+                        <Label id="mail" fx:id="mail" prefHeight="20.0" prefWidth="169.0" text="omar753sahl@gmail.com" textFill="#e61e63" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -163,14 +165,6 @@
          </GridPane>
 
         </GridPane>
-        <JFXToolbar prefHeight="70.0" prefWidth="816.0" style="-fx-background-color: #ffffff;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
-            <center>
-                <ImageView fitHeight="66.0" fitWidth="138.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../HashLearning_logo.png" />
-                    </image>
-                </ImageView>
-            </center>
-        </JFXToolbar>
+
     </children>
 </GridPane>

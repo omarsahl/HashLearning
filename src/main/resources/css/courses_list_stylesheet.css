@@ -1,0 +1,58 @@
+/*******************************************************************************
+*                                                                              *
+* JFX List View                                                                *
+*                                                                              *
+*******************************************************************************/
+
+.jfx-list-cell {
+    -fx-background-insets: 0.0 ;
+    -fx-text-fill: BLACK;
+}
+.jfx-list-cell:odd,
+.jfx-list-cell:even {
+    /*this one*/
+    -fx-background-color:  #FFFFFF;
+}
+.jfx-list-cell:filled:hover {
+    -fx-text-fill: black;
+}
+
+.jfx-list-cell .jfx-rippler {
+    /*this one*/
+    -fx-rippler-fill: #ff0156;
+}
+
+.jfx-list-cell:odd:selected > .jfx-rippler > StackPane,
+.jfx-list-cell:even:selected > .jfx-rippler > StackPane{
+    /*this one*/
+    -fx-background-color: #FFFFFF;
+}
+
+
+.custom-jfx-list-view1{
+
+    -fx-background-color: #414550;
+}
+
+.custom-jfx-list-view-icon {
+    /*this one*/
+    -fx-text-fill: #FFFFFF;
+    -fx-fill: #FFFFFF;
+    -fx-cursor: hand;
+}
+.custom-jfx-list-view-icon-container{
+    -fx-pref-width:40px;
+}
+
+
+.custom-jfx-list-view .sublist-item {
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1 0 1 0;
+}
+
+.custom-jfx-list-view .jfx-list-cell .sublist-header > .drop-icon{
+    -fx-background-color: GRAY;
+}
+.custom-jfx-list-view .jfx-list-cell:filled:hover .sublist-header > .drop-icon{
+    -fx-background-color: BLACK;
+}

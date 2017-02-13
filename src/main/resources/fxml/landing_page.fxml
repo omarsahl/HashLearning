@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="956.0" style="-fx-background-color: #243342;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.LandingPageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="956.0" style="-fx-background-color: #243342;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.LandingPageController">
    <children>
       <ImageView fitHeight="514.0" fitWidth="698.0" layoutX="250.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,17 +23,17 @@
             <Font name="Roboto Black" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="assignmentsBtn" layoutX="646.0" layoutY="46.0" onAction="#openAssignmentsPage" prefHeight="25.0" prefWidth="113.0" ripplerFill="WHITE" text="ASSIGNMENTS" textFill="WHITE">
+      <JFXButton fx:id="assignmentsBtn" layoutX="627.0" layoutY="46.0" onAction="#openAssignmentsPage" prefHeight="26.0" prefWidth="132.0" ripplerFill="WHITE" text="ASSIGNMENTS" textFill="WHITE" underline="true">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="coursesBtn" layoutX="553.0" layoutY="46.0" onAction="#openCoursesPage" prefHeight="25.0" prefWidth="78.0" ripplerFill="WHITE" text="COURSES" textFill="WHITE">
+      <JFXButton fx:id="coursesBtn" layoutX="521.0" layoutY="46.0" onAction="#openCoursesPage" prefHeight="26.0" prefWidth="113.0" ripplerFill="WHITE" text="COURSES" textFill="WHITE" underline="true">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="myProfileBtn" layoutX="447.0" layoutY="46.0" onAction="#openMyProfilePage" prefHeight="25.0" prefWidth="94.0" ripplerFill="WHITE" text="MY PROFILE" textFill="WHITE">
+      <JFXButton fx:id="myProfileBtn" layoutX="385.0" layoutY="46.0" onAction="#openMyProfilePage" prefHeight="26.0" prefWidth="132.0" ripplerFill="WHITE" text="MY PROFILE" textFill="WHITE" underline="true">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

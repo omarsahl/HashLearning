@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created by ahmed-ayman on 11/28/16.
+ * Created by ahmed-ayman on 11/28/16
  */
 public class Encrypt {
     public static String encrypt(String password){

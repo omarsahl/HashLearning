@@ -1,7 +1,8 @@
 package com.hashlearning.gui.controllers;
 
 import com.hashlearning.gui.custom_views.CourseListItem;
-import com.hashlearning.gui.custom_views.CoursesCourseListItem;
+
+import com.hashlearning.gui.custom_views.HashLearningCoursesListItem;
 import com.hashlearning.models.Course;
 import com.hashlearning.models.Student;
 import com.hashlearning.utils.ErrorHandler;
@@ -27,7 +28,7 @@ public class DashboardManager {
 
     private static JFXListView<Course> myCourses;
     private GridPane container;
-    private JFXListView<Course> hashLearningCourses;
+    private static JFXListView<Course> hashLearningCourses;
 
     public void open(int index, GridPane container) throws IOException {
         this.container = container;
@@ -80,7 +81,6 @@ public class DashboardManager {
         Label assignmentsLabel = new Label("Assignments Page!");
         tab2.setContent(assignmentsLabel);
         assignmentsLabel.setStyle("-fx-font-size: 50px");
-        //tabPane.getTabs().add(tab2);
         tabPane.getTabs().addAll(tab1, tab2);
         tabPane.getSelectionModel().select(0);
         container.getChildren().add(tabPane);
@@ -127,7 +127,33 @@ public class DashboardManager {
             System.out.println(course.getName());
         }
         myCourses.setItems(courseObservableList);
-        myCourses.setCellFactory(courseListView -> new CourseListItem());
+        myCourses.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>() {
+            @Override
+            public ListCell<Course> call(ListView<Course> courseListView) {
+                return new CourseListItem();
+            }
+        });
+    }
+
+
+    private void initCoursesList() {
+        System.out.println("Initializing CoursesList...");
+        hashLearningCourses = new JFXListView<Course>();
+        hashLearningCourses.getStylesheets().add(getClass().getResource("/css/courses_list_stylesheet.css").toExternalForm());
+        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(new Course("Java"), new Course("C++"));
+
+        System.out.println("courseObservableList");
+        for (Course course : courseObservableList) {
+            System.out.println(course.getName());
+        }
+
+        hashLearningCourses.setItems(courseObservableList);
+        hashLearningCourses.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>() {
+            @Override
+            public ListCell<Course> call(ListView<Course> courseListView) {
+                return new HashLearningCoursesListItem();
+            }
+        });
     }
 
     private void initCoursesList() {

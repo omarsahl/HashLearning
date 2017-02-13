@@ -37,8 +37,6 @@ public class DatabaseManager {
         gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
         jsonFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "users.json");
         tutorialFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "java.json");
-        parser1 = new JsonParser();
-        gson1 = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
     }
 
     /**

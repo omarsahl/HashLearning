@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by Omar on 17-Nov-16.
+ * Created by Omar on 17-Nov-16
  */
 public class LandingPageController implements Initializable{
 

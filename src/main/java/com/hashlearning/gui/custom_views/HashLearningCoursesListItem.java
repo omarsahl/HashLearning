@@ -72,7 +72,7 @@ public class HashLearningCoursesListItem extends ListCell<Course>{
             enrollBtn.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    DatabaseManager.enrollInCourse(course, SessionManager.getCurrentUser());
+                    DatabaseManager.enrollInCourse(course, SessionManager.getCurrentStudent());
                 }
             });
 

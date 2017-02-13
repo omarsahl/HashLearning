@@ -137,7 +137,11 @@ public class DashboardManager {
         System.out.println("Initializing CoursesList...");
         hashLearningCourses = new JFXListView<Course>();
         hashLearningCourses.getStylesheets().add(getClass().getResource("/css/courses_list_stylesheet.css").toExternalForm());
-        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(new Course("Java"), new Course("C++"));
+
+        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(
+                new Course("Java", null),
+                new Course("C++", "/courses_html/c_html.html")
+        );
 
         System.out.println("courseObservableList");
         for (Course course : courseObservableList) {

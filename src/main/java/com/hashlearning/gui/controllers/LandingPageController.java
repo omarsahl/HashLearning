@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 /**
  * Created by Omar on 17-Nov-16
  */
-public class LandingPageController implements Initializable{
+public class LandingPageController implements Initializable {
 
     @FXML
     private JFXButton signOutBtn;
@@ -50,11 +50,11 @@ public class LandingPageController implements Initializable{
     void openMyProfilePage(ActionEvent event) {
         Stage stage = null;
         try {
-         stage = StageNavigator.switchStage((Stage) contLearninBtn.getScene().getWindow(),"/fxml/dashboard_page.fxml",true);
-                  stage.show();
+            stage = StageNavigator.switchStage((Stage) contLearninBtn.getScene().getWindow(), "/fxml/dashboard_page.fxml", true);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE,e.toString());
+            ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.toString());
         }
     }
 

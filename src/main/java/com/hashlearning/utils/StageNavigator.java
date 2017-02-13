@@ -39,6 +39,14 @@ public class StageNavigator {
         return stage;
     }
 
+    public static Stage switchStage(Parent root, boolean resizable) throws IOException {
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        StageInitializer.initializeStage(stage, resizable);
+        stage.setScene(scene);
+        return stage;
+    }
+
 
 
 }

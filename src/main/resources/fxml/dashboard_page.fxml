@@ -69,7 +69,7 @@
                     <Label textFill="#ffffff">
                         COURSES
                         <graphic>
-                            <StackPane styleClass="custom-jfx-list-view-icon-container">dashboardManager
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">
                                 <FontAwesomeIconView glyphName="GRADUATION_CAP" size="2.25em" styleClass="custom-jfx-list-view-icon">
                                     <StackPane.margin>
                                         <Insets right="8.0" />

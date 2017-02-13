@@ -1,9 +1,8 @@
 package com.hashlearning.gui.controllers;
 
+import com.hashlearning.utils.Audio;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXListView;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -34,27 +33,22 @@ public class DashboardController implements Initializable {
 
         list_view.getStylesheets().add(getClass().getResource("/css/listview_stylesheet.css").toExternalForm());
 
-        list_view.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-// TODO adjusting the Audio..
-//      try {
-//                    Audio.playOnClick(this);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+        list_view.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                Audio.playOnClick();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-                try {
-                    dashboardManager.open(newValue.intValue(), dashboardPageContainer);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            try {
+                dashboardManager.open(newValue.intValue(), dashboardPageContainer);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
 
         // call DashboardManager.open(0) to open Dashboard after initialization so that the user doesn't have to look at some empty boring page.
         list_view.getSelectionModel().select(0); // 0 is Dashboard
-
     }
 
 

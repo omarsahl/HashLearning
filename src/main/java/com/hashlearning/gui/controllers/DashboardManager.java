@@ -1,32 +1,33 @@
 package com.hashlearning.gui.controllers;
 
 import com.hashlearning.gui.custom_views.CourseListItem;
+
 import com.hashlearning.gui.custom_views.HashLearningCoursesListItem;
 import com.hashlearning.models.Course;
-import com.hashlearning.utils.DatabaseManager;
+import com.hashlearning.models.Student;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class DashboardManager {
 
-    private GridPane container;
-
     private static JFXListView<Course> myCourses;
+    private GridPane container;
     private static JFXListView<Course> hashLearningCourses;
 
     public void open(int index, GridPane container) throws IOException {
@@ -92,7 +93,7 @@ public class DashboardManager {
 //            @Override
 //            public void handle(ActionEvent event) {
 //                System.out.println("Enrolling " + SessionManager.getCurrentUser().getUsername() + " in Java");
-//                DatabaseManager.enrollInCourse(new Course("Java"), SessionManager.getCurrentUser());
+//                DatabaseManager.enrollInCourse(new Course("Java"), SessionManager.getCurrentStudent());
 //            }
 //        });
 //
@@ -101,9 +102,11 @@ public class DashboardManager {
 //            @Override
 //            public void handle(ActionEvent event) {
 //                System.out.println("Enrolling " + SessionManager.getCurrentUser().getUsername() + " in C++");
-//                DatabaseManager.enrollInCourse(new Course("C++"), SessionManager.getCurrentUser());
+//                DatabaseManager.enrollInCourse(new Course("C++"), SessionManager.getCurrentStudent());
 //            }
 //        });
+//
+//        VBox vBox = new VBox(javaBtn, cppBtn);
         container.getChildren().add(hashLearningCourses);
     }
 
@@ -112,7 +115,7 @@ public class DashboardManager {
         System.out.println("Initializing MyCoursesList...");
         myCourses = new JFXListView<Course>();
         myCourses.getStylesheets().add(getClass().getResource("/css/courses_list_stylesheet.css").toExternalForm());
-        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(SessionManager.getCurrentUser().getEnrolledCourses());
+        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(((Student) SessionManager.getCurrentUser()).getEnrolledCourses());
 
         System.out.println("courseObservableList");
         for (Course course : courseObservableList) {
@@ -120,7 +123,7 @@ public class DashboardManager {
         }
 
         System.out.println("getEnrolledCourses");
-        for (Course course : SessionManager.getCurrentUser().getEnrolledCourses()) {
+        for (Course course : ((Student) SessionManager.getCurrentUser()).getEnrolledCourses()) {
             System.out.println(course.getName());
         }
         myCourses.setItems(courseObservableList);
@@ -149,6 +152,30 @@ public class DashboardManager {
             @Override
             public ListCell<Course> call(ListView<Course> courseListView) {
                 return new HashLearningCoursesListItem();
+            }
+        });
+    }
+
+    private void initCoursesList() {
+        System.out.println("Initializing CoursesList...");
+        hashLearningCourses = new JFXListView<Course>();
+        hashLearningCourses.getStylesheets().add(getClass().getResource("/css/courses_list_stylesheet.css").toExternalForm());
+        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(Arrays.asList(new Course("Java"), new Course("C++")));
+//
+//        System.out.println("courseObservableList");
+//        for (Course course : courseObservableList) {
+//            System.out.println(course.getName());
+//        }
+//
+//        System.out.println("getEnrolledCourses");
+//        for (Course course : ((Student) SessionManager.getCurrentUser()).getEnrolledCourses()) {
+//            System.out.println(course.getName());
+//        }
+        hashLearningCourses.setItems(courseObservableList);
+        hashLearningCourses.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>() {
+            @Override
+            public ListCell<Course> call(ListView<Course> courseListView) {
+                return new CoursesCourseListItem();
             }
         });
     }

@@ -12,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.StackPane;
 
 import javax.swing.*;
@@ -54,6 +53,7 @@ public class EditorController implements Initializable {
         SwingNode textPaneSwingNode = new SwingNode();
         createAndSetSwingContent(textPaneSwingNode);
         editorContainer.getChildren().add(textPaneSwingNode);
+        textPane.setEditable(true);
     }
 
 

@@ -3,19 +3,15 @@
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXToolbar?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
-<GridPane minHeight="580.0" minWidth="800.0" prefHeight="660.0" prefWidth="980.0" style="-fx-background-color: #ebeff2;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hashlearning.gui.controllers.DashboardController">
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" minHeight="580.0" minWidth="800.0" prefHeight="660.0" prefWidth="980.0"
+          style="-fx-background-color: #ebeff2;" xmlns="http://javafx.com/javafx/8.0.65"
+          fx:controller="com.hashlearning.gui.controllers.DashboardController">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="800.0" />
@@ -73,7 +69,7 @@
                     <Label textFill="#ffffff">
                         COURSES
                         <graphic>
-                            <StackPane styleClass="custom-jfx-list-view-icon-container">
+                            <StackPane styleClass="custom-jfx-list-view-icon-container">dashboardManager
                                 <FontAwesomeIconView glyphName="GRADUATION_CAP" size="2.25em" styleClass="custom-jfx-list-view-icon">
                                     <StackPane.margin>
                                         <Insets right="8.0" />

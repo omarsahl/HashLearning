@@ -1,13 +1,11 @@
 package com.hashlearning.models;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public class Course {
-
-    //TODO course class
-
+    Map<String, Tutorial> tutorial;
+    private int id;
     private String name ;
-    HashMap<String , Tutorial> toutrials;
 
     public Course(String name) {
         this.name = name;

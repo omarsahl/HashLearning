@@ -40,7 +40,7 @@ public class LoginScreenController implements Initializable {
 
     @FXML
     private void logIn(ActionEvent event) throws IOException {
-       // Audio.playOnClick(this);
+        Audio.playOnClick();
 
         String username = emailTextField.getText();
         String password = passwordTextField.getText();
@@ -105,9 +105,15 @@ public class LoginScreenController implements Initializable {
 
     }
 
+    /**
+     * Login on hitting Enter key
+     *
+     * @param keyEvent
+     * @throws IOException
+     */
+    @FXML
     public void onKeyPressed(KeyEvent keyEvent) throws IOException {
-        if(keyEvent.getCode()== KeyCode.ENTER){
-            logIn(null);
-        }
+        if (keyEvent.getCode() == KeyCode.ENTER)
+            logIn(new ActionEvent(logInBtn, logInBtn));
     }
 }

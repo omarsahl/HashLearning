@@ -3,43 +3,13 @@
     "username": "Omar Sahl",
     "email": "omar753sahl@gmail.com",
     "password": "12345678",
-    "enrolledCourses": [
-      {
-        "name": "Java",
-        "toutrials": null
-      },
-      {
-        "name": "C++",
-        "toutrials": null
-      },
-      {
-        "name": "Java",
-        "toutrials": null
-      },
-      {
-        "name": "C++",
-        "toutrials": null
-      },
-      {
-        "name": "C++",
-        "toutrials": null
-      },
-      {
-        "name": "Java",
-        "toutrials": null
-      }
-    ]
+    "enrolledCourses": []
   },
   {
     "username": "Ahmed Nabil",
     "email": "ahmed_nabil@gmail.com",
     "password": "123456",
-    "enrolledCourses": [
-      {
-        "name": "C++",
-        "toutrials": null
-      }
-    ]
+    "enrolledCourses": []
   },
   {
     "username": "Ahmed Ayman",
@@ -87,40 +57,7 @@
     "username": "Ahmed Sahl",
     "email": "ahmed_sahl@gmail.com",
     "password": "12345678",
-    "enrolledCourses": [
-      {
-        "name": "Java",
-        "toutrials": null
-      },
-      {
-        "name": "C++",
-        "toutrials": null
-      },
-      {
-        "name": "Java",
-        "toutrials": null
-      },
-      {
-        "name": "C++",
-        "toutrials": null
-      },
-      {
-        "name": "C++",
-        "toutrials": null
-      },
-      {
-        "name": "C++",
-        "toutrials": null
-      },
-      {
-        "name": "C++",
-        "toutrials": null
-      },
-      {
-        "name": "Java",
-        "toutrials": null
-      }
-    ]
+    "enrolledCourses": []
   },
   {
     "username": "Jack Sparrow",

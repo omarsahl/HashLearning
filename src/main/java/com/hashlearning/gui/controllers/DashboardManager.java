@@ -1,6 +1,7 @@
 package com.hashlearning.gui.controllers;
 
 import com.hashlearning.gui.custom_views.CourseListItem;
+import com.hashlearning.gui.custom_views.HashLearningCoursesListItem;
 import com.hashlearning.models.Course;
 import com.hashlearning.utils.DatabaseManager;
 import com.hashlearning.utils.ErrorHandler;
@@ -13,12 +14,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 
@@ -27,6 +27,7 @@ public class DashboardManager {
     private GridPane container;
 
     private static JFXListView<Course> myCourses;
+    private static JFXListView<Course> hashLearningCourses;
 
     public void open(int index, GridPane container) throws IOException {
         this.container = container;
@@ -36,6 +37,7 @@ public class DashboardManager {
                 openDashboard();
                 break;
             case 1:
+                initCoursesList();
                 openCoursesPage();
                 break;
             case 2:
@@ -78,7 +80,6 @@ public class DashboardManager {
         Label assignmentsLabel = new Label("Assignments Page!");
         tab2.setContent(assignmentsLabel);
         assignmentsLabel.setStyle("-fx-font-size: 50px");
-        //tabPane.getTabs().add(tab2);
         tabPane.getTabs().addAll(tab1, tab2);
         tabPane.getSelectionModel().select(0);
         container.getChildren().add(tabPane);
@@ -86,26 +87,24 @@ public class DashboardManager {
 
     private void openCoursesPage() {
         clearContainer();
-        Button javaBtn = new Button("Enroll in Java");
-        javaBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Enrolling " + SessionManager.getCurrentUser().getUsername() + " in Java");
-                DatabaseManager.enrollInCourse(new Course("Java"), SessionManager.getCurrentUser());
-            }
-        });
-
-        Button cppBtn = new Button("Enroll in c++");
-        cppBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Enrolling " + SessionManager.getCurrentUser().getUsername() + " in C++");
-                DatabaseManager.enrollInCourse(new Course("C++"), SessionManager.getCurrentUser());
-            }
-        });
-
-        VBox vBox = new VBox(javaBtn, cppBtn);
-        container.getChildren().add(vBox);
+//        Button javaBtn = new Button("Enroll in Java");
+//        javaBtn.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                System.out.println("Enrolling " + SessionManager.getCurrentUser().getUsername() + " in Java");
+//                DatabaseManager.enrollInCourse(new Course("Java"), SessionManager.getCurrentUser());
+//            }
+//        });
+//
+//        Button cppBtn = new Button("Enroll in c++");
+//        cppBtn.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                System.out.println("Enrolling " + SessionManager.getCurrentUser().getUsername() + " in C++");
+//                DatabaseManager.enrollInCourse(new Course("C++"), SessionManager.getCurrentUser());
+//            }
+//        });
+        container.getChildren().add(hashLearningCourses);
     }
 
 
@@ -125,7 +124,33 @@ public class DashboardManager {
             System.out.println(course.getName());
         }
         myCourses.setItems(courseObservableList);
-        myCourses.setCellFactory(courseListView -> new CourseListItem());
+        myCourses.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>() {
+            @Override
+            public ListCell<Course> call(ListView<Course> courseListView) {
+                return new CourseListItem();
+            }
+        });
+    }
+
+
+    private void initCoursesList() {
+        System.out.println("Initializing CoursesList...");
+        hashLearningCourses = new JFXListView<Course>();
+        hashLearningCourses.getStylesheets().add(getClass().getResource("/css/courses_list_stylesheet.css").toExternalForm());
+        ObservableList<Course> courseObservableList = FXCollections.observableArrayList(new Course("Java"), new Course("C++"));
+
+        System.out.println("courseObservableList");
+        for (Course course : courseObservableList) {
+            System.out.println(course.getName());
+        }
+
+        hashLearningCourses.setItems(courseObservableList);
+        hashLearningCourses.setCellFactory(new Callback<ListView<Course>, ListCell<Course>>() {
+            @Override
+            public ListCell<Course> call(ListView<Course> courseListView) {
+                return new HashLearningCoursesListItem();
+            }
+        });
     }
 
     private void openEditor() throws IOException {

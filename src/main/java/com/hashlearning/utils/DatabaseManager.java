@@ -39,11 +39,9 @@ public class DatabaseManager {
 
     static {
         parser = new JsonParser();
-
         parser1 = new JsonParser();
         gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
         gson1 = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
-
     }
 
     /**

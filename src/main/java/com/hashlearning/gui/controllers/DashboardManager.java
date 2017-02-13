@@ -3,20 +3,16 @@ package com.hashlearning.gui.controllers;
 import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.gui.custom_views.HashLearningCoursesListItem;
 import com.hashlearning.models.Course;
-import com.hashlearning.utils.DatabaseManager;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -140,7 +136,7 @@ public class DashboardManager {
 
         ObservableList<Course> courseObservableList = FXCollections.observableArrayList(
                 new Course("Java", null),
-                new Course("C++", "/courses_html/c_html.html")
+                new Course("C++", "/courses_html/c++_html.html")
         );
 
         System.out.println("courseObservableList");

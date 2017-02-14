@@ -1,24 +1,35 @@
 package com.hashlearning.models;
 
 
+import java.util.ArrayList;
+
 public class Tutorial {
 
-    private String name ;
-    private double time ; //the estimated time of the Course
-    private String content;
+    private String name;
+    private ArrayList<TutorialContent> contentList;
 
-    public String getContent() {
-        return content;
+    public Tutorial(String name) {
+        this.name = name;
+        contentList = new ArrayList<>();
+    }
+
+    public void addTutorialContent(TutorialContent content){
+        contentList.add(content);
+    }
+
+    public ArrayList<TutorialContent> getContentList() {
+        return contentList;
+    }
+
+    public void setContentList(ArrayList<TutorialContent> contentList) {
+        this.contentList = contentList;
     }
 
     public String getName() {
         return name;
     }
 
-
-
-    public double getTime() {
-        return time;
+    public void setName(String name) {
+        this.name = name;
     }
-
 }

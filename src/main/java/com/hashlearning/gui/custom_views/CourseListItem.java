@@ -1,5 +1,6 @@
 package com.hashlearning.gui.custom_views;
 
+import com.hashlearning.gui.controllers.CourseTutorialsListController;
 import com.hashlearning.gui.controllers.CourseWebViewController;
 import com.hashlearning.models.Course;
 import com.hashlearning.utils.ErrorHandler;
@@ -58,7 +59,7 @@ public class CourseListItem extends ListCell<Course> {
                 loader.setController(this);
 
                 try {
-                     loader.load();
+                    loader.load();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -77,7 +78,7 @@ public class CourseListItem extends ListCell<Course> {
             continueBtn.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    openCourseWebView(course);
+                    openCourseTutorialsList(course);
                 }
             });
 
@@ -88,12 +89,11 @@ public class CourseListItem extends ListCell<Course> {
 
     }
 
-    private void openCourseWebView(Course course) {
-        CourseWebViewController controller = new CourseWebViewController(course);
+    @SuppressWarnings("Duplicates")
+    private void openCourseTutorialsList(Course course) {
 
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/course_webview.fxml"));
-        loader.setController(controller);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/course_tutorial_list.fxml"));
+        loader.setController(new CourseTutorialsListController(course));
 
         try {
             Parent root = loader.load();

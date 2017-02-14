@@ -22,8 +22,6 @@ public class LoginScreen extends Application {
         DatabaseManager.initJsonDatabase();
         DatabaseManager.loadUsersFromJsonDatabase();
         DatabaseManager.printUsers();
-        DatabaseManager.javaTutorialsFromJsonDatabase();
-        DatabaseManager.printTutorialsName();
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/login_screen.fxml"));
 

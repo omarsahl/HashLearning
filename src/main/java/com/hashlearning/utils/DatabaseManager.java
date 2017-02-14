@@ -2,10 +2,7 @@ package com.hashlearning.utils;
 
 import com.google.gson.*;
 import com.hashlearning.gui.custom_views.MaterialDialog;
-import com.hashlearning.models.Course;
-import com.hashlearning.models.Student;
-import com.hashlearning.models.Tutorial;
-import com.hashlearning.models.User;
+import com.hashlearning.models.*;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
@@ -26,9 +23,8 @@ public class DatabaseManager {
     private static final String PASSWORD_KEY = "password";
     private static final String ENROLLED_COURSES_KEY = "enrolledCourses";
     private static final JsonParser parser;
-    private static final File jsonFile, tutorialFile;
+    private static final File jsonFile;
     public static Map<String, User> users;
-    public static Map<String, Tutorial> javaTutorials; //name = name of the tutorial.
     private static Gson gson;
     private static JsonArray usersJson, javaJson;
 
@@ -36,7 +32,6 @@ public class DatabaseManager {
         parser = new JsonParser();
         gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
         jsonFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "users.json");
-        tutorialFile = new File(FileSystemView.getFileSystemView().getHomeDirectory(), "java.json");
     }
 
     /**
@@ -67,29 +62,6 @@ public class DatabaseManager {
             }
         }
 
-        // Tutorial
-        if (!tutorialFile.exists()) {
-            InputStream in = DatabaseManager.class.getClassLoader().getResourceAsStream("files/java.json");
-            try {
-                Files.copy(in, tutorialFile.toPath());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (tutorialFile.exists()) try (FileInputStream fis = new FileInputStream(tutorialFile)) {
-            byte[] data = new byte[(int) tutorialFile.length()];
-            fis.read(data);
-            String json = new String(data, "UTF-8");
-            javaJson = parser.parse(json).getAsJsonArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-            ErrorHandler.showErrorDialog(ErrorHandler.DEFAULT_MESSAGE, e.getMessage());
-        }
-        else {
-            MaterialDialog.showDialog(Alert.AlertType.ERROR, "Couldn't find \"java.json\"", "Couldn't find \"java.json\"", "check this out!");
-            Platform.exit();
-        }
     }
 
     /**
@@ -101,18 +73,6 @@ public class DatabaseManager {
             JsonObject jsonObject = jsonElement.getAsJsonObject();
             Student user = gson.fromJson(jsonObject, Student.class);
             users.put(user.getUsername(), user);
-        }
-    }
-
-    /**
-     * Loads the java tutorials in tutorial json array to the java Hashmap.
-     */
-    public static void javaTutorialsFromJsonDatabase() {
-        javaTutorials = new HashMap<>();
-        for (JsonElement jsonElement : javaJson) {
-            JsonObject jsonObject = jsonElement.getAsJsonObject();
-            Tutorial tutorial = gson.fromJson(jsonObject, Tutorial.class);
-            javaTutorials.put(tutorial.getName(), tutorial); //adding the name and the tutorial object to the HashMap.
         }
     }
 
@@ -226,9 +186,5 @@ public class DatabaseManager {
         }
     }
 
-    public static void printTutorialsName() {
-        for (Map.Entry<String, Tutorial> s : javaTutorials.entrySet())
-            System.out.printf("%s\n%s\n", s.getKey(), s.getValue().getName());
-    }
 
 }

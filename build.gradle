@@ -32,4 +32,5 @@ dependencies {
     }
     compile group: 'org.fxmisc.richtext', name: 'richtextfx', version: '0.6.10'
     compile 'net.sf.squirrel-sql.thirdparty-non-maven:ostermiller-syntax:1.1.1'
+    compile 'org.jsoup:jsoup:1.10.2'
 }

@@ -3,6 +3,7 @@ package com.hashlearning.gui.controllers;
 import com.hashlearning.gui.custom_views.CourseListItem;
 import com.hashlearning.gui.custom_views.HashLearningCoursesListItem;
 import com.hashlearning.models.Course;
+import com.hashlearning.models.CourseFactory;
 import com.hashlearning.utils.ErrorHandler;
 import com.hashlearning.utils.SessionManager;
 import com.jfoenix.controls.JFXListView;
@@ -83,23 +84,6 @@ public class DashboardManager {
 
     private void openCoursesPage() {
         clearContainer();
-//        Button javaBtn = new Button("Enroll in Java");
-//        javaBtn.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                System.out.println("Enrolling " + SessionManager.getCurrentUser().getUsername() + " in Java");
-//                DatabaseManager.enrollInCourse(new Course("Java"), SessionManager.getCurrentUser());
-//            }
-//        });
-//
-//        Button cppBtn = new Button("Enroll in c++");
-//        cppBtn.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                System.out.println("Enrolling " + SessionManager.getCurrentUser().getUsername() + " in C++");
-//                DatabaseManager.enrollInCourse(new Course("C++"), SessionManager.getCurrentUser());
-//            }
-//        });
         container.getChildren().add(hashLearningCourses);
     }
 
@@ -134,9 +118,10 @@ public class DashboardManager {
         hashLearningCourses = new JFXListView<Course>();
         hashLearningCourses.getStylesheets().add(getClass().getResource("/css/courses_list_stylesheet.css").toExternalForm());
 
+        CourseFactory factory = new CourseFactory();
         ObservableList<Course> courseObservableList = FXCollections.observableArrayList(
-                new Course("Java", null),
-                new Course("C++", "/courses_html/c++_html.html")
+                factory.buildCourse(CourseFactory.CourseName.JAVA),
+                factory.buildCourse(CourseFactory.CourseName.C)
         );
 
         System.out.println("courseObservableList");

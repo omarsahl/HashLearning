@@ -1,6 +1,6 @@
 package com.hashlearning.gui.controllers;
 
-import com.hashlearning.models.Course;
+import com.hashlearning.models.TutorialContent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
  */
 public class CourseWebViewController implements Initializable {
 
-    private Course course;
+    private TutorialContent tutorialContent;
 
     @FXML
     private WebView courseView;
@@ -26,21 +26,20 @@ public class CourseWebViewController implements Initializable {
     public CourseWebViewController() {
     }
 
-    public CourseWebViewController(Course course) {
-        this.course = course;
+    public CourseWebViewController(TutorialContent tutorialContent) {
+        this.tutorialContent = tutorialContent;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        courseNameLabel.setText(course.getName() + " Course");
+        courseNameLabel.setText(tutorialContent.getTitle());
         WebEngine engine = courseView.getEngine();
 
-        System.out.println("in initialize: " + course.getName() + "\t" + course.getContentHtmlFile());
+        System.out.println("in initialize: " + tutorialContent.getTitle() + "\t" + tutorialContent.getHtmlFilePath());
 
-        if (course.getContentHtmlFile() != null) {
-            engine.load(getClass().getResource(course.getContentHtmlFile()).toExternalForm());
-        }
-        else {
+        if (tutorialContent.getHtmlFilePath() != null) {
+            engine.load(getClass().getResource(tutorialContent.getHtmlFilePath()).toExternalForm());
+        } else {
             engine.load(getClass().getResource("/courses_html/no_content.html").toExternalForm());
         }
     }

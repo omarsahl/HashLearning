@@ -61,7 +61,6 @@ public class HashLearningCoursesListItem extends ListCell<Course>{
             }
 
             courseName.setText(String.valueOf(course.getName()));
-
             URL iconPath = getClass().getResource("/courses_icons/" + course.getName().toLowerCase() + ".png");
             if (iconPath != null) {
                 courseIcon.setImage(new Image(iconPath.toString()));

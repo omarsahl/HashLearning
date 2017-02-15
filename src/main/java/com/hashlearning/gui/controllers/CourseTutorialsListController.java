@@ -40,6 +40,8 @@ public class CourseTutorialsListController implements Initializable{
         courseName.setText(course.getName());
         ObservableList<Tutorial> tutorialObservableList = FXCollections.observableArrayList(course.getTutorials());
 
+
+
         courseTutorialList.setItems(tutorialObservableList);
         courseTutorialList.setCellFactory(new Callback<ListView<Tutorial>, ListCell<Tutorial>>() {
             @Override

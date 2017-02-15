@@ -37,6 +37,7 @@ public class TutorialListItem extends ListCell<Tutorial> {
     @FXML
     private JFXListView<TutorialContent> tutorialList;
 
+
     @Override
     protected void updateItem(Tutorial tutorial, boolean empty) {
         super.updateItem(tutorial, empty);
@@ -75,6 +76,7 @@ public class TutorialListItem extends ListCell<Tutorial> {
                                 setText(null);
                             } else {
                                 setText(item.getTitle());
+                                setStyle("-fx-font-size: 20");
                             }
                         }
                     };
@@ -94,8 +96,11 @@ public class TutorialListItem extends ListCell<Tutorial> {
             setGraphic(tutorialListItemParent);
 
         }
+
+
     }
 
+    @SuppressWarnings("Duplicates")
     private void openCourseWebView(TutorialContent tutorialContent) {
         CourseWebViewController controller = new CourseWebViewController(tutorialContent);
 

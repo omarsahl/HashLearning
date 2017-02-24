@@ -8,7 +8,7 @@ public class StageInitializer {
 
 
     /**
-     * This method initializeStage stage by setting its title to "Hash Learning", and setting its icon to the Hash Learning logo.
+     * This method initialize stage by setting its title to "Hash Learning", and setting its icon to the Hash Learning logo.
      *
      * @param stage the stage to initialize
      */

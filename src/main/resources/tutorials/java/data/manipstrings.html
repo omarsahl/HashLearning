@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -497,7 +497,7 @@
         <br /><b>Section:</b> Strings
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -518,7 +518,7 @@ String anotherPalindrome = "Niagara. O roar again!";
 char aChar = anotherPalindrome.charAt(9);
 </pre></div>
 <p>Indices begin at 0, so the character at index 9 is &#39;O&#39;, as illustrated in the following figure: <!-- figure --></p>
-<center><img src="../../figures/java/objects-charAt.gif" width="569" height="78" align="bottom" alt="Use the charAt method to get a character at a particular index." /></center><p>If you want to get more than one consecutive character from a string, you can use the <code>substring</code> method. The <code>substring</code> method has two versions, as shown in the following table:</p>
+<center><img src="../figures/java/objects-charAt.gif" width="569" height="78" align="bottom" alt="Use the charAt method to get a character at a particular index." /></center><p>If you want to get more than one consecutive character from a string, you can use the <code>substring</code> method. The <code>substring</code> method has two versions, as shown in the following table:</p>
 <table width="100%" border="1" cellpadding="4" cellspacing="3" summary="This table lists String methods">
 <caption style="font-weight: bold">The <code>substring</code> Methods in the <code>String</code> Class</caption>
 <tr>
@@ -540,7 +540,7 @@ String anotherPalindrome = "Niagara. O roar again!";
 String roar = anotherPalindrome.substring(11, 15); 
 </pre></div>
 <!-- figure -->
-<center><img src="../../figures/java/objects-substring.gif" width="482" height="90" align="bottom" alt="Use the substring method to get part of a string." /></center><h2>Other Methods for Manipulating Strings</h2>
+<center><img src="../figures/java/objects-substring.gif" width="482" height="90" align="bottom" alt="Use the substring method to get part of a string." /></center><h2>Other Methods for Manipulating Strings</h2>
 <p>Here are several other <code>String</code> methods for manipulating strings:</p>
 <table width="100%" border="1" cellpadding="4" cellspacing="3" summary="This table lists other methods in the String class for manipulating strings">
 <caption style="font-weight: bold">Other Methods in the <code>String</code> Class for Manipulating Strings</caption>
@@ -632,7 +632,7 @@ int lastIndexOf(String str, int fromIndex)</code></td>
 </table>
 <h2>An Example</h2>
 <p>The following class, 
-<a class="SourceLink" target="_blank" href="examples/Filename.java" onclick="showCode('../../displayCode.html', 'examples/Filename.java'); return false;"><code>Filename</code></a>, illustrates the use of <code>lastIndexOf()</code> and <code>substring()</code> to isolate different parts of a file name.</p>
+<a class="SourceLink" target="_blank" href="examples/Filename.java" onclick="showCode('../displayCode.html', 'examples/Filename.java'); return false;"><code>Filename</code></a>, illustrates the use of <code>lastIndexOf()</code> and <code>substring()</code> to isolate different parts of a file name.</p>
 <div class="note"><hr /><strong>Note:</strong>&nbsp;The methods in the following <code>Filename</code> class don&#39;t do any error checking and assume that their argument contains a full directory path and a filename with an extension. If these methods were production code, they would verify that their arguments were properly constructed.
 <hr /></div>
 <div class="codeblock"><pre>
@@ -667,7 +667,7 @@ public class Filename {
 }
 </pre></div>
 <p>Here is a program, 
-<a class="SourceLink" target="_blank" href="examples/FilenameDemo.java" onclick="showCode('../../displayCode.html', 'examples/FilenameDemo.java'); return false;"><code>FilenameDemo</code></a>, that constructs a <code>Filename</code> object and calls all of its methods:</p>
+<a class="SourceLink" target="_blank" href="examples/FilenameDemo.java" onclick="showCode('../displayCode.html', 'examples/FilenameDemo.java'); return false;"><code>FilenameDemo</code></a>, that constructs a <code>Filename</code> object and calls all of its methods:</p>
 <div class="codeblock"><pre>
 
 public class FilenameDemo {
@@ -687,7 +687,7 @@ Filename = index
 Path = /home/user
 </pre></div>
 <p>As shown in the following figure, our <code>extension</code> method uses <code>lastIndexOf</code> to locate the last occurrence of the period (.) in the file name. Then <code>substring</code> uses the return value of <code>lastIndexOf</code> to extract the file name extension &#151; that is, the substring from the period to the end of the string. This code assumes that the file name has a period in it; if the file name does not have a period, <code>lastIndexOf</code> returns -1, and the substring method throws a <code>StringIndexOutOfBoundsException</code>.</p>
-<center><img src="../../figures/java/objects-lastIndexOf.gif" width="325" height="127" align="bottom" alt="The use of lastIndexOf and substring in the extension method in the Filename class." /></center><p>Also, notice that the <code>extension</code> method uses <code>dot + 1</code> as the argument to <code>substring</code>. If the period character (.) is the last character of the string, <code>dot + 1</code> is equal to the length of the string, which is one larger than the largest index into the string (because indices start at 0). This is a legal argument to <code>substring</code> because that method accepts an index equal to, but not greater than, the length of the string and interprets it to mean &quot;the end of the string.&quot;</p>
+<center><img src="../figures/java/objects-lastIndexOf.gif" width="325" height="127" align="bottom" alt="The use of lastIndexOf and substring in the extension method in the Filename class." /></center><p>Also, notice that the <code>extension</code> method uses <code>dot + 1</code> as the argument to <code>substring</code>. If the period character (.) is the last character of the string, <code>dot + 1</code> is equal to the length of the string, which is one larger than the largest index into the string (because indices start at 0). This is a legal argument to <code>substring</code> because that method accepts an index equal to, but not greater than, the length of the string and interprets it to mean &quot;the end of the string.&quot;</p>
 
         </div>
         <div class="NavBit">
@@ -706,14 +706,14 @@ Path = /home/user
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

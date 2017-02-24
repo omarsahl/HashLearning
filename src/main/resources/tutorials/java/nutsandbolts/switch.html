@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -503,7 +503,7 @@
         <br /><b>Section:</b> Control Flow Statements
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -524,7 +524,7 @@
 <a class="APILink" target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html"><code>Integer</code></a> (discussed in 
 <a class="TutorialLink" target="_top" href="../data/index.html">Numbers and Strings</a>).</p>
 <p>The following code example, 
-<a class="SourceLink" target="_blank" href="examples/SwitchDemo.java" onclick="showCode('../../displayCode.html', 'examples/SwitchDemo.java'); return false;"><code>SwitchDemo</code></a>, declares an <code>int</code> named <code>month</code> whose value represents a month. The code displays the name of the month, based on the value of <code>month</code>, using the <code>switch</code> statement.</p>
+<a class="SourceLink" target="_blank" href="examples/SwitchDemo.java" onclick="showCode('../displayCode.html', 'examples/SwitchDemo.java'); return false;"><code>SwitchDemo</code></a>, declares an <code>int</code> named <code>month</code> whose value represents a month. The code displays the name of the month, based on the value of <code>month</code>, using the <code>switch</code> statement.</p>
 <div class="codeblock"><pre>
 
 public class SwitchDemo {
@@ -578,7 +578,7 @@ if (month == 1) {
 </pre></div>
 <p>Deciding whether to use <code>if-then-else</code> statements or a <code>switch</code> statement is based on readability and the expression that the statement is testing. An <code>if-then-else</code> statement can test expressions based on ranges of values or conditions, whereas a <code>switch</code> statement tests expressions based only on a single integer, enumerated value, or <code>String</code> object.</p>
 <p>Another point of interest is the <code>break</code> statement. Each <code>break</code> statement terminates the enclosing <code>switch</code> statement. Control flow continues with the first statement following the <code>switch</code> block. The <code>break</code> statements are necessary because without them, statements in <code>switch</code> blocks <em>fall through</em>: All statements after the matching <code>case</code> label are executed in sequence, regardless of the expression of subsequent <code>case</code> labels, until a <code>break</code> statement is encountered. The program 
-<a class="SourceLink" target="_blank" href="examples/SwitchDemoFallThrough.java" onclick="showCode('../../displayCode.html', 'examples/SwitchDemoFallThrough.java'); return false;"><code>SwitchDemoFallThrough</code></a> shows statements in a <code>switch</code> block that fall through. The program displays the month corresponding to the integer <code>month</code> and the months that follow in the year:</p>
+<a class="SourceLink" target="_blank" href="examples/SwitchDemoFallThrough.java" onclick="showCode('../displayCode.html', 'examples/SwitchDemoFallThrough.java'); return false;"><code>SwitchDemoFallThrough</code></a> shows statements in a <code>switch</code> block that fall through. The program displays the month corresponding to the integer <code>month</code> and the months that follow in the year:</p>
 <div class="codeblock"><pre>
 
 public class SwitchDemoFallThrough {
@@ -626,7 +626,7 @@ December
 </pre></div>
 <p>Technically, the final <code>break</code> is not required because flow falls out of the <code>switch</code> statement. Using a <code>break</code> is recommended so that modifying the code is easier and less error prone. The <code>default</code> section handles all values that are not explicitly handled by one of the <code>case</code> sections.</p>
 <p>The following code example, 
-<a class="SourceLink" target="_blank" href="examples/SwitchDemo2.java" onclick="showCode('../../displayCode.html', 'examples/SwitchDemo2.java'); return false;"><code>SwitchDemo2</code></a>, shows how a statement can have multiple <code>case</code> labels. The code example calculates the number of days in a particular month:</p>
+<a class="SourceLink" target="_blank" href="examples/SwitchDemo2.java" onclick="showCode('../displayCode.html', 'examples/SwitchDemo2.java'); return false;"><code>SwitchDemo2</code></a>, shows how a statement can have multiple <code>case</code> labels. The code example calculates the number of days in a particular month:</p>
 <div class="codeblock"><pre>
 
 class SwitchDemo2 {
@@ -669,7 +669,7 @@ Number of Days = 29
 </pre></div>
 <h2>Using Strings in switch Statements</h2>
 <p>In Java SE 7 and later, you can use a <code>String</code> object in the <code>switch</code> statement&#39;s expression. The following code example, 
-<a class="SourceLink" target="_blank" href="examples/StringSwitchDemo.java" onclick="showCode('../../displayCode.html', 'examples/StringSwitchDemo.java'); return false;"><code>StringSwitchDemo</code></a>, displays the number of the month based on the value of the <code>String</code> named <code>month</code>:</p>
+<a class="SourceLink" target="_blank" href="examples/StringSwitchDemo.java" onclick="showCode('../displayCode.html', 'examples/StringSwitchDemo.java'); return false;"><code>StringSwitchDemo</code></a>, displays the number of the month based on the value of the <code>String</code> named <code>month</code>:</p>
 <div class="codeblock"><pre>
 
 public class StringSwitchDemo {
@@ -765,14 +765,14 @@ public class StringSwitchDemo {
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

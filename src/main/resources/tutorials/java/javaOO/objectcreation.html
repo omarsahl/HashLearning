@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -510,7 +510,7 @@
         <br /><b>Section:</b> Objects
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -524,15 +524,15 @@
 
 <!-- Creating Objects -->
 <p>As you know, a class provides the blueprint for objects; you create an object from a class. Each of the following statements taken from the 
-<a class="SourceLink" target="_blank" href="examples/CreateObjectDemo.java" onclick="showCode('../../displayCode.html', 'examples/CreateObjectDemo.java'); return false;"><code>CreateObjectDemo</code></a> program creates an object and assigns it to a variable:</p>
+<a class="SourceLink" target="_blank" href="examples/CreateObjectDemo.java" onclick="showCode('../displayCode.html', 'examples/CreateObjectDemo.java'); return false;"><code>CreateObjectDemo</code></a> program creates an object and assigns it to a variable:</p>
 <div class="codeblock"><pre>
 <strong>Point originOne</strong> = new Point(23, 94);
 <strong>Rectangle rectOne</strong> = new Rectangle(originOne, 100, 200);
 <strong>Rectangle rectTwo</strong> = new Rectangle(50, 100);
 </pre></div>
 <p>The first line creates an object of the 
-<a class="SourceLink" target="_blank" href="examples/Point.java" onclick="showCode('../../displayCode.html', 'examples/Point.java'); return false;"><code>Point</code></a> class, and the second and third lines each create an object of the 
-<a class="SourceLink" target="_blank" href="examples/Rectangle.java" onclick="showCode('../../displayCode.html', 'examples/Rectangle.java'); return false;"><code>Rectangle</code></a> class.</p>
+<a class="SourceLink" target="_blank" href="examples/Point.java" onclick="showCode('../displayCode.html', 'examples/Point.java'); return false;"><code>Point</code></a> class, and the second and third lines each create an object of the
+<a class="SourceLink" target="_blank" href="examples/Rectangle.java" onclick="showCode('../displayCode.html', 'examples/Rectangle.java'); return false;"><code>Rectangle</code></a> class.</p>
 <p>Each of these statements has three parts (discussed in detail below):</p>
 <ol>
 <li><strong>Declaration</strong>: The code set in <strong>bold</strong> are all variable declarations that associate a variable name with an object type.</li>
@@ -552,7 +552,7 @@ Point originOne;
 </pre></div>
 <p>If you declare <code>originOne</code> like this, its value will be undetermined until an object is actually created and assigned to it. Simply declaring a reference variable does not create an object. For that, you need to use the <code>new</code> operator, as described in the next section. You must assign an object to <code>originOne</code> before you use it in your code. Otherwise, you will get a compiler error.</p>
 <p>A variable in this state, which currently references no object, can be illustrated as follows (the variable name, <code>originOne</code>, plus a reference pointing to nothing):</p>
-<center><img src="../../figures/java/objects-null.gif" width="122" height="39" align="bottom" alt="originOne is null." /></center><p><a name="instantiating" id="instantiating"></a></p>
+<center><img src="../figures/java/objects-null.gif" width="122" height="39" align="bottom" alt="originOne is null." /></center><p><a name="instantiating" id="instantiating"></a></p>
 <h2>Instantiating a Class</h2>
 <p>The <tt>new</tt> operator instantiates a class by allocating memory for a new object and returning a reference to that memory. The <tt>new</tt> operator also invokes the object constructor.</p>
 <div class="note"><hr /><strong>Note:</strong>&nbsp;The phrase &quot;instantiating a class&quot; means the same thing as &quot;creating an object.&quot; When you create an object, you are creating an &quot;instance&quot; of a class, therefore &quot;instantiating&quot; a class.
@@ -585,7 +585,7 @@ public class Point {
 Point originOne = new Point(23, 94);
 </pre></div>
 <p>The result of executing this statement can be illustrated in the next figure:</p>
-<center><img src="../../figures/java/objects-oneRef.gif" width="323" height="196" align="bottom" alt="originOne now points to a Point object." /></center><p>Here&#39;s the code for the <tt>Rectangle</tt> class, which contains four constructors:</p>
+<center><img src="../figures/java/objects-oneRef.gif" width="323" height="196" align="bottom" alt="originOne now points to a Point object." /></center><p>Here&#39;s the code for the <tt>Rectangle</tt> class, which contains four constructors:</p>
 <div class="codeblock"><pre>
 public class Rectangle {
     public int width = 0;
@@ -628,7 +628,7 @@ public class Rectangle {
 Rectangle rectOne = new Rectangle(originOne, 100, 200);
 </pre></div>
 <p>This calls one of <code>Rectangle</code>&#39;s constructors that initializes <code>origin</code> to <code>originOne</code>. Also, the constructor sets <code>width</code> to 100 and <code>height</code> to 200. Now there are two references to the same <tt>Point object</tt>&#151;an object can have multiple references to it, as shown in the next figure:</p>
-<center><img src="../../figures/java/objects-multipleRefs.gif" width="396" height="350" align="bottom" alt="Now the rectangle's origin variable also points to the Point." /></center><p>The following line of code calls the <code>Rectangle</code> constructor that requires two integer arguments, which provide the initial values for <tt>width</tt> and <tt>height</tt>. If you inspect the code within the constructor, you will see that it creates a new <tt>Point</tt> object whose <tt>x</tt> and <tt>y</tt> values are initialized to 0:</p>
+<center><img src="../figures/java/objects-multipleRefs.gif" width="396" height="350" align="bottom" alt="Now the rectangle's origin variable also points to the Point." /></center><p>The following line of code calls the <code>Rectangle</code> constructor that requires two integer arguments, which provide the initial values for <tt>width</tt> and <tt>height</tt>. If you inspect the code within the constructor, you will see that it creates a new <tt>Point</tt> object whose <tt>x</tt> and <tt>y</tt> values are initialized to 0:</p>
 <div class="codeblock"><pre>
 Rectangle rectTwo = new Rectangle(50, 100);
 </pre></div>
@@ -656,14 +656,14 @@ Rectangle rect = new Rectangle();
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

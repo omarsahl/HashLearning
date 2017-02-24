@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -501,7 +501,7 @@
         <br /><b>Section:</b> Inheritance
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -514,13 +514,13 @@
             <div id="PageContent">
 
 <p>One significant difference between classes and interfaces is that classes can have fields whereas interfaces cannot. In addition, you can instantiate a class to create an object, which you cannot do with interfaces. As explained in the section
-<a class="TutorialLink" target="_top" href="../../java/concepts/object.html">What Is an Object?</a>, an object stores its state in fields, which are defined in classes. One reason why the Java programming language does not permit you to extend more than one class is to avoid the issues of <em>multiple inheritance of state</em>, which is the ability to inherit fields from multiple classes. For example, suppose that you are able to define a new class that extends multiple classes. When you create an object by instantiating that class, that object will inherit fields from all of the class's superclasses. What if methods or constructors from different superclasses instantiate the same field? Which method or constructor will take precedence? Because interfaces do not contain fields, you do not have to worry about problems that result from multiple inheritance of state.</p>
+<a class="TutorialLink" target="_top" href="../java/concepts/object.html">What Is an Object?</a>, an object stores its state in fields, which are defined in classes. One reason why the Java programming language does not permit you to extend more than one class is to avoid the issues of <em>multiple inheritance of state</em>, which is the ability to inherit fields from multiple classes. For example, suppose that you are able to define a new class that extends multiple classes. When you create an object by instantiating that class, that object will inherit fields from all of the class's superclasses. What if methods or constructors from different superclasses instantiate the same field? Which method or constructor will take precedence? Because interfaces do not contain fields, you do not have to worry about problems that result from multiple inheritance of state.</p>
 
 <p><em>Multiple inheritance of implementation</em> is the ability to inherit method definitions from multiple classes. Problems arise with this type of multiple inheritance, such as name conflicts and ambiguity. When compilers of programming languages that support this type of multiple inheritance encounter superclasses that contain methods with the same name, they sometimes cannot determine which member or method to access or invoke. In addition, a programmer can unwittingly introduce a name conflict by adding a new method to a superclass.
-<a class="TutorialLink" target="_top" href="../../java/IandI/defaultmethods.html">Default methods</a> introduce one form of multiple inheritance of implementation. A class can implement more than one interface, which can contain default methods that have the same name. The Java compiler provides some rules to determine which default method a particular class uses.</p>
+<a class="TutorialLink" target="_top" href="../java/IandI/defaultmethods.html">Default methods</a> introduce one form of multiple inheritance of implementation. A class can implement more than one interface, which can contain default methods that have the same name. The Java compiler provides some rules to determine which default method a particular class uses.</p>
 
 <p>The Java programming language supports <em>multiple inheritance of type</em>, which is the ability of a class to implement more than one interface. An object can have multiple types: the type of its own class and the types of all the interfaces that the class implements. This means that if a variable is declared to be the type of an interface, then its value can reference any object that is instantiated from any class that implements the interface. This is discussed in the section
-<a class="TutorialLink" target="_top" href="../../java/IandI/interfaceAsType.html">Using an Interface as a Type</a>.</p>
+<a class="TutorialLink" target="_top" href="../java/IandI/interfaceAsType.html">Using an Interface as a Type</a>.</p>
 
 <p>As with multiple inheritance of implementation, a class can inherit different implementations of a method defined (as default or static) in the interfaces that it extends. In this case, the compiler or the user must decide which one to use.</p>
 
@@ -541,14 +541,14 @@
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

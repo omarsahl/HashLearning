@@ -15,5 +15,5 @@ public class Audio {
         Media media = new Media(Audio.class.getResource("/sounds/click.mp3").toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
-    }
-}
+        }
+        }

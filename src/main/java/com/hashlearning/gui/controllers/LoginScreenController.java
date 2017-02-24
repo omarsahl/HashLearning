@@ -6,13 +6,17 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -78,28 +82,39 @@ public class LoginScreenController implements Initializable {
 
         emailValidator.setMessage("Email can't be empty");
         emailTextField.getValidators().add(emailValidator);
-        emailTextField.focusedProperty().addListener((o, oldVal, newVal) -> {
-            if (!newVal) {
-                emailTextField.validate();
+
+        emailTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> o, Boolean oldVal, Boolean newVal) {
+                if (!newVal) {
+                    emailTextField.validate();
+                }
             }
         });
 
         passwordValidator.setMessage("Password Can't be empty");
         passwordTextField.getValidators().add(passwordValidator);
-        passwordTextField.focusedProperty().addListener((o, oldVal, newVal) -> {
-            if (!newVal) {
-                passwordTextField.validate();
+        passwordTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> o, Boolean oldVal, Boolean newVal) {
+                if (!newVal) {
+                    passwordTextField.validate();
+                }
             }
         });
     }
 
     public void initialize(URL location, ResourceBundle resources) {
         initializeInputUI();
-        signUpLabel.setOnMouseClicked(event -> {
-            try {
-                openSignUpScreen((Stage) signUpLabel.getScene().getWindow());
-            } catch (IOException e) {
-                e.printStackTrace();
+
+        signUpLabel.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    LoginScreenController.this.openSignUpScreen((Stage) signUpLabel.getScene().getWindow());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 

@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -501,7 +501,7 @@
         <br /><b>Section:</b> Interfaces
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -515,13 +515,13 @@
 
 
 <p>The section
-<a class="TutorialLink" target="_top" href="../../java/IandI/createinterface.html">Interfaces</a> describes an example that involves manufacturers of computer-controlled cars who publish industry-standard interfaces that describe which methods can be invoked to operate their cars. What if those computer-controlled car manufacturers add new functionality, such as flight, to their cars? These manufacturers would need to specify new methods to enable other companies (such as electronic guidance instrument manufacturers) to adapt their software to flying cars. Where would these car manufacturers declare these new flight-related methods? If they add them to their original interfaces, then programmers who have implemented those interfaces would have to rewrite their implementations. If they add them as static methods, then programmers would regard them as utility methods, not as essential, core methods.</p>
+<a class="TutorialLink" target="_top" href="../java/IandI/createinterface.html">Interfaces</a> describes an example that involves manufacturers of computer-controlled cars who publish industry-standard interfaces that describe which methods can be invoked to operate their cars. What if those computer-controlled car manufacturers add new functionality, such as flight, to their cars? These manufacturers would need to specify new methods to enable other companies (such as electronic guidance instrument manufacturers) to adapt their software to flying cars. Where would these car manufacturers declare these new flight-related methods? If they add them to their original interfaces, then programmers who have implemented those interfaces would have to rewrite their implementations. If they add them as static methods, then programmers would regard them as utility methods, not as essential, core methods.</p>
 
 <p>Default methods enable you to add new functionality to the interfaces of your libraries and ensure binary compatibility with code written for older versions of those interfaces.</p> 
 
 <p>Consider the following interface,
-<a class="SourceLink" target="_blank" href="examples/TimeClient.java" onclick="showCode('../../displayCode.html', 'examples/TimeClient.java'); return false;"><code>TimeClient</code></a>, as described in
-<a class="TutorialLink" target="_top" href="../../java/IandI/QandE/interfaces-answers.html">Answers to Questions and Exercises: Interfaces</a>:</p>
+<a class="SourceLink" target="_blank" href="examples/TimeClient.java" onclick="showCode('../displayCode.html', 'examples/TimeClient.java'); return false;"><code>TimeClient</code></a>, as described in
+<a class="TutorialLink" target="_top" href="../java/IandI/QandE/interfaces-answers.html">Answers to Questions and Exercises: Interfaces</a>:</p>
 
 <div class="codeblock"><pre>
 
@@ -537,7 +537,7 @@ public interface TimeClient {
 </pre></div>
 
 <p>The following class,
-<a class="SourceLink" target="_blank" href="examples/defaultmethods/SimpleTimeClient.java" onclick="showCode('../../displayCode.html', 'examples/defaultmethods/SimpleTimeClient.java'); return false;"><code>SimpleTimeClient</code></a>, implements <code>TimeClient</code>:</p>
+<a class="SourceLink" target="_blank" href="examples/defaultmethods/SimpleTimeClient.java" onclick="showCode('../displayCode.html', 'examples/defaultmethods/SimpleTimeClient.java'); return false;"><code>SimpleTimeClient</code></a>, implements <code>TimeClient</code>:</p>
 
 <div class="codeblock"><pre>
 
@@ -605,7 +605,7 @@ public interface TimeClient {
 </pre></div>
 
 <p>Following this modification to the <code>TimeClient</code> interface, you would also have to modify the class <code>SimpleTimeClient</code> and implement the method <code>getZonedDateTime</code>. However, rather than leaving <code>getZonedDateTime</code> as <code>abstract</code> (as in the previous example), you can instead define a <em>default implementation</em>. (Remember that an
-<a class="TutorialLink" target="_top" href="../../java/IandI/abstract.html">abstract method</a> is a method declared without an implementation.)</p>
+<a class="TutorialLink" target="_top" href="../java/IandI/abstract.html">abstract method</a> is a method declared without an implementation.)</p>
 
 <div class="codeblock"><pre>
 
@@ -639,7 +639,7 @@ public interface TimeClient {
 <p>You specify that a method definition in an interface is a default method with the <code>default</code> keyword at the beginning of the method signature. All method declarations in an interface, including default methods, are implicitly <code>public</code>, so you can omit the <code>public</code> modifier.</p>
 
 <p>With this interface, you do not have to modify the class <code>SimpleTimeClient</code>, and this class (and any class that implements the interface <code>TimeClient</code>), will have the method <code>getZonedDateTime</code> already defined. The following example,
-<a class="SourceLink" target="_blank" href="examples/defaultmethods/TestSimpleTimeClient.java" onclick="showCode('../../displayCode.html', 'examples/defaultmethods/TestSimpleTimeClient.java'); return false;"><code>TestSimpleTimeClient</code></a>, invokes the method <code>getZonedDateTime</code> from an instance of <code>SimpleTimeClient</code>:</p>
+<a class="SourceLink" target="_blank" href="examples/defaultmethods/TestSimpleTimeClient.java" onclick="showCode('../displayCode.html', 'examples/defaultmethods/TestSimpleTimeClient.java'); return false;"><code>TestSimpleTimeClient</code></a>, invokes the method <code>getZonedDateTime</code> from an instance of <code>SimpleTimeClient</code>:</p>
 
 <div class="codeblock"><pre>
 
@@ -712,7 +712,7 @@ public interface HandleInvalidTimeZoneClient extends TimeClient {
 <h2><a name="static">Static Methods</a></h2>
 
 <p>In addition to default methods, you can define
-<a class="TutorialLink" target="_top" href="../../java/javaOO/classvars.html">static methods </a> in interfaces. (A static method is a method that is associated with the class in which it is defined rather than with any object. Every instance of the class shares its static methods.) This makes it easier for you to organize helper methods in your libraries; you can keep static methods specific to an interface in the same interface rather than in a separate class. The following example defines a static method that retrieves a
+<a class="TutorialLink" target="_top" href="../java/javaOO/classvars.html">static methods </a> in interfaces. (A static method is a method that is associated with the class in which it is defined rather than with any object. Every instance of the class shares its static methods.) This makes it easier for you to organize helper methods in your libraries; you can keep static methods specific to an interface in the same interface rather than in a separate class. The following example defines a static method that retrieves a
 <a class="APILink" target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html"><code>ZoneId</code></a> object corresponding to a time zone identifier; it uses the system default time zone if there is no <code>ZoneId</code> object corresponding to the given identifier. (As a result, you can simplify the method <code>getZonedDateTime</code>):</p>
 
 <div class="codeblock"><pre>
@@ -745,9 +745,9 @@ public interface TimeClient {
 <a class="APILink" target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html"><code>Comparator</code></a> interface has been enhanced with default and static methods.</p> 
 
 <p>Consider the <code>Card</code> and <code>Deck</code> classes as described in
-<a class="TutorialLink" target="_top" href="../../java/javaOO/QandE/creating-questions.html">Questions and Exercises: Classes</a>. This example rewrites the
-<a class="SourceLink" target="_blank" href="examples/defaultmethods/Card.java" onclick="showCode('../../displayCode.html', 'examples/defaultmethods/Card.java'); return false;"><code>Card</code></a> and 
-<a class="SourceLink" target="_blank" href="examples/defaultmethods/Deck.java" onclick="showCode('../../displayCode.html', 'examples/defaultmethods/Deck.java'); return false;"><code>Deck</code></a> classes as interfaces. The <code>Card</code> interface contains two <code>enum</code> types (<code>Suit</code> and <code>Rank</code>) and two abstract methods (<code>getSuit</code> and <code>getRank</code>):</p>
+<a class="TutorialLink" target="_top" href="../java/javaOO/QandE/creating-questions.html">Questions and Exercises: Classes</a>. This example rewrites the
+<a class="SourceLink" target="_blank" href="examples/defaultmethods/Card.java" onclick="showCode('../displayCode.html', 'examples/defaultmethods/Card.java'); return false;"><code>Card</code></a> and
+<a class="SourceLink" target="_blank" href="examples/defaultmethods/Deck.java" onclick="showCode('../displayCode.html', 'examples/defaultmethods/Deck.java'); return false;"><code>Deck</code></a> classes as interfaces. The <code>Card</code> interface contains two <code>enum</code> types (<code>Suit</code> and <code>Rank</code>) and two abstract methods (<code>getSuit</code> and <code>getRank</code>):</p>
  
 <div class="codeblock"><pre>
 
@@ -830,8 +830,8 @@ public interface Deck {
 </pre></div>
 
 <p>The class
-<a class="SourceLink" target="_blank" href="examples/defaultmethods/PlayingCard.java" onclick="showCode('../../displayCode.html', 'examples/defaultmethods/PlayingCard.java'); return false;"><code>PlayingCard</code></a> implements the interface <code>Card</code>, and the class
-<a class="SourceLink" target="_blank" href="examples/defaultmethods/StandardDeck.java" onclick="showCode('../../displayCode.html', 'examples/defaultmethods/StandardDeck.java'); return false;"><code>StandardDeck</code></a> implements the interface <code>Deck</code>.</p>
+<a class="SourceLink" target="_blank" href="examples/defaultmethods/PlayingCard.java" onclick="showCode('../displayCode.html', 'examples/defaultmethods/PlayingCard.java'); return false;"><code>PlayingCard</code></a> implements the interface <code>Card</code>, and the class
+<a class="SourceLink" target="_blank" href="examples/defaultmethods/StandardDeck.java" onclick="showCode('../displayCode.html', 'examples/defaultmethods/StandardDeck.java'); return false;"><code>StandardDeck</code></a> implements the interface <code>Deck</code>.</p>
 
 <p>The class <code>StandardDeck</code> implements the abstract method <code>Deck.sort</code> as follows:</p>
 
@@ -877,7 +877,7 @@ public void sort(Comparator&lt;Card&gt; c) {
 </pre></div>
 
 <p>With this method, you can specify how the method <code>Collections.sort</code> sorts instances of the <code>Card</code> class. One way to do this is to implement the <code>Comparator</code> interface to specify how you want the cards sorted. The example
-<a class="SourceLink" target="_blank" href="examples/defaultmethods/SortByRankThenSuit.java" onclick="showCode('../../displayCode.html', 'examples/defaultmethods/SortByRankThenSuit.java'); return false;"><code>SortByRankThenSuit</code></a> does this:
+<a class="SourceLink" target="_blank" href="examples/defaultmethods/SortByRankThenSuit.java" onclick="showCode('../displayCode.html', 'examples/defaultmethods/SortByRankThenSuit.java'); return false;"><code>SortByRankThenSuit</code></a> does this:
 </p>
 
 <div class="codeblock"><pre>
@@ -922,7 +922,7 @@ myDeck.sort(
 </pre></div>
 
 <p>Because the interface <code>Comparator</code> is a
-<a class="TutorialLink" target="_top" href="../../java/javaOO/lambdaexpressions.html#approach6">functional interface</a>, you can use a lambda expression as an argument for the <code>sort</code> method. In this example, the lambda expression compares two integer values.</p>
+<a class="TutorialLink" target="_top" href="../java/javaOO/lambdaexpressions.html#approach6">functional interface</a>, you can use a lambda expression as an argument for the <code>sort</code> method. In this example, the lambda expression compares two integer values.</p>
 
 <p>It would be simpler for your developers if they could create a <code>Comparator</code> instance by invoking the method <code>Card.getRank</code> only. In particular, it would be helpful if your developers could create a <code>Comparator</code> instance that compares any object that can return a numerical value from a method such as <code>getValue</code> or <code>hashCode</code>. The <code>Comparator</code> interface has been enhanced with this ability with the static method
 <a class="APILink" target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html#comparing-java.util.function.Function-java.util.Comparator-"><code>comparing</code></a>:</p>
@@ -932,7 +932,7 @@ myDeck.sort(Comparator.comparing((card) -> card.getRank()));
 </pre></div>
 
 <p>In this example, you can use a
-<a class="TutorialLink" target="_top" href="../../java/javaOO/methodreferences.html">method reference</a> instead:</p>
+<a class="TutorialLink" target="_top" href="../java/javaOO/methodreferences.html">method reference</a> instead:</p>
 
 <div class="codeblock"><pre>
 myDeck.sort(Comparator.comparing(Card::getRank));  
@@ -1005,14 +1005,14 @@ myDeck.sort(
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

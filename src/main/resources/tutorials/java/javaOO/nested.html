@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -509,7 +509,7 @@
         <br /><b>Lesson:</b> Classes and Objects
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -605,7 +605,7 @@ OuterClass.InnerClass innerObject = outerObject.new InnerClass();
 <h2><a name="shadowing">Shadowing</a></h2>
 
 <p>If a declaration of a type (such as a member variable or a parameter name) in a particular scope (such as an inner class or a method definition) has the same name as another declaration in the enclosing scope, then the declaration <em>shadows</em> the declaration of the enclosing scope. You cannot refer to a shadowed declaration by its name alone. The following example,
-<a class="SourceLink" target="_blank" href="examples/ShadowTest.java" onclick="showCode('../../displayCode.html', 'examples/ShadowTest.java'); return false;"><code>ShadowTest</code></a>, demonstrates this:</p>
+<a class="SourceLink" target="_blank" href="examples/ShadowTest.java" onclick="showCode('../displayCode.html', 'examples/ShadowTest.java'); return false;"><code>ShadowTest</code></a>, demonstrates this:</p>
 
 <pre class="codeblock">
  
@@ -649,11 +649,11 @@ ShadowTest.this.x = 0</pre>
 <h2><a name="serialization">Serialization</a></h2>
 
 <p>
-<a class="TutorialLink" target="_top" href="../../jndi/objects/serial.html">Serialization</a> of inner classes, including
+<a class="TutorialLink" target="_top" href="../jndi/objects/serial.html">Serialization</a> of inner classes, including
 <a class="TutorialLink" target="_top" href="localclasses.html">local</a> and
 <a class="TutorialLink" target="_top" href="anonymousclasses.html">anonymous</a> classes, is strongly discouraged. When the Java compiler compiles certain constructs, such as inner classes, it creates <em>synthetic constructs</em>; these are classes, methods, fields, and other constructs that do not have a corresponding construct in the source code. Synthetic constructs enable Java compilers to implement new Java language features without changes to the JVM. However, synthetic constructs can vary among different Java compiler implementations, which means that <code>.class</code> files can vary among different implementations as well. Consequently, you may have compatibility issues if you serialize an inner class and then deserialize it with a different JRE implementation. See the section
-<a class="TutorialLink" target="_top" href="../../reflect/member/methodparameterreflection.html#implcit_and_synthetic">Implicit and Synthetic Parameters</a> in the section
-<a class="TutorialLink" target="_top" href="../../reflect/member/methodparameterreflection.html">Obtaining Names of Method Parameters</a> for more information about the synthetic constructs generated when an inner class is compiled.</p>
+<a class="TutorialLink" target="_top" href="../reflect/member/methodparameterreflection.html#implcit_and_synthetic">Implicit and Synthetic Parameters</a> in the section
+<a class="TutorialLink" target="_top" href="../reflect/member/methodparameterreflection.html">Obtaining Names of Method Parameters</a> for more information about the synthetic constructs generated when an inner class is compiled.</p>
  
 
         </div>
@@ -673,14 +673,14 @@ ShadowTest.this.x = 0</pre>
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

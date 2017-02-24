@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -503,7 +503,7 @@
         <br /><b>Section:</b> Control Flow Statements
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -517,7 +517,7 @@
 
 <h2>The <code>break</code> Statement</h2>
 <p>The <code>break</code> statement has two forms: labeled and unlabeled. You saw the unlabeled form in the previous discussion of the <code>switch</code> statement. You can also use an unlabeled <code>break</code> to terminate a <code>for</code>, <code>while</code>, or <code>do-while</code> loop, as shown in the following 
-<a class="SourceLink" target="_blank" href="examples/BreakDemo.java" onclick="showCode('../../displayCode.html', 'examples/BreakDemo.java'); return false;"><code>BreakDemo</code></a> program:</p>
+<a class="SourceLink" target="_blank" href="examples/BreakDemo.java" onclick="showCode('../displayCode.html', 'examples/BreakDemo.java'); return false;"><code>BreakDemo</code></a> program:</p>
 <div class="codeblock"><pre>
 class BreakDemo {
     public static void main(String[] args) {
@@ -551,7 +551,7 @@ class BreakDemo {
 Found 12 at index 4
 </pre></div>
 <p>An unlabeled <code>break</code> statement terminates the innermost <code>switch</code>, <code>for</code>, <code>while</code>, or <code>do-while</code> statement, but a labeled <code>break</code> terminates an outer statement. The following program, 
-<a class="SourceLink" target="_blank" href="examples/BreakWithLabelDemo.java" onclick="showCode('../../displayCode.html', 'examples/BreakWithLabelDemo.java'); return false;"><code>BreakWithLabelDemo</code></a>, is similar to the previous program, but uses nested <code>for</code> loops to search for a value in a two-dimensional array. When the value is found, a labeled <code>break</code> terminates the outer <code>for</code> loop (labeled &quot;search&quot;):</p>
+<a class="SourceLink" target="_blank" href="examples/BreakWithLabelDemo.java" onclick="showCode('../displayCode.html', 'examples/BreakWithLabelDemo.java'); return false;"><code>BreakWithLabelDemo</code></a>, is similar to the previous program, but uses nested <code>for</code> loops to search for a value in a two-dimensional array. When the value is found, a labeled <code>break</code> terminates the outer <code>for</code> loop (labeled &quot;search&quot;):</p>
 <div class="codeblock"><pre>
 
 class BreakWithLabelDemo {
@@ -594,7 +594,7 @@ Found 12 at 1, 0
 <p>The <code>break</code> statement terminates the labeled statement; it does not transfer the flow of control to the label. Control flow is transferred to the statement immediately following the labeled (terminated) statement.</p>
 <h2>The <code>continue</code> Statement</h2>
 <p>The <code>continue</code> statement skips the current iteration of a <code>for</code>, <code>while</code> , or <code>do-while</code> loop. The unlabeled form skips to the end of the innermost loop&#39;s body and evaluates the <code>boolean</code> expression that controls the loop. The following program, 
-<a class="SourceLink" target="_blank" href="examples/ContinueDemo.java" onclick="showCode('../../displayCode.html', 'examples/ContinueDemo.java'); return false;"><code>ContinueDemo</code></a> , steps through a <code>String</code>, counting the occurences of the letter &quot;p&quot;. If the current character is not a p, the <code>continue</code> statement skips the rest of the loop and proceeds to the next character. If it <i>is</i> a &quot;p&quot;, the program increments the letter count.</p>
+<a class="SourceLink" target="_blank" href="examples/ContinueDemo.java" onclick="showCode('../displayCode.html', 'examples/ContinueDemo.java'); return false;"><code>ContinueDemo</code></a> , steps through a <code>String</code>, counting the occurences of the letter &quot;p&quot;. If the current character is not a p, the <code>continue</code> statement skips the rest of the loop and proceeds to the next character. If it <i>is</i> a &quot;p&quot;, the program increments the letter count.</p>
 <div class="codeblock"><pre>
 
 class ContinueDemo {
@@ -622,7 +622,7 @@ Found 9 p's in the string.
 </pre></div>
 <p>To see this effect more clearly, try removing the <code>continue</code> statement and recompiling. When you run the program again, the count will be wrong, saying that it found 35 p&#39;s instead of 9.</p>
 <p>A labeled <code>continue</code> statement skips the current iteration of an outer loop marked with the given label. The following example program, <code>ContinueWithLabelDemo</code>, uses nested loops to search for a substring within another string. Two nested loops are required: one to iterate over the substring and one to iterate over the string being searched. The following program, 
-<a class="SourceLink" target="_blank" href="examples/ContinueWithLabelDemo.java" onclick="showCode('../../displayCode.html', 'examples/ContinueWithLabelDemo.java'); return false;"><code>ContinueWithLabelDemo</code></a>, uses the labeled form of continue to skip an iteration in the outer loop.</p>
+<a class="SourceLink" target="_blank" href="examples/ContinueWithLabelDemo.java" onclick="showCode('../displayCode.html', 'examples/ContinueWithLabelDemo.java'); return false;"><code>ContinueWithLabelDemo</code></a>, uses the labeled form of continue to skip an iteration in the outer loop.</p>
 <div class="codeblock"><pre>
 
 class ContinueWithLabelDemo {
@@ -685,14 +685,14 @@ return;
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

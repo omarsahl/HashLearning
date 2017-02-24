@@ -11,7 +11,7 @@
 
 <GridPane fx:id="tutorialListItemParent" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="261.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
-        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="700.0" />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
@@ -20,7 +20,7 @@
     <children>
         <StackPane>
             <children>
-                <Label fx:id="tutorialName" prefHeight="36.0" prefWidth="665.0" text="Label" textFill="#e61e63">
+                <Label fx:id="tutorialName" prefHeight="36.0" prefWidth="665.0" style="-fx-font-size: 20;" text="Label" textFill="#e61e63">
                     <font>
                         <Font size="22.0" />
                     </font>
@@ -30,7 +30,7 @@
                 </Label>
             </children>
         </StackPane>
-        <JFXListView fx:id="tutorialList" prefHeight="400.0" prefWidth="733.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+        <JFXListView fx:id="tutorialList" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
          <GridPane.margin>
             <Insets />
          </GridPane.margin></JFXListView>

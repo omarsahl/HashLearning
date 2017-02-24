@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -503,7 +503,7 @@
         <br /><b>Lesson:</b> Generics (Updated)
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -546,7 +546,7 @@ public void boxTest(Box&lt;Number&gt; n) { /* ... */ }
 What type of argument does it accept?  By looking at its signature, you can see that it accepts a single argument whose type is <tt>Box&lt;Number&gt;</tt>.  But what does that mean?  Are you allowed to pass in <tt>Box&lt;Integer&gt;</tt> or <tt>Box&lt;Double&gt;</tt>, as you might expect?  The answer is "no", because <tt>Box&lt;Integer&gt;</tt> and <tt>Box&lt;Double&gt;</tt> are not subtypes of <tt>Box&lt;Number&gt;</tt>.</p>
 <p>
 This is a common misunderstanding when it comes to programming with generics, but it is an important concept to learn.</p>
-<center><img src="../../figures/java/generics-subtypeRelationship.gif" width="338" height="225" align="bottom" alt="diagram showing that Box&lt;Integer&gt; is not a subtype of Box&lt;Number&gt;" /></center><center><tt>Box&lt;Integer&gt;</tt> is not a subtype of <tt>Box&lt;Number&gt;</tt> even though <tt>Integer</tt> is a subtype of <tt>Number</tt>.</center>
+<center><img src="../figures/java/generics-subtypeRelationship.gif" width="338" height="225" align="bottom" alt="diagram showing that Box&lt;Integer&gt; is not a subtype of Box&lt;Number&gt;" /></center><center><tt>Box&lt;Integer&gt;</tt> is not a subtype of <tt>Box&lt;Number&gt;</tt> even though <tt>Integer</tt> is a subtype of <tt>Number</tt>.</center>
 <div class="note"><hr /><strong>Note:</strong>&nbsp;Given two concrete types <tt>A</tt> and <tt>B</tt> (for example, <tt>Number</tt> and <tt>Integer</tt>), <tt>MyClass&lt;A&gt;</tt> has no relationship to <tt>MyClass&lt;B&gt;</tt>, regardless of whether or not <tt>A</tt> and <tt>B</tt> are related. The common parent of <tt>MyClass&lt;A&gt;</tt> and <tt>MyClass&lt;B&gt;</tt> is <tt>Object</tt>.<br /><br />
 For information on how to create a subtype-like relationship between two generic classes when the type parameters are related, see
 <a class="TutorialLink" target="_top" href="subtyping.html">Wildcards and Subtyping</a>.
@@ -557,7 +557,7 @@ For information on how to create a subtype-like relationship between two generic
 You can subtype a generic class or interface by extending or implementing it.  The relationship between the type parameters of one class or interface and the type parameters of another are determined by the <tt>extends</tt> and <tt>implements</tt> clauses.</p>
 <p>
 Using the <tt>Collections</tt> classes as an example, <tt>ArrayList&lt;E&gt;</tt> implements <tt>List&lt;E&gt;</tt>, and <tt>List&lt;E&gt; extends Collection&lt;E&gt;</tt>.  So <tt>ArrayList&lt;String&gt;</tt> is a subtype of <tt>List&lt;String&gt;</tt>, which is a subtype of <tt>Collection&lt;String&gt;</tt>.  So long as you do not vary the type argument, the subtyping relationship is preserved between the types.</p>
-<center><img src="../../figures/java/generics-sampleHierarchy.gif" width="147" height="116" align="bottom" alt="diagram showing a sample collections hierarchy: ArrayList&lt;String&gt; is a subtype of List&lt;String&gt;, which is a subtype of Collection&lt;String&gt;." /></center><center>A sample <tt>Collections</tt> hierarchy</center>
+<center><img src="../figures/java/generics-sampleHierarchy.gif" width="147" height="116" align="bottom" alt="diagram showing a sample collections hierarchy: ArrayList&lt;String&gt; is a subtype of List&lt;String&gt;, which is a subtype of Collection&lt;String&gt;." /></center><center>A sample <tt>Collections</tt> hierarchy</center>
 
 <p>
 Now imagine we want to define our own list interface, <tt>PayloadList</tt>, that associates an optional value of generic type <tt>P</tt> with each element.  Its declaration might look like:</p>
@@ -576,7 +576,7 @@ The following parameterizations of <tt>PayloadList</tt> are subtypes of <tt>List
 <li><tt>PayloadList&lt;String,Integer&gt;</tt></li>
 <li><tt>PayloadList&lt;String,Exception&gt;</tt></li>
 </ul>
-<center><img src="../../figures/java/generics-payloadListHierarchy.gif" width="566" height="138" align="bottom" alt="diagram showing an example PayLoadList hierarchy: PayloadList&lt;String, String&gt; is a subtype of List&lt;String&gt;, which is a subtype of Collection&lt;String&gt;. At the same level of PayloadList&lt;String,String&gt; is PayloadList&lt;String, Integer&gt; and PayloadList&lt;String, Exceptions&gt;." /></center><center>A sample <tt>PayloadList</tt> hierarchy</center>
+<center><img src="../figures/java/generics-payloadListHierarchy.gif" width="566" height="138" align="bottom" alt="diagram showing an example PayLoadList hierarchy: PayloadList&lt;String, String&gt; is a subtype of List&lt;String&gt;, which is a subtype of Collection&lt;String&gt;. At the same level of PayloadList&lt;String,String&gt; is PayloadList&lt;String, Integer&gt; and PayloadList&lt;String, Exceptions&gt;." /></center><center>A sample <tt>PayloadList</tt> hierarchy</center>
 
         </div>
         <div class="NavBit">
@@ -595,14 +595,14 @@ The following parameterizations of <tt>PayloadList</tt> are subtypes of <tt>List
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

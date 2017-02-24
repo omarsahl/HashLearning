@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -510,7 +510,7 @@
         <br /><b>Section:</b> Nested Classes
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -619,7 +619,7 @@ social networking application that satisfy certain criteria. The following table
 
 <p>Suppose that members of this social networking application are
 represented by the following
-<a class="SourceLink" target="_blank" href="examples/Person.java" onclick="showCode('../../displayCode.html', 'examples/Person.java'); return false;"><code>Person</code></a> class:</p>
+<a class="SourceLink" target="_blank" href="examples/Person.java" onclick="showCode('../displayCode.html', 'examples/Person.java'); return false;"><code>Person</code></a> class:</p>
 
 <pre class="codeblock">public class Person {
 
@@ -645,7 +645,7 @@ represented by the following
 are stored in a <code>List&lt;Person&gt;</code> instance.</p>
 
 <p>This section begins with a naive approach to this use case. It improves upon this approach with local and anonymous classes, and then finishes with an efficient and concise approach using lambda expressions. Find the code excerpts described in this section in the example
-<a class="SourceLink" target="_blank" href="examples/RosterTest.java" onclick="showCode('../../displayCode.html', 'examples/RosterTest.java'); return false;"><code>RosterTest</code></a>.
+<a class="SourceLink" target="_blank" href="examples/RosterTest.java" onclick="showCode('../displayCode.html', 'examples/RosterTest.java'); return false;"><code>RosterTest</code></a>.
 </p>
 
 <h3><a name="approach1">Approach 1: Create Methods That Search for Members That Match One Characteristic</a></h3>
@@ -668,7 +668,7 @@ age:</p>
 that groups multiple elements into a single unit. Collections are
 used to store, retrieve, manipulate, and communicate aggregate
 data. For more information about collections, see the
-<a class="TutorialLink" target="_top" href="../../collections/index.html">Collections</a> trail.</p>
+<a class="TutorialLink" target="_top" href="../collections/index.html">Collections</a> trail.</p>
 
 <p>This approach can potentially make your application <em>brittle</em>, which is the likelihood of an application not working because of the introduction of updates (such as newer data types). Suppose that you upgrade your application and change the structure of the <code>Person</code> class such that it contains different member variables; perhaps the class records and measures ages with a different data type or algorithm. You would have to rewrite a lot of your API to accommodate this change. In addition, this approach is unnecessarily restrictive; what if you
 wanted to print members younger than a certain age, for example?</p>
@@ -759,9 +759,9 @@ described in the next section.</p>
 <p>The <code>CheckPerson</code>
 interface is a <i>functional interface</i>. A functional
 interface is any interface that contains only one
-<a class="TutorialLink" target="_top" href="../../java/IandI/abstract.html">abstract method</a>. (A functional interface may contain one or more 
-<a class="TutorialLink" target="_top" href="../../java/IandI/defaultmethods.html">default methods</a> or
-<a class="TutorialLink" target="_top" href="../../java/IandI/defaultmethods.html#static">static methods</a>.) Because
+<a class="TutorialLink" target="_top" href="../java/IandI/abstract.html">abstract method</a>. (A functional interface may contain one or more
+<a class="TutorialLink" target="_top" href="../java/IandI/defaultmethods.html">default methods</a> or
+<a class="TutorialLink" target="_top" href="../java/IandI/defaultmethods.html#static">static methods</a>.) Because
 a functional interface contains only one abstract method, you can
 omit the name of that method
 when you implement it. To do this, instead of using an anonymous
@@ -810,7 +810,7 @@ test(T t)</code>:</p>
 }</pre>
 
 <p>The interface <code>Predicate&lt;T&gt;</code> is an example of a generic interface. (For more information about generics, see the
-<a class="TutorialLink" target="_top" href="../../java/generics/index.html">Generics (Updated)</a> lesson.) Generic types (such as generic interfaces) specify one or more type parameters within angle brackets (<code>&lt;&gt;</code>). This interface contains only one type parameter, <code>T</code>. When you declare or instantiate a generic type with actual type arguments, you have a parameterized type. For example, the parameterized type <code>Predicate&lt;Person&gt;</code> is the following:</p>
+<a class="TutorialLink" target="_top" href="../java/generics/index.html">Generics (Updated)</a> lesson.) Generic types (such as generic interfaces) specify one or more type parameters within angle brackets (<code>&lt;&gt;</code>). This interface contains only one type parameter, <code>T</code>. When you declare or instantiate a generic type with actual type arguments, you have a parameterized type. For example, the parameterized type <code>Predicate&lt;Person&gt;</code> is the following:</p>
 
 <pre class="codeblock">interface Predicate&lt;<code>Person</code>&gt; {
     boolean test(<code>Person</code> t);
@@ -1021,7 +1021,7 @@ then prints it:</p>
 <p>The operations <code>filter</code>, <code>map</code>, and <code>forEach</code> are <em>aggregate operations</em>. Aggregate operations process elements from a stream, not directly from a collection (which is the reason why the first method invoked in this example is <code>stream</code>). A <em>stream</em> is a sequence of elements. Unlike a collection, it is not a data structure that stores elements. Instead, a stream carries values from a source, such as collection, through a pipeline. A <em>pipeline</em> is a sequence of stream operations, which in this example is <code>filter</code>- <code>map</code>-<code>forEach</code>. In addition, aggregate operations typically accept lambda expressions as parameters, enabling you to customize how they behave.</p>
 
 <p>For a more thorough discussion of aggregate operations, see the
-<a class="TutorialLink" target="_top" href="../../collections/streams/index.html">Aggregate Operations</a> lesson.</p>
+<a class="TutorialLink" target="_top" href="../collections/streams/index.html">Aggregate Operations</a> lesson.</p>
 
 
 <h2><a name="lambda-expressions-in-gui-applications">Lambda Expressions in GUI Applications</a></h2>
@@ -1109,7 +1109,7 @@ declaration; you can consider lambda expressions as anonymous
 methods&mdash;methods without a name.</p>
 
 <p>The following example,
-<a class="SourceLink" target="_blank" href="examples/Calculator.java" onclick="showCode('../../displayCode.html', 'examples/Calculator.java'); return false;"><code>Calculator</code></a>, is an example of lambda expressions that take
+<a class="SourceLink" target="_blank" href="examples/Calculator.java" onclick="showCode('../displayCode.html', 'examples/Calculator.java'); return false;"><code>Calculator</code></a>, is an example of lambda expressions that take
 more than one formal parameter:</p>
 
 <pre class="codeblock">
@@ -1151,8 +1151,8 @@ the following:</p>
 
 <p>Like local and anonymous classes, lambda expressions can
 <a class="TutorialLink" target="_top" href="localclasses.html#accessing-members-of-an-enclosing-class">capture variables</a>; they have the same access to local variables of the enclosing scope. However, unlike local and anonymous classes, lambda expressions do not have any shadowing issues (see
-<a class="TutorialLink" target="_top" href="../../java/javaOO/nested.html#shadowing">Shadowing</a> for more information). Lambda expressions are lexically scoped. This means that they do not inherit any names from a supertype or introduce a new level of scoping. Declarations in a lambda expression are interpreted just as they are in the enclosing environment. The following example,
-<a class="SourceLink" target="_blank" href="examples/LambdaScopeTest.java" onclick="showCode('../../displayCode.html', 'examples/LambdaScopeTest.java'); return false;"><code>LambdaScopeTest</code></a>, demonstrates this:</p>
+<a class="TutorialLink" target="_top" href="../java/javaOO/nested.html#shadowing">Shadowing</a> for more information). Lambda expressions are lexically scoped. This means that they do not inherit any names from a supertype or introduce a new level of scoping. Declarations in a lambda expression are interpreted just as they are in the enclosing environment. The following example,
+<a class="SourceLink" target="_blank" href="examples/LambdaScopeTest.java" onclick="showCode('../displayCode.html', 'examples/LambdaScopeTest.java'); return false;"><code>LambdaScopeTest</code></a>, demonstrates this:</p>
 
 <pre class="codeblock">
 
@@ -1312,7 +1312,7 @@ invoked because that method returns a value; the method
 <h2><a name="serialization">Serialization</a></h2>
 
 <p>You can 
-<a class="TutorialLink" target="_top" href="../../jndi/objects/serial.html">serialize</a> a lambda expression if its target type and its captured arguments are serializable. However, like
+<a class="TutorialLink" target="_top" href="../jndi/objects/serial.html">serialize</a> a lambda expression if its target type and its captured arguments are serializable. However, like
 <a class="TutorialLink" target="_top" href="nested.html#serialization">inner classes</a>, the serialization of lambda expressions is strongly discouraged.</p>
 
         </div>
@@ -1332,14 +1332,14 @@ invoked because that method returns a value; the method
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

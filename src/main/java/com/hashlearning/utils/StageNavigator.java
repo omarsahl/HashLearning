@@ -28,6 +28,7 @@ public class StageNavigator {
         return stage;
     }
 
+
     public static Stage switchStage(Stage currentWindow, String fxml, boolean resizable, String cssFileName) throws IOException {
         Parent root = FXMLLoader.load(StageNavigator.class.getResource(fxml));
         Scene scene = new Scene(root);

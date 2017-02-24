@@ -26,7 +26,7 @@ public class DatabaseManager {
     private static final File jsonFile;
     public static Map<String, User> users;
     private static Gson gson;
-    private static JsonArray usersJson, javaJson;
+    private static JsonArray usersJson;
 
     static {
         parser = new JsonParser();
@@ -185,6 +185,4 @@ public class DatabaseManager {
             System.out.println("----------------------------------------------------");
         }
     }
-
-
 }

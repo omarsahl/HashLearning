@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -503,7 +503,7 @@
         <br /><b>Section:</b> Variables
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -517,10 +517,10 @@
 
 
 <p>An <i>array</i> is a container object that holds a fixed number of values of a single type. The length of an array is established when the array is created. After creation, its length is fixed. You have seen an example of arrays already, in the <code>main</code> method of the &quot;Hello World!&quot; application. This section discusses arrays in greater detail.</p>
-<center><img src="../../figures/java/objects-tenElementArray.gif" width="335" height="124" align="bottom" alt="Illustration of an array as 10 boxes numbered 0 through 9; an index of 0 indicates the first element in the array" /></p><p class="FigureCaption">An array of 10 elements.</p></center><br />
+<center><img src="../figures/java/objects-tenElementArray.gif" width="335" height="124" align="bottom" alt="Illustration of an array as 10 boxes numbered 0 through 9; an index of 0 indicates the first element in the array" /></p><p class="FigureCaption">An array of 10 elements.</p></center><br />
 <p>Each item in an array is called an <i>element</i>, and each element is accessed by its numerical <i>index</i>. As shown in the preceding illustration, numbering begins with 0. The 9th element, for example, would therefore be accessed at index 8.</p>
 <p>The following program, 
-<a class="SourceLink" target="_blank" href="examples/ArrayDemo.java" onclick="showCode('../../displayCode.html', 'examples/ArrayDemo.java'); return false;"><code>ArrayDemo</code></a>, creates an array of integers, puts some values in the array, and prints each value to standard output.</p>
+<a class="SourceLink" target="_blank" href="examples/ArrayDemo.java" onclick="showCode('../displayCode.html', 'examples/ArrayDemo.java'); return false;"><code>ArrayDemo</code></a>, creates an array of integers, puts some values in the array, and prints each value to standard output.</p>
 <div class="codeblock"><pre>
 
 class ArrayDemo {
@@ -642,7 +642,7 @@ int[] anArray = {
 <p>You can also declare an array of arrays (also known as a <em>multidimensional</em> array) by using two or more sets of brackets, such as <code>String[][] names</code>. Each element, therefore, must be accessed by a corresponding number of index values.</p>
 
 <p>In the Java programming language, a multidimensional array is an array whose components are themselves arrays. This is unlike arrays in C or Fortran. A consequence of this is that the rows are allowed to vary in length, as shown in the following 
-<a class="SourceLink" target="_blank" href="examples/MultiDimArrayDemo.java" onclick="showCode('../../displayCode.html', 'examples/MultiDimArrayDemo.java'); return false;"><code>MultiDimArrayDemo</code></a> program:</p>
+<a class="SourceLink" target="_blank" href="examples/MultiDimArrayDemo.java" onclick="showCode('../displayCode.html', 'examples/MultiDimArrayDemo.java'); return false;"><code>MultiDimArrayDemo</code></a> program:</p>
 
 <div class="codeblock"><pre>
 class MultiDimArrayDemo {
@@ -675,7 +675,7 @@ public static void arraycopy(Object src, int srcPos,
 </pre></div>
 <p>The two <code>Object</code> arguments specify the array to copy <i>from</i> and the array to copy <i>to</i>. The three <code>int</code> arguments specify the starting position in the source array, the starting position in the destination array, and the number of array elements to copy.</p>
 <p>The following program, 
-<a class="SourceLink" target="_blank" href="examples/ArrayCopyDemo.java" onclick="showCode('../../displayCode.html', 'examples/ArrayCopyDemo.java'); return false;"><code>ArrayCopyDemo</code></a>, declares an array of <code>char</code> elements, spelling the word &quot;decaffeinated.&quot; It uses the <code>System.arraycopy</code> method to copy a subsequence of array components into a second array:</p>
+<a class="SourceLink" target="_blank" href="examples/ArrayCopyDemo.java" onclick="showCode('../displayCode.html', 'examples/ArrayCopyDemo.java'); return false;"><code>ArrayCopyDemo</code></a>, declares an array of <code>char</code> elements, spelling the word &quot;decaffeinated.&quot; It uses the <code>System.arraycopy</code> method to copy a subsequence of array components into a second array:</p>
 <div class="codeblock"><pre>
 
 class ArrayCopyDemo {
@@ -695,10 +695,10 @@ caffein
 </pre></div>
 <h2>Array Manipulations</h2>
 <p>Arrays are a powerful and useful concept used in programming. Java SE provides methods to perform some of the most common manipulations related to arrays. For instance, the
-<a class="SourceLink" target="_blank" href="examples/ArrayCopyDemo.java" onclick="showCode('../../displayCode.html', 'examples/ArrayCopyDemo.java'); return false;"><code>ArrayCopyDemo</code></a> example uses the <code>arraycopy</code> method of the <code>System</code> class instead of manually iterating through the elements of the source array and placing each one into the destination array. This is performed behind the scenes, enabling the developer to use just one line of code to call the method.</p>
+<a class="SourceLink" target="_blank" href="examples/ArrayCopyDemo.java" onclick="showCode('../displayCode.html', 'examples/ArrayCopyDemo.java'); return false;"><code>ArrayCopyDemo</code></a> example uses the <code>arraycopy</code> method of the <code>System</code> class instead of manually iterating through the elements of the source array and placing each one into the destination array. This is performed behind the scenes, enabling the developer to use just one line of code to call the method.</p>
 <p>For your convenience, Java SE provides several methods for performing array manipulations (common tasks, such as copying, sorting and searching arrays) in the
 <a class="APILink" target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html"><code>java.util.Arrays</code></a> class. For instance, the previous example can be modified to use the <code>copyOfRange</code> method of the <code>java.util.Arrays</code> class, as you can see in the 
-<a class="SourceLink" target="_blank" href="examples/ArrayCopyOfDemo.java" onclick="showCode('../../displayCode.html', 'examples/ArrayCopyOfDemo.java'); return false;"><code>ArrayCopyOfDemo</code></a> example. The difference is that using the <code>copyOfRange</code> method does not require you to create the destination array before calling the method, because the destination array is returned by the method:</p>
+<a class="SourceLink" target="_blank" href="examples/ArrayCopyOfDemo.java" onclick="showCode('../displayCode.html', 'examples/ArrayCopyOfDemo.java'); return false;"><code>ArrayCopyOfDemo</code></a> example. The difference is that using the <code>copyOfRange</code> method does not require you to create the destination array before calling the method, because the destination array is returned by the method:</p>
 <div class="codeblock"><pre>
 
 class ArrayCopyOfDemo {
@@ -740,14 +740,14 @@ class ArrayCopyOfDemo {
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

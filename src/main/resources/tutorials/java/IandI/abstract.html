@@ -59,7 +59,7 @@
     
     #logocover {
         display: block;
-        background: transparent url(../../images/oracle-java-logo.png) 0px 0px no-repeat;
+        background: transparent url(../images/oracle-java-logo.png) 0px 0px no-repeat;
         height: 50px;
         width: 229px;
         float: left;
@@ -462,7 +462,7 @@
                             <a target="_blank"
                                 href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download JDK</a>
                             <br />
-                            <a href="../../search.html" target="_blank">Search Java Tutorials</a>
+                            <a href="../search.html" target="_blank">Search Java Tutorials</a>
                             <br />           
                             <a href="javascript:toggleLeft()"
                                 id="ToggleLeft">Hide TOC</a>
@@ -501,7 +501,7 @@
         <br /><b>Section:</b> Inheritance
     </div>
             <div id="BreadCrumbs">
-                <a href="../../index.html" target="_top">Home Page</a>
+                <a href="../index.html" target="_top">Home Page</a>
                 &gt;
                 <a href="../index.html" target="_top">Learning the Java Language</a>
                 &gt;
@@ -564,14 +564,14 @@ public abstract class GraphicObject {
 <p>An example of a class in the JDK that implements several interfaces is 
 <a class="APILink" target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html"><code>HashMap</code></a>, which implements the interfaces <code>Serializable</code>, <code>Cloneable</code>, and <code>Map&lt;K, V&gt;</code>. By reading this list of interfaces, you can infer that an instance of <code>HashMap</code> (regardless of the developer or company who implemented the class) can be cloned, is serializable (which means that it can be converted into a byte stream; 
 see the section
-<a class="TutorialLink" target="_top" href="../../jndi/objects/serial.html">Serializable Objects</a>), and has the functionality of a map. In addition, the <code>Map&lt;K, V&gt;</code> interface has been enhanced with many default methods such as <code>merge</code> and <code>forEach</code> that older classes that have implemented this interface do not have to define.</p>
+<a class="TutorialLink" target="_top" href="../jndi/objects/serial.html">Serializable Objects</a>), and has the functionality of a map. In addition, the <code>Map&lt;K, V&gt;</code> interface has been enhanced with many default methods such as <code>merge</code> and <code>forEach</code> that older classes that have implemented this interface do not have to define.</p>
 
 <p>Note that many software libraries use both abstract classes and interfaces; the <code>HashMap</code> class implements several interfaces and also extends the abstract class <code>AbstractMap</code>.</p>
 
 <h2>An Abstract Class Example</h2>
 <p>In an object-oriented drawing application, you can draw circles, rectangles, lines, Bezier curves, and many other graphic objects. These objects all have certain states (for example: position, orientation, line color, fill color) and behaviors (for example: moveTo, rotate, resize, draw) in common. Some of these states and behaviors are the same for all graphic objects (for example: position, fill color, and moveTo). Others require different implementations (for example, resize or draw). All <code>GraphicObject</code>s must be able to draw or resize themselves; they just differ in how they do it. This is a perfect situation for an abstract superclass. You can take advantage of the similarities and declare all the graphic objects to inherit from the same abstract parent object (for example, <code>GraphicObject</code>) as shown in 
 <span id="figure:classes-graphicObject.gif">the following figure.</span></p>
-<center><img src="../../figures/java/classes-graphicObject.gif" width="372" height="80" align="bottom" alt="Classes Rectangle, Line, Bezier, and Circle Inherit from GraphicObject " /></p><p class="FigureCaption">Classes Rectangle, Line, Bezier, and Circle Inherit from GraphicObject</p></center><p>First, you declare an abstract class, <code>GraphicObject</code>, to provide member variables and methods that are wholly shared by all subclasses, such as the current position and the <code>moveTo</code> method. <code>GraphicObject</code> also declares abstract methods for methods, such as <code>draw</code> or <code>resize</code>, that need to be implemented by all subclasses but must be implemented in different ways. The <code>GraphicObject</code> class can look something like this:</p>
+<center><img src="../figures/java/classes-graphicObject.gif" width="372" height="80" align="bottom" alt="Classes Rectangle, Line, Bezier, and Circle Inherit from GraphicObject " /></p><p class="FigureCaption">Classes Rectangle, Line, Bezier, and Circle Inherit from GraphicObject</p></center><p>First, you declare an abstract class, <code>GraphicObject</code>, to provide member variables and methods that are wholly shared by all subclasses, such as the current position and the <code>moveTo</code> method. <code>GraphicObject</code> also declares abstract methods for methods, such as <code>draw</code> or <code>resize</code>, that need to be implemented by all subclasses but must be implemented in different ways. The <code>GraphicObject</code> class can look something like this:</p>
 <div class="codeblock"><pre>
 abstract class GraphicObject {
     int x, y;
@@ -636,14 +636,14 @@ class XX extends X {
 <tr>
     <td>
          <p class="footertext"><a name="license_info">Your use of this</a> page and all the material on pages under &quot;The Java Tutorials&quot; banner 
-         is subject to these <a href="../../information/cpyr.html">legal notices</a>.
+         is subject to these <a href="../information/cpyr.html">legal notices</a>.
          </p>
          <p class="footertext">Copyright &copy; 1995, 2015 Oracle and/or its affiliates. All rights reserved.</p>
     </td>
     
     <td align="right">
         <p class="footertext">Problems with the examples? Try <a target="_blank"
-        href="../../information/run-examples.html">Compiling and Running
+        href="../information/run-examples.html">Compiling and Running
         the Examples: FAQs</a>.
         </p>
         <p class="footertext">

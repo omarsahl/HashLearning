@@ -1,4 +1,6 @@
 # HashLearning
+a Desktop app using Java FXML and Jfoenix library..
+
 [check out this *prezi* for more information!](http://prezi.com/yyu8eriws4z8/?utm_campaign=share&utm_medium=copy)
 
 [check out this quick journey](https://youtu.be/HhNMiwidJlg)
